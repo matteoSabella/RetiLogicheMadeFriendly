@@ -1,0 +1,560 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.17)  15 OCT 2021 13:37
+entering extended mode
+**./RetiLogicheMadeFriendly.tex
+(RetiLogicheMadeFriendly.tex
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-02-18> xparse <2020-03-03>
+(D:\SOFTWARE\MiKTeX\tex/latex/base\book.cls
+Document Class: book 2020/04/10 v1.4m Standard LaTeX document class
+(D:\SOFTWARE\MiKTeX\tex/latex/base\bk10.clo
+File: bk10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+)
+\c@part=\count179
+\c@chapter=\count180
+\c@section=\count181
+\c@subsection=\count182
+\c@subsubsection=\count183
+\c@paragraph=\count184
+\c@subparagraph=\count185
+\c@figure=\count186
+\c@table=\count187
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+)
+(D:\SOFTWARE\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
+
+(D:\SOFTWARE\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+(D:\SOFTWARE\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
+
+(D:\SOFTWARE\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(D:\SOFTWARE\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+(D:\SOFTWARE\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen139
+\Gin@req@width=\dimen140
+)
+(D:\SOFTWARE\MiKTeX\tex/latex/wrapfig\wrapfig.sty
+\wrapoverhang=\dimen141
+\WF@size=\dimen142
+\c@WF@wrappedlines=\count188
+\WF@box=\box47
+\WF@everypar=\toks16
+Package: wrapfig 2003/01/31  v 3.6
+)
+(D:\SOFTWARE\MiKTeX\tex/latex/adjustbox\adjustbox.sty
+Package: adjustbox 2020/08/19 v1.3 Adjusting TeX boxes (trim, clip, ...)
+
+(D:\SOFTWARE\MiKTeX\tex/latex/xkeyval\xkeyval.sty
+Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
+
+(D:\SOFTWARE\MiKTeX\tex/generic/xkeyval\xkeyval.tex
+(D:\SOFTWARE\MiKTeX\tex/generic/xkeyval\xkvutils.tex
+\XKV@toks=\toks17
+\XKV@tempa@toks=\toks18
+)
+\XKV@depth=\count189
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(D:\SOFTWARE\MiKTeX\tex/latex/adjustbox\adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+)
+(D:\SOFTWARE\MiKTeX\tex/latex/adjustbox\trimclip.sty
+Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
+
+(D:\SOFTWARE\MiKTeX\tex/latex/collectbox\collectbox.sty
+Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
+\collectedbox=\box48
+)
+\tc@llx=\dimen143
+\tc@lly=\dimen144
+\tc@urx=\dimen145
+\tc@ury=\dimen146
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+
+(D:\SOFTWARE\MiKTeX\tex/latex/adjustbox\tc-pdftex.def
+File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen147
+\adjbox@Height=\dimen148
+\adjbox@Depth=\dimen149
+\adjbox@Totalheight=\dimen150
+\adjbox@pwidth=\dimen151
+\adjbox@pheight=\dimen152
+\adjbox@pdepth=\dimen153
+\adjbox@ptotalheight=\dimen154
+
+(D:\SOFTWARE\MiKTeX\tex/latex/ifoddpage\ifoddpage.sty
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count190
+)
+(D:\SOFTWARE\MiKTeX\tex/latex/varwidth\varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box49
+\sift@deathcycles=\count191
+\@vwid@loff=\dimen155
+\@vwid@roff=\dimen156
+))
+(D:\SOFTWARE\MiKTeX\tex/latex/listings\listings.sty
+\lst@mode=\count192
+\lst@gtempboxa=\box50
+\lst@token=\toks19
+\lst@length=\count193
+\lst@currlwidth=\dimen157
+\lst@column=\count194
+\lst@pos=\count195
+\lst@lostspace=\dimen158
+\lst@width=\dimen159
+\lst@newlines=\count196
+\lst@lineno=\count197
+\lst@maxwidth=\dimen160
+
+(D:\SOFTWARE\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
+\c@lstnumber=\count198
+\lst@skipnumbers=\count199
+\lst@framebox=\box51
+)
+(D:\SOFTWARE\MiKTeX\tex/latex/listings\listings.cfg
+File: listings.cfg 2020/03/24 1.8d listings configuration
+))
+Package: listings 2020/03/24 1.8d (Carsten Heinz)
+
+(D:\SOFTWARE\MiKTeX\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(D:\SOFTWARE\MiKTeX\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(D:\SOFTWARE\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2021-03-02 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count266
+\l__pdf_internal_box=\box52
+)
+(RetiLogicheMadeFriendly.aux)
+\openout1 = `RetiLogicheMadeFriendly.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+
+(D:\SOFTWARE\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count267
+\scratchdimen=\dimen161
+\scratchbox=\box53
+\nofMPsegments=\count268
+\nofMParguments=\count269
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count270
+\MPscratchDim=\dimen162
+\MPnumerator=\count271
+\makeMPintoPDFobject=\count272
+\everyMPtoPDFconversion=\toks21
+) (D:\SOFTWARE\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+)
+\c@lstlisting=\count273
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 45.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 45.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 45.
+ [1
+
+
+{C:/Users/matte/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2
+
+]
+Chapter 1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 56.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 56.
+<SchemaDigitale.png, id=11, 466.74374pt x 72.27pt>
+File: SchemaDigitale.png Graphic file (type png)
+<use SchemaDigitale.png>
+Package pdftex.def Info: SchemaDigitale.png  used on input line 57.
+(pdftex.def)             Requested size: 345.0pt x 53.4216pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--58
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--58
+
+ []
+
+[3 <./SchemaDigitale.png>] [4
+
+]
+Chapter 2.
+
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
+
+ []
+
+
+! LaTeX Error: Unknown float option `,'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.65 \begin{figure}[h!,right]
+                             
+Option `,' ignored and `p' used.
+
+
+! LaTeX Error: Unknown float option `r'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.65 \begin{figure}[h!,right]
+                             
+Option `r' ignored and `p' used.
+
+
+! LaTeX Error: Unknown float option `i'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.65 \begin{figure}[h!,right]
+                             
+Option `i' ignored and `p' used.
+
+
+! LaTeX Error: Unknown float option `g'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.65 \begin{figure}[h!,right]
+                             
+Option `g' ignored and `p' used.
+
+<AndGate.png, id=23, 140.02313pt x 60.225pt>
+File: AndGate.png Graphic file (type png)
+<use AndGate.png>
+Package pdftex.def Info: AndGate.png  used on input line 66.
+(pdftex.def)             Requested size: 140.02278pt x 60.22484pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--69
+
+ []
+
+<OrGate.png, id=24, 137.7647pt x 55.70813pt>
+File: OrGate.png Graphic file (type png)
+<use OrGate.png>
+Package pdftex.def Info: OrGate.png  used on input line 71.
+(pdftex.def)             Requested size: 137.76434pt x 55.70798pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--75
+
+ []
+
+[5 <./AndGate.png> <./OrGate.png>]
+<NotGate.png, id=33, 48.93282pt x 79.04532pt>
+File: NotGate.png Graphic file (type png)
+<use NotGate.png>
+Package pdftex.def Info: NotGate.png  used on input line 77.
+(pdftex.def)             Requested size: 48.93268pt x 79.0451pt.
+ [6 <./NotGate.png>]
+<NandGate.png, id=39, 158.09062pt x 60.225pt>
+File: NandGate.png Graphic file (type png)
+<use NandGate.png>
+Package pdftex.def Info: NandGate.png  used on input line 87.
+(pdftex.def)             Requested size: 158.09023pt x 60.22484pt.
+
+Overfull \hbox (133.9377pt too wide) in paragraph at lines 87--88
+[][] 
+ []
+
+
+! LaTeX Error: File `NorGate' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.92 \includegraphics{NorGate}
+                              
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[7 <./NandGate.png>] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 107--110
+\OT1/cmr/m/n/10 tipo
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--110
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--110
+\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 ([]\OML/cmm/m/it/10 ; []; []; :::; []\OT1/cmr
+/m/n/10 )$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--110
+
+ []
+
+
+Underfull \hbox (badness 8000) in paragraph at lines 107--110
+\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 ([]\OML/cmm/m/it/10 ; []; []; :::; []\OT1/cmr
+/m/n/10 ) = \OML/cmm/m/it/10 a \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 f\OT1/cmr/m/
+n/10 (1\OML/cmm/m/it/10 ; []; []; :::; []\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 a
+[] \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (0\OML/cmm/m/it/10 ; []
+; []; :::; []\OT1/cmr/m/n/10 )$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--110
+
+ []
+
+[9] [10
+
+]
+Chapter 3.
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--134
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--134
+\OT1/cmr/bx/n/10 Letterale \OT1/cmr/m/n/10 Ogni vari-abile che sia af-fer-mat o
+ negata.
+ []
+
+
+Underfull \hbox (badness 2351) in paragraph at lines 119--134
+\OT1/cmr/bx/n/10 Maxterm \OT1/cmr/m/n/10 Somma in cui vari-abile com-pare una v
+olta come let-terale.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--134
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--134
+
+ []
+
+[11] [12]
+Chapter 4.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13
+
+]
+! Undefined control sequence.
+l.158 \break\nextline
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 159--166
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 159--166
+
+ []
+
+<Multiplexer21Circuito.png, id=65, 247.67531pt x 121.95563pt>
+File: Multiplexer21Circuito.png Graphic file (type png)
+<use Multiplexer21Circuito.png>
+Package pdftex.def Info: Multiplexer21Circuito.png  used on input line 180.
+(pdftex.def)             Requested size: 247.6747pt x 121.9553pt.
+<Multiplexer21.png, id=66, 59.47218pt x 96.36pt>
+File: Multiplexer21.png Graphic file (type png)
+<use Multiplexer21.png>
+Package pdftex.def Info: Multiplexer21.png  used on input line 182.
+(pdftex.def)             Requested size: 59.47203pt x 96.35974pt.
+
+Overfull \hbox (166.03621pt too wide) in paragraph at lines 179--184
+[]\OT1/cmr/m/n/10 Ecco lo schema cir-cuitale della fun-zione ap-pena de-scritta
+: []
+ []
+
+
+Overfull \hbox (1.75026pt too wide) in paragraph at lines 179--184
+\OT1/cmr/m/n/10 Il mul-ti-plexer 2 a 1 si rap-p-re-senta con un questo sim-bolo
+ cir-cuitale: []
+ []
+
+! Double subscript.
+l.189 \(S_0_
+            1 \) si occuperà di scremare tra A e B mentre \(S_0_2 \) screme...
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+! Double subscript.
+l.189 ...perà di scremare tra A e B mentre \(S_0_
+                                                  2 \) scremerà tra C e D.
+I treat `x_1_2' essentially like `x_1{}_2'.
+
+[14 <./Multiplexer21Circuito.png> <./Multiplexer21.png>] [15] [16
+
+]
+Chapter 5.
+
+Underfull \hbox (badness 10000) in paragraph at lines 211--215
+
+ []
+
+[17] [18
+
+]
+Chapter 6.
+[19] [20]
+Chapter 7.
+[21
+
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.329 ...e per dichiarare un'entità di nome nome_
+                                                  entity con n ingressi e m-...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.330 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (20.46123pt too wide) in paragraph at lines 329--330
+[]\OT1/cmr/m/n/10 Di se-guito il codice per dichiarare un'entita di nome nome$
+[]\OML/cmm/m/it/10 ntityconningressiem \OMS/cmsy/m/n/10  
+ []
+
+! Undefined control sequence.
+l.360 ...ooleane come and,or,xor...\break\nextline
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.361 ...tre bisogna usare le parentesi !\nextline
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.362 ...lla logica del componente.\break\nextline
+                                                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 360--364
+\OT1/cmr/m/n/10 VHDL possiede tutte le op-er-azioni booleane come and,or,xor...
+
+ []
+
+
+Overfull \hbox (2.15804pt too wide) in paragraph at lines 365--366
+[]\OT1/cmr/m/n/10 All'interno della stessa ar-chitet-tura pos-sono avvenire pi
+u op-er-azioni. L'ordine
+ []
+
+[22] [23] (RetiLogicheMadeFriendly.aux) ) 
+Here is how much of TeX's memory you used:
+ 4263 strings out of 479334
+ 61960 string characters out of 2869356
+ 362678 words of memory out of 3000000
+ 21685 multiletter control sequences out of 15000+200000
+ 409454 words of font info for 47 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 68i,7n,74p,367b,263s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\matte\AppData\Local\MiKTeX\
+fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><D:/SOFTWARE/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmbx10.pfb><D:/SOFTWARE/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmbx12.pfb><D:/SOFTWARE/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/
+SOFTWARE/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><D:/SOFTWARE/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmr10.pfb><D:/SOFTWARE/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmr12.pfb><D:/SOFTWARE/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.p
+fb><D:/SOFTWARE/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><D:/SOFTWARE/MiK
+TeX/fonts/type1/public/amsfonts/cm/cmsl10.pfb><D:/SOFTWARE/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmsy10.pfb><D:/SOFTWARE/MiKTeX/fonts/type1/public/amsfonts/cm
+/cmsy7.pfb><D:/SOFTWARE/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on RetiLogicheMadeFriendly.pdf (23 pages, 194070 bytes).
+PDF statistics:
+ 144 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+
