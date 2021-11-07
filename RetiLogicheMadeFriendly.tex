@@ -4,11 +4,11 @@
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage[export]{adjustbox}
+\usepackage{titlesec}
 \usepackage{listings}
 \usepackage{xcolor}
-
-
-
+\graphicspath{{images/}}
+\usepackage{wrapfig}
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
@@ -60,41 +60,47 @@ Per risolvere questo inconveniente intrinseco di questo modo di comunicare si ri
 \subsection{OPERATORI SEMPLICI}
 Gli operatori basilari che vengono utilizzati per la costruzione di reti logiche sono i seguenti:\newline
 \subsubsection*{AND}
-
+\begin{wrapfigure}{r}{0.10\textwidth}
+\includegraphics{AndPrecisa}
+\end{wrapfigure}
 L'operatore AND prende in input  due segnali e restituisce 1 se e solo se entrambi sono 1, altrimenti restituisce 0.
-\begin{figure}[h!,right]
-\includegraphics{AndGate}
-\end{figure}
 \newline Si rappresenta come : \(x*y\)\newline
+
+
 \subsubsection*{OR}
-\begin{figure}[h!]
+\begin{wrapfigure}{r}{0.10\textwidth}
 \includegraphics{OrGate}
-\end{figure}
+\end{wrapfigure}
 L'operatore OR prende in input due segnali e restituisce 1 se almeno uno dei due è 1, altrimenti restituisce 0.
 \newline Si rappresenta come : \(x+y\)\newline
 \subsubsection*{NOT}
-\begin{figure}[h!]
+\begin{wrapfigure}{r}{0.10\textwidth}
 \includegraphics{NotGate}
-\end{figure}
+\end{wrapfigure}
 L'operatore NOT prende in input un solo segnali e restituisce 1 se il segnale è 0 e 0 se l'input è 1.
 \newline Si rappresenta come : \(x'\)
 
 \newpage
 \subsection{OPERATORI COMPLESSI}
 Gli operatori che vediamo di seguito possono essere considerati come operatori "complessi" ossia costituiti da elementi più semplici.
-\subsubsection*{NAND}
-\begin{wrapfigure}{r}{0.07\textwidth}
+\begin{wrapfigure}{r}{0.10\textwidth}
 \includegraphics{NandGate}
 \end{wrapfigure}
+\subsubsection*{NAND}
+
 L'operatore NAND è costituito da un operatore AND seguito da un NOT.
-\subsubsection*{NOR}
-L'operatore NOR è costituito da un operatore OR seguito da un NOT.
+\begin{wrapfigure}{r}{0,10\textwidth}
 \includegraphics{NorGate}
+\end{wrapfigure}
+\subsubsection*{NOR}
+
+L'operatore NOR è costituito da un operatore OR seguito da un NOT.
+
 \subsubsection*{EXOR}
 L'operatore EXOR è anche detto OR esclusivo, questo perchè restituisce 1 se e solo se i due segnali in ingresso sono diversi tra loro.
 \subsubsection*{EXNOR}
 L'operatore EXNOR è anche detto OR inclusivo perchè restituisce 1 se e solo se i due segnali in ingresso sono uguali tra loro.
-\subsubsection{RAPPRESENTAZIONE CIRCUITALE}
+
 \newpage
 \section{Algebra di boole}
 Le operazioni svolte dagli operatori appena visti godono di proprietà che vanno sotto il nome di algebra di Boole. (Ognuna di esse è dimsotrabile tramite induzione completa, ossia verificando totalmente la veridicità delle implicazioni tramite tabelle di verità).
@@ -117,20 +123,22 @@ Procedendo iterando questo teorema sui pezzi di funzioni rimanenti si può arriv
 
 \chapter{Semplificazione di funzioni logiche}
 Introduciamo ora alcune definizioni:\newline\break
-\textbf{Letterale}
+\begin{itemize}
+\item\textbf{Letterale}
 Ogni variabile che sia affermat o negata.\break
-\textbf{Minterm}
+\item\textbf{Minterm}
 Prodotto in cui ogni variabile compare una volta come letterale.\break
-\textbf{Maxterm}
+\item\textbf{Maxterm}
 Somma in cui variabile compare una volta come letterale.\break
-\textbf{Implicante}
+\item\textbf{Implicante}
 f è implicante di g se e solo se quando f è 1 allora g è 1.
 \newline Si dice \textbf{implicante primo} ogni implicante che non è possibile racchiudere in uno più grande.
-Essi possono essere \textbf{ridondanti} nel caso in cui coprano zone coperte da altri implicanti primi mentre altri sono invece \textbf{essenziali} perchè sono gli unici a coprire quelle zone.
-\newline\break
+Essi possono essere \textbf{ridondanti} nel caso in cui coprano zone coperte da altri implicanti primi mentre altri sono invece \textbf{essenziali} perchè sono gli unici a coprire quelle zone.\break
 Ogni minterm è un implicante della propria f, l'unico problema è che ognuno di essi rappresenta "pochi uni".\newline\break
+\end{itemize}
 Per trovare implicanti che non siano minterm è utile utilizzare la \textbf{notazione Gray}.
 Essa consiste nel fare tabele di verità in cui tra ogni riga e la sua successiva c'è solamente una variabile a variare, così da poter eventualmente fare dei raccoglimenti sfruttando l'algebra di Boole.
+
 
 Nel caso funzioni con più di due variabili è necessario cercare gli implicanti utilizzando altri modi per rappresentare le tabelle di verità così da far risaltare meglio le adiacenze tra i vari minterm.
 
@@ -153,9 +161,8 @@ Ora prendiamo in esame il più elementare tra i multiplexer, ovvero quello che f
 Questo è il più elementare perchè altrimenti avrei una variabiule in ingresso ed una in uscita e ciò non è un vera scelta.
 
 Partiamo dalla tabella di verità scritta con il codice Grey e cerchiamone gli implicanti primi.
-Partiamo da qui perchè è il punto principale per impostare come funzionerà il nostro multiplexer.
+Partiamo da qui perchè è il punto principale per impostare come funzionerà il nostro multiplexer.\break
 
-\break\nextline
 \begin{tabular}{|c|c|c|c|c|}
 \hline
 S-AB & 00 & 01 & 11 & 10 \\ \hline
@@ -176,12 +183,25 @@ Prendendo in esame uno solo delle AND, queste ci dicono che nel caso in cui S si
 Perciò verrà selezionato ESCLUSIVAMENTE l'operazione AND che ha S=1.
 Poi l'essere 0 o 1 dell'altro operando determinerà l'uscita esattamente di quel valore.
 
-Ecco lo schema circuitale della funzione appena descritta:
-\includegraphics{Multiplexer21Circuito}
-Il multiplexer 2 a 1 si rappresenta con un questo simbolo circuitale:
+
+
+\begin{wrapfigure}{r}{0,1\textwidth}
 \includegraphics{Multiplexer21}
+\end{wrapfigure}
+
+
+Il multiplexer 2 a 1 si rappresenta con un questo simbolo circuitale:
 In cui i numeri indicano per quale valore di S venga selezionata la corrispondente entrata.
+
+\begin{figure}
+\centering
+\includegraphics{Multiplexer21Circuito}
+\caption{schema circuitale di un Multiplexer 2 a 1}
+\end{figure}
+
+
 \subsubsection{Da 4 a 1}
+
 Alla luce di quello che abbiamo appena letto riguardo al multiplexer 2 a 1 possiamo immaginare come realizzare questa versione più in grande.
 
 Posso utilizzare due multiplexer 2 a 1 per ottenere due output e poi questi ultimi metterli all'interno di un ulteriore multiplexer 2 a 1 così da ottenere un solo risultato in uscita.
@@ -240,6 +260,7 @@ Indichiamo con a e b i due ingressi, mentre con s il bit meno significativo del 
 La lettera c ci ricorderà anche tale cifra è dovuta al carry dell'operazione.
 \newline
 \begin{tabular}{|c|c|c|c|}
+
 \hline
 a & b & c & s \\ \hline
 0 & 0 & 0 & 0 \\ \hline
@@ -291,7 +312,7 @@ Il circuito dell'half adder è:
 
 
 \chapter{Linguaggi di descrizione dell'hardware}
-\section*{VHDL}
+\chapter{VHDL}
 
 Il linguaggio che utilizzeremo è il \textbf{VHDL}, ossia \textbf{V}ery highspeed integrated circuit \textbf{H}ardware \textbf{D}escription \textbf{L}anguage.
 
@@ -313,7 +334,7 @@ e secondo 3 viste
 
 
 \newpage
-\subsection*{Entità}
+\section{Entità}
 
 La nozione di \textbf{entità} in VHDL corrisponde alla rappresentazione di un blocco \textbf{SENZA SPECIFICARNE} la logica interna.
 
@@ -326,7 +347,7 @@ Esso specifica :
 
 \end{itemize}
 
-Di seguito il codice per dichiarare un'entità di nome nome_entity con n ingressi e m-n uscite.
+Di seguito il codice per dichiarare un'entità di nome nom\stringe_entity con n ingressi e m-n uscite.
 
 \begin{verbatim}
 
@@ -345,18 +366,84 @@ end  nome_entity;
 \end{verbatim}
 
 
-\subsection*{Architettura}
+\section{Architettura}
 
 La nozione di \textbf{architettura} in VHDL specifica il comportamento di un'entità.
 (Ad un'entità possono corrispondere più architetture.)
 
+\begin{verbatim}
 
-\subsection*{Testbench}
+architecture nomearchitettura of nomeentità is
+--dichiarazione di eventuali signal o buffer ausiliari
+begin
+--le equazioni e le operazioni di assegnamento che verranno scirtte in questa zona verranno eseguite tutte in contemporanea, indipendentemente dalla sequenza in cui compariranno
+
+
+
+end architecture nomearchitettura;
+
+
+\end{verbatim}
+
+
+\section{Testbench}
 
 Il \textbf{testbench} è un'unione della vista dataflow con quella strutturale che permette la simulazione del circuito dando dei dati in ingresso.
 
-\subsection*{Operatori,Identificatori e operazioni multiple}
+\begin{verbatim}
 
+--dichiaro un'enetità senza interfaccia perchè non ha necessità di porte di ingresso nè di uscita
+
+entity TestBench is 
+end entity TestBench;
+
+--definisco ora la sua architettura
+
+architecture test of TestBench is 
+
+--segnali interni di interconnessione
+signal a,b,c : bit;
+
+begin
+
+--istanzio il modulo da testare
+g1 : entitàdatestare portmap()
+
+--definizione degli stimoli tramite equazioni in cui assegno ogni tot secondi un certo valore ai signal del mio testBench che a loro volta verranno assegnati alle porte dell'entità da testare.
+
+
+
+
+
+
+\end{verbatim}
+
+Il testbench può essere fatto nello stesso file di testo in cui si dichiarano le entità e le architetture che poi andranno ad essere usate.
+
+\subsection*{Components}
+
+Può capitare di avere una funzione logica implementata in un file e di volerla recuperare all'interno di un progetto più ampio o per eseguirne un test bench ma senza sporcare il codice.
+
+Per fare ciò è necessario dunque all'interno del nuovo file pescare questa risorsa e ciò è possibile tramite un component.
+
+
+\begin{verbatim}
+component nomecomponent is 
+
+--descrizione dell' entità 
+
+end component;
+\end{verbatim}
+
+
+\section*{Operatori,Identificatori e operazioni multiple}
+
+Il linguaggio VHDL ha di default tutti gli operatori booleani .
+L'operatore \textbf{NOT} è l'unico con la \textbf{priorità alta} mentre gli altri hanno tutti la stessa priorità e quindi verrà data importanza all'ordine o ad eventuali parentesi per decidere quale operazione fare per prima.\newline
+VHDL è un linguaggio NON case sensitive.
+
+Per specificare un delay si può utilizzare l'operatore \textbf{after}
+Con il tipo bit\_vector(n down to m) si crea un array di bit con gli indici che vanno da m ad n.
 VHDL possiede tutte le operazioni booleane come and,or,xor...\break\nextline
 La precedenza maggiore tra tali operazioni la ha la porta NOT mentre a differenza di quello che avviene nell'algebra booleana il resto degli operatori ha la stessa priorità perciò per forzare alcune operazioni prima di altre bisogna usare le parentesi !\nextline
 Nella descrizione delle architetture a volte è necessario instanziare variabili interne, queste vengono chiamate \textbf{signal} e necessitano di un nome univoco per essere riconosciuti nello svolgimento della logica del componente.\break\nextline
@@ -365,52 +452,167 @@ Nella descrizione delle architetture a volte è necessario instanziare variabili
 All'interno della stessa architettura possono avvenire più operazioni. L'ordine in cui vengono specificate all'interno dell'architettura non è rilevante perchè vanno concepite come un sistema in cui procedono in parallelo.
 
 
+\section*{Parametri formali ed effettivi}
 
+\newpage
+\section{Modi dei segnali}
 
+I segnali possono assumere vari tipologie e ognuna di esse comporta un certo set di operazioni ammesse o no.
 
+\begin{itemize}
 
+\item\textbf{IN}
+I segnali in in possono essere solamente letti e perciò possono stare solo a destra dell'operatore di assegnazione.
 
+\item\textbf{OUT}
+I segnali di out possono essere solo scritti e perciò staranno solamente dalla parte dell'operatore di assegnazione che subisce l'assegnamento.
+Inoltre nelle quazioni all'interno di un'architettura possono comparire una volta sola, questo perchè none ssendo sequenziali bensì contemporanee le istruzioni avrei un conflitto nell'assegnazione.
 
+\item\textbf{BUFFER}
+I segnali buffer sono segnali in out ma leggibili e perciò possono stare da entrambe le parti di un'assegnazione.
+Ma possono subire un'assegnazione comunque una sola volta.
 
+\begin{verbatim}
+port(var : buffer bit);
+\end{verbatim}
 
+\item\textbf{SIGNAL}
+Sono segnali sia in ingresso sia in uscita ( venendo valutati una volta sola).
 
+\begin{verbatim}
+--si scrive nell'architecture PRIMA del begin
+signal S: bit_vector(3 downto 1);
+\end{verbatim}
 
+\item\textbf{INOUT}
+Sono componenti analoghi ad i buffer ma possono avere driver dall'esterno.
 
+Possono subire assegnazioni più volte ma stando attenti ai conflitti. (es. buffer tri-state)
 
+\begin{verbatim}
+--in entity
+port (bus: inout bit)
 
+\end{verbatim}
+\item\textbf{GENERIC}
 
+Permette di parametrizzare un segnale così da rendere un'entità più versatile e riutilizzabile.
 
+nella definizione dell'entità si scrive
+\begin{verbatim}
+generic(nomesegnale : tiposegnale)
+\end{verbatim}
 
+poi nella definizione dell'architettura di quella data entità si scriverà 
+\begin{verbatim}
+g1 : entità generic map(nomesegnale <= valore)
+\end{verbatim}
+oppure si può usare la notazione posizionale nel caso di più generic per rendere tutto più compatto.
+\item\textbf{CONSTANT}
 
+Permette di definire costanti per leggere ed interpretare il codice più agevolmente e poi per facilitare eventuali modifiche.
 
+\begin{verbatim}
+--in architecture PRIMA di begin
+constant nomecostante : tipo :=valore;
+\end{verbatim}
 
+\item\textbf{TIPI DEFINITI DALL'UTENTE}
+\begin{verbatim}
+--in architecture PRIMA di begin
+type nomedeltipo is tipo
+\end{verbatim}
 
+\item\textbf{TIPI COMPOSITI}
 
+\begin{tabular}{c c}
+\hline
+enum & type nomeenum is (lista di valori che può assumere)\\
+\hline
+array & type nomearray is array (come sono gli indici) of tipodicontenuto \\
+\hline
+struttura & type nomestruttura is record (dichiaro insieme di variabili che lo costituiscono )
+end record \\
+\hline
 
+\end{tabular}
 
 
 
 
+\end{itemize}
 
 
 
 
+\section{Far girare il codice vhdl : ghdl e gtkwave}
 
 
+I programmi che andremo ad utilizzare sono ghdl e gtkwave.\break\newline
+Una volta scaricate le versioni stabili correnti adatte al vostro dispositivo si consiglia di estrarre i contenuti di entrambe le cartelle in due cartelle separate.\break\newline
+Poi aggiungere nel caso di windows i percorsi delle cartelle bin al PATH così da poterci accedere ogni volta senza dover andare nel percorso preciso in cui andremo a mettere gli eseguibili.
 
+\subsubsection*{ghdl}
+\subsubsection*{gtkwave}
+\subsubsection*{Sporcarsi le mani}
+I comandi più frequenti sono:
 
+\begin{verbatim}ghdl -h \end{verbatim}visualizzo i comandi che ghdl offre.
 
+\begin{verbatim}
+-a nomedelfile
+\end{verbatim}
+Compila il file .vhd che gli indichiamo
+\begin{verbatim}
+-e UNIT
+\end{verbatim}
+E' un passaggio necessario ai fini dell'esecuzione. Nel token UNIT va specificato il nome della entity che poi abbiamo intenzione di eseguire.
+\begin{verbatim}
+-r UNIT
+\end{verbatim}
+Questo comando esegue l'architettura dell'entità che inseriremo al posto di UNIT e che prima dovrà essere passata per i comandi -a e -e.
+\end{verbatim}
 
 
+Quindi se volessimo compilare ed eseguire l'entità baseEntity nel file baseTest.vhd seguiremo i seguenti passaggi:
+\begin{verbatim}
+ghdl -a baseTest.vhd
+ghdl -e baseEntity
+ghdl -r baseEntity
+\end{verbatim}
 
 
+\section*{Tipo std\_logic}
 
 
 
 
+\
 
+Il tipo standard logic (std\_logic) è un' estensione del concetto di bit che permette di rappresentare ulteriori stati logici.
 
 
+\begin{tabular}{|c c|}
+\hline
+U & Undefined \\
+\hline
+X & Non determinato \\
+\hline
+0 & 0 logico \\
+\hline
+1 & 1 logico \\
+\hline
+Z & alta impedenza \\
+\hline
+W & segnale debole non determinabile \\
+\hline
+L & segnale debole tendente ad 0 \\
+\hline
+H & segnale debole tendente ad 1 \\
+\hline
+- & don't care \\
+\hline
+\end{tabular}
 
 
 
@@ -419,53 +621,7 @@ All'interno della stessa architettura possono avvenire più operazioni. L'ordine
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\chapter{Macchine a stati}
 
 
 
