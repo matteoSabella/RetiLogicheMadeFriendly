@@ -44,6 +44,8 @@
 
 \maketitle
 
+Al mio fedele compagno di avventure, che mi piaceva girare a letto come un flip flop e che mi ha consentito di mantenere la fede.
+
 \chapter{Da analogico a digitale}
 Nell'era pre digitale i segnali erano analogici, ossia il loro valore spaziava su una gamma potenzialmente infinita di valori.
 Ciò poneva di fronte ad un problema, quello delle interferenze e dei disturbi di segnale, che potevano distorcere o rendere impossibile la lettura del messaggio trasportato dal segnale in questione.
@@ -103,11 +105,41 @@ L'operatore EXNOR è anche detto OR inclusivo perchè restituisce 1 se e solo se
 
 \newpage
 \section{Algebra di boole}
-Le operazioni svolte dagli operatori appena visti godono di proprietà che vanno sotto il nome di algebra di Boole. (Ognuna di esse è dimsotrabile tramite induzione completa, ossia verificando totalmente la veridicità delle implicazioni tramite tabelle di verità).
+Le operazioni svolte dagli operatori appena visti godono di proprietà che vanno sotto il nome di algebra di Boole.\newline (Ognuna di esse è dimsotrabile tramite induzione completa, ossia verificando totalmente la veridicità delle implicazioni tramite tabelle di verità).
+\subsection*{Identità}
+
+\(x+0=x \) \newline
+\(x*1=x \)
+
+\subsection*{Proprietà commutativa}
+
+\(x+y=y*x \) \newline
+\(x*y=y*x \) 
+
 \subsection*{Proprietà distributiva}
+
+\( x*(y+z)=(x*y)+(x*z)  \) \newline
+\( x+(y*z)=(x+y)*(x+z)  \)
+
 \subsection*{Complementazione}
+
+\(x+x'=1 \) \newline
+\(x*x'=0 \)
+
 \subsection*{Proprietà associativa}
+
+\(x+(y+z)=(x+y)+z \) \newline
+\(x*(y*z)=(x*y)*z \) 
+
 \subsection*{Leggi di De Morgan}
+
+Consentono di trasformare delle funzioni in cui compaiono OR in funzioni equivalenti che usano delle AND.
+
+\( (x+y)' = x' * y' \) \hspace{3cm} \( (x'+y')' = x*y\) \newline
+\( (x*y)' = x' + y' \) \hspace{3cm} \( (x'*y')'= x+y\)
+\newline
+Tip : un modo utile per ricordarsele è che per passare da un operatore ad un altro , si cambia l'operatore e si "raccoglie" un not.
+
 \newpage
 \section{Teorema Di Shennon}
 Nel processo di ricerca di un'espressione logica che impieghi gli operatori che ora conosciamo, torna utilissimo il teorema di Shennon.
@@ -125,29 +157,76 @@ Procedendo iterando questo teorema sui pezzi di funzioni rimanenti si può arriv
 Introduciamo ora alcune definizioni:\newline\break
 \begin{itemize}
 \item\textbf{Letterale}
-Ogni variabile che sia affermat o negata.\break
+Ogni variabile che sia affermata o negata.\\
 \item\textbf{Minterm}
-Prodotto in cui ogni variabile compare una volta come letterale.\break
+Prodotto in cui ogni variabile compare una volta come letterale.\newline Esso è 1 per una e una sola combinazione di letterali.\\
 \item\textbf{Maxterm}
-Somma in cui variabile compare una volta come letterale.\break
+Somma in cui variabile compare una volta come letterale.\newline Esso è 0 per una e una sola combinazione dei suoi letterali.\\
 \item\textbf{Implicante}
 f è implicante di g se e solo se quando f è 1 allora g è 1.
+\vspace{\baselineskip}
 \newline Si dice \textbf{implicante primo} ogni implicante che non è possibile racchiudere in uno più grande.
-Essi possono essere \textbf{ridondanti} nel caso in cui coprano zone coperte da altri implicanti primi mentre altri sono invece \textbf{essenziali} perchè sono gli unici a coprire quelle zone.\break
+Essi possono essere \textbf{ridondanti} nel caso in cui coprano zone coperte da altri implicanti primi mentre altri sono invece \textbf{essenziali} perchè sono gli unici a coprire quelle zone.
+
+\vspace{\baselineskip}
+
 Ogni minterm è un implicante della propria f, l'unico problema è che ognuno di essi rappresenta "pochi uni".\newline\break
 \end{itemize}
-Per trovare implicanti che non siano minterm è utile utilizzare la \textbf{notazione Gray}.
-Essa consiste nel fare tabele di verità in cui tra ogni riga e la sua successiva c'è solamente una variabile a variare, così da poter eventualmente fare dei raccoglimenti sfruttando l'algebra di Boole.
 
 
-Nel caso funzioni con più di due variabili è necessario cercare gli implicanti utilizzando altri modi per rappresentare le tabelle di verità così da far risaltare meglio le adiacenze tra i vari minterm.
 
+\newpage
+
+La funzione logica sarà data dall' \text{OR} degli implicanti, ma quali cerco ?
+\vspace{\baselineskip}
+
+Partendo dalla tabella della verità si possono trovare i minterm della funzione.\\Questi poi possono essere compattati utilizzando le proprietà dell'algebra di Boole (torna molto utile l'adiacenza logica).
+
+L'adiacenza logica in particolare si può utilizzare solo quando, dati minterm composti da L letterali, L-1 letterali restano immutati ed uno solo cambia.
+
+Per trovare implicanti che non siano minterm è utile utilizzare la \textbf{notazione Gray}.\\
+Chiamiamo \textbf{term} gli implicanti che non sono minterm !.\\
+Essa consiste nel fare tabelle di verità in cui tra ogni riga e la sua successiva c'è solamente una variabile a variare, così da poter eventualmente fare dei raccoglimenti sfruttando l'algebra di Boole.
+
+
+Non garantisce tuttavia un modo perfetto per trovare i minterm con facilità perchè permette di muoversi in una sola dimensione.
+
+\vspace{\baselineskip}
+
+Nel caso funzioni con più di due variabili è necessario cercare gli implicanti utilizzando altri modi per rappresentare le tabelle di verità così da far risaltare meglio le adiacenze tra i vari minterm.\\
+\vspace{\baselineskip}
 Qui entra in gioco \textbf{la mappa di Karnough}
+
+\vspace{\baselineskip}
+
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+a\backslash bc & 00 & 01 & 11 & 10 \\
+\hline
+0              & *  & *  & *  & *  \\
+\hline
+1              & *  & *  & *  & *  \\
+\hline
+\end{tabular}
+
+
+\vspace{\baselineskip}
+
+Nella prima riga partendo dall'alto verranno messe in notazione Grey tutte le possibili combinazioni che la variabile bc può assumere.
+Nella prima colonna invece tutte le combinazioni (in questo caso solo due) che la variabile a può assumere.
+
+Nelle celle interne invece si procederà mettendo ad ogni incrocio, al posto di * l'uscita della funzione per i corrispondenti valori di a,b e c.
+
+
+...
+
 
 \newpage
 \section{Insiemi di operatori completi ed uso delle porte logiche}
 
 \section{Mappe a 5 e 6 variabili}
+
+
 \section{Altri metodi per sintetizzare circuiti}
 \section{Minimizzazione congiunta}
 \newpage	
@@ -161,7 +240,7 @@ Ora prendiamo in esame il più elementare tra i multiplexer, ovvero quello che f
 Questo è il più elementare perchè altrimenti avrei una variabiule in ingresso ed una in uscita e ciò non è un vera scelta.
 
 Partiamo dalla tabella di verità scritta con il codice Grey e cerchiamone gli implicanti primi.
-Partiamo da qui perchè è il punto principale per impostare come funzionerà il nostro multiplexer.\break
+Partiamo da qui perchè è il punto principale per impostare come funzionerà il nostro multiplexer.\\
 
 \begin{tabular}{|c|c|c|c|c|}
 \hline
@@ -206,7 +285,7 @@ Alla luce di quello che abbiamo appena letto riguardo al multiplexer 2 a 1 possi
 
 Posso utilizzare due multiplexer 2 a 1 per ottenere due output e poi questi ultimi metterli all'interno di un ulteriore multiplexer 2 a 1 così da ottenere un solo risultato in uscita.
 
-\(S_0_1 \) si occuperà di scremare tra A e B mentre \(S_0_2 \) scremerà tra C e D.
+\(S_01 \) si occuperà di scremare tra A e B mentre \(S_02 \) scremerà tra C e D.
 
 
 \subsection{Odd Function}
@@ -347,10 +426,9 @@ Esso specifica :
 
 \end{itemize}
 
-Di seguito il codice per dichiarare un'entità di nome nom\stringe_entity con n ingressi e m-n uscite.
+Di seguito il codice per dichiarare un'entità di nome nom$e_entity$ con n ingressi e m-n uscite.
 
-\begin{verbatim}
-
+\begin{lstlisting}[language=VHDL]
 entity nome_entity is
 port
 (	
@@ -362,38 +440,34 @@ port
 	nome_portan+3 : tipo_uscita;
 );
 end  nome_entity;
-
-\end{verbatim}
-
+\end{lstlisting}
 
 \section{Architettura}
 
 La nozione di \textbf{architettura} in VHDL specifica il comportamento di un'entità.
 (Ad un'entità possono corrispondere più architetture.)
 
-\begin{verbatim}
+\begin{lstlisting}[language=VHDL]
 
-architecture nomearchitettura of nomeentità is
+architecture nomearchitettura of nome entita is
 --dichiarazione di eventuali signal o buffer ausiliari
 begin
 --le equazioni e le operazioni di assegnamento che verranno scirtte in questa zona verranno eseguite tutte in contemporanea, indipendentemente dalla sequenza in cui compariranno
 
 
-
 end architecture nomearchitettura;
 
 
-\end{verbatim}
+\end{lstlisting}
 
 
 \section{Testbench}
 
 Il \textbf{testbench} è un'unione della vista dataflow con quella strutturale che permette la simulazione del circuito dando dei dati in ingresso.
 
-\begin{verbatim}
+\begin{lstlisting}[language=VHDL]
 
---dichiaro un'enetità senza interfaccia perchè non ha necessità di porte di ingresso nè di uscita
-
+--dichiaro un entita senza interfaccia perche non ha necessita di porte di ingresso ne di uscita.
 entity TestBench is 
 end entity TestBench;
 
@@ -405,20 +479,15 @@ architecture test of TestBench is
 signal a,b,c : bit;
 
 begin
-
 --istanzio il modulo da testare
-g1 : entitàdatestare portmap()
+g1 : entitadatestare portmap()
 
---definizione degli stimoli tramite equazioni in cui assegno ogni tot secondi un certo valore ai signal del mio testBench che a loro volta verranno assegnati alle porte dell'entità da testare.
+--definizione degli stimoli tramite equazioni in cui assegno ogni tot secondi un certo valore ai signal del mio testBench che a loro volta verranno assegnati alle porte dell entita da testare.
 
-
-
-
-
-
-\end{verbatim}
+\end{lstlisting}
 
 Il testbench può essere fatto nello stesso file di testo in cui si dichiarano le entità e le architetture che poi andranno ad essere usate.
+
 
 \subsection*{Components}
 
@@ -427,13 +496,13 @@ Può capitare di avere una funzione logica implementata in un file e di volerla 
 Per fare ciò è necessario dunque all'interno del nuovo file pescare questa risorsa e ciò è possibile tramite un component.
 
 
-\begin{verbatim}
+\begin{lstlisting}[language=VHDL]
 component nomecomponent is 
 
---descrizione dell' entità 
+--descrizione dell' entita
 
 end component;
-\end{verbatim}
+\end{lstlisting}
 
 
 \section*{Operatori,Identificatori e operazioni multiple}
@@ -444,15 +513,21 @@ VHDL è un linguaggio NON case sensitive.
 
 Per specificare un delay si può utilizzare l'operatore \textbf{after}
 Con il tipo bit\_vector(n down to m) si crea un array di bit con gli indici che vanno da m ad n.
-VHDL possiede tutte le operazioni booleane come and,or,xor...\break\nextline
+VHDL possiede tutte le operazioni booleane come and,or,xor.
+\break \nextline
 La precedenza maggiore tra tali operazioni la ha la porta NOT mentre a differenza di quello che avviene nell'algebra booleana il resto degli operatori ha la stessa priorità perciò per forzare alcune operazioni prima di altre bisogna usare le parentesi !\nextline
 Nella descrizione delle architetture a volte è necessario instanziare variabili interne, queste vengono chiamate \textbf{signal} e necessitano di un nome univoco per essere riconosciuti nello svolgimento della logica del componente.\break\nextline
 (Attenzione che VDHL NON è case sensitive).
 
-All'interno della stessa architettura possono avvenire più operazioni. L'ordine in cui vengono specificate all'interno dell'architettura non è rilevante perchè vanno concepite come un sistema in cui procedono in parallelo.
-
-
 \section*{Parametri formali ed effettivi}
+
+Le funzioni si richiamano nell'architettura tramite \textbf{port map} seguito da \textbf{notazione posizionale} e la loro instanziazione sarà contemporanea.
+All'interno della stessa architettura possono avvenire \textxtbf{più operazioni}. L'ordine in cui vengono specificate all'interno dell'architettura non è rilevante perchè vanno concepite come un sistema in cui \textbf{procedono in parallelo}.
+
+\begin{lstlisting}[language=VHDL]
+nome_istanza : nome_master port map(parametri effettivi)
+\end{lstlisting}
+Si può anche optare per un'assegnazione di tipo esplicito e ciò aiuta a devitare gli errori e ad indentificarli prima.
 
 \newpage
 \section{Modi dei segnali}
@@ -472,60 +547,60 @@ Inoltre nelle quazioni all'interno di un'architettura possono comparire una volt
 I segnali buffer sono segnali in out ma leggibili e perciò possono stare da entrambe le parti di un'assegnazione.
 Ma possono subire un'assegnazione comunque una sola volta.
 
-\begin{verbatim}
+\begin{lstlisting}[language=VHDL]
 port(var : buffer bit);
-\end{verbatim}
+\end{lstlisting}
 
 \item\textbf{SIGNAL}
 Sono segnali sia in ingresso sia in uscita ( venendo valutati una volta sola).
 
-\begin{verbatim}
+\begin{lstlisting}[language=VHDL]
 --si scrive nell'architecture PRIMA del begin
 signal S: bit_vector(3 downto 1);
-\end{verbatim}
+\end{lstlisting}
 
 \item\textbf{INOUT}
 Sono componenti analoghi ad i buffer ma possono avere driver dall'esterno.
 
 Possono subire assegnazioni più volte ma stando attenti ai conflitti. (es. buffer tri-state)
 
-\begin{verbatim}
+\begin{lstlisting}[language=VHDL]
 --in entity
 port (bus: inout bit)
-
-\end{verbatim}
+\end{lstlisting}
 \item\textbf{GENERIC}
 
 Permette di parametrizzare un segnale così da rendere un'entità più versatile e riutilizzabile.
 
 nella definizione dell'entità si scrive
-\begin{verbatim}
+\begin{lstlisting}[language=VHDL]
 generic(nomesegnale : tiposegnale)
-\end{verbatim}
+\end{lstlisting}
 
 poi nella definizione dell'architettura di quella data entità si scriverà 
-\begin{verbatim}
-g1 : entità generic map(nomesegnale <= valore)
-\end{verbatim}
+\begin{lstlisting}[language=VHDL]
+g1 : entita generic map(nomesegnale <= valore)
+\end{lstlisting}
 oppure si può usare la notazione posizionale nel caso di più generic per rendere tutto più compatto.
 \item\textbf{CONSTANT}
 
 Permette di definire costanti per leggere ed interpretare il codice più agevolmente e poi per facilitare eventuali modifiche.
 
-\begin{verbatim}
+\begin{lstlisting}[language=VHDL]
 --in architecture PRIMA di begin
 constant nomecostante : tipo :=valore;
-\end{verbatim}
+\end{lstlisting}
 
 \item\textbf{TIPI DEFINITI DALL'UTENTE}
-\begin{verbatim}
+
+\begin{lstlisting}[language=VHDL]
 --in architecture PRIMA di begin
 type nomedeltipo is tipo
-\end{verbatim}
+\end{lstlisting}
 
 \item\textbf{TIPI COMPOSITI}
 
-\begin{tabular}{c c}
+\begin{tabular}{|c|c|}
 \hline
 enum & type nomeenum is (lista di valori che può assumere)\\
 \hline
@@ -570,6 +645,7 @@ E' un passaggio necessario ai fini dell'esecuzione. Nel token UNIT va specificat
 \begin{verbatim}
 -r UNIT
 \end{verbatim}
+
 Questo comando esegue l'architettura dell'entità che inseriremo al posto di UNIT e che prima dovrà essere passata per i comandi -a e -e.
 \end{verbatim}
 
@@ -583,11 +659,6 @@ ghdl -r baseEntity
 
 
 \section*{Tipo std\_logic}
-
-
-
-
-\
 
 Il tipo standard logic (std\_logic) è un' estensione del concetto di bit che permette di rappresentare ulteriori stati logici.
 
@@ -615,14 +686,116 @@ H & segnale debole tendente ad 1 \\
 \end{tabular}
 
 
+\section*{Espressioni condizionate}
+
+Sono operazioni che si basano sul principio del multiplexer.
+
+L'assegnazione può essere di due tipi:
+
+\begin{itemize}
+\item\textbf{Assegnazione Condizionata}
+Sono definite nella libreria ieee.
+Vanno implementate nell'architettura e sono tra di loro combinabili.
+
+\begin{verbatim}
+opzione1 when condizione else opzione2
+\end{verbatim}
+\item\textbf{Assegnazione Selezionata}
+
+E' simile ad uno switch e utilizza una variabile di tipo signal per effettuare la decisione.
+La condizione può anche considerare più segnali così da essere molto flessibile.
+
+\begin{verbatim}
+with segnale select
+\end{verbatim}
+\end{itemize}
 
 
+\chapter{Stile Comportamentale}
+
+Permette di calcolare i valori di uscita tramite algoritmi.
+La peculiarità di questo stile è che a differenza di quanto visto fino ad ora le parti di codice sono eseguite in ordine \textbf{sequenziale}.
 
 
+\textbf{Processo:}
+\begin{itemize}
+\item compare all'interno di dell'architettura.
+\item compare all'interno di una \textbf{sensitivity list}, ossia una lista di segnali che definiscono le condizioni di attivazioni de processo.
+Ogni volta che un parametro della lista varia il processo verrà eseguito.
 
+
+\end{itemize}
+
+\begin{verbatim}
+architecture comportamentale of mio_modulo is
+begin
+label: process (sensitivity-list) is
+	dichiarazioni di tipi,costanti,segnali,variabili;
+	begin
+	statement sequenziale;
+	statement sequenziale;
+	statement sequenziale;
+	end process;
+end architecture comportamentale;
+\end{verbatim}
 
 \chapter{Macchine a stati}
 
+\section*{Ciruiti sequenziali}
+Ci occupiamo ora di circuiti che possono \textbf{ricordare} la loro storia.
+QUesto sarà possibile grazie ad un nuovo ingresso che codificherà l'ultimo stato vissuto dal circuito.
+
+Per semplicità conviene separare il circuito in due macro aree:
+
+\begin{itemize}
+\item Circuito Combinatorio
+\item Memoria
+\end{itemize}
+
+Come nella figura accanto
+
+Un circuito sequenziale può essere di due tipi:
+ \begin{itemize}
+ \item \textbf{Sincrono}: Sono circuiti che aggiornano lo stato presente a cicli, detti \textbf{cicli di clock}
+ \item \textbf{Asincrono}: Sono circuiti in cui lo stato presente continua ad aggiornarsi e ciò può essere compromettente per esempio nel caso di circuiti suscettibili a glitch.
+ \end{itemize}
+
+
+\section*{Elementi di memoria}
+
+Gli elementi che verranno di seguito introdotti sono da considerare come black box, di cui verrà descritto solo il loro utilizzo mentre come implementano le porte logiche al loro interno per ottenere tali risultati verrà introdotto in altri corsi.
+
+I circuiti che impiegano memorie sincrone hanno due stati:
+
+\begin{itemize}
+\item Clock basso e la rete combinatoria calcola.
+\item Clock alto e  la rete combinatoria calcola con un nuovo stato presente.
+\end{itemize}
+
+\subsection*{Latch D}
+
+Il latch D ha due ingressi, di cui uno di clock e due ingressi Q e Q'.
+
+Un latch durante il funzionamento del circuito vive due possibili stati che si alternano nel tempo:
+
+\begin{itemize}
+\item C=1 corrisponde a \textbf{latch trasparente} ossia stato in cui viene messo un nuovo valore in memoria.
+\item C=0 corrisponde a \textbf{latch in memoria} ossia stato in cui il valore in memoria viene conservato immutato.
+\end{itemize}	
+
+\subsection*{Flip Flop Edge Triggered} 
+
+Viene impiegato per risolvere i problemi di sfasamento tra frequenza di clock ed elaborazione del circuito.\\
+
+\textbf{Edge Triggered}: \newline\break
+Significa che il flip flop diviene trasparente \textbf{SOLO} nella transizione (edge appunto) tra stato 0 ed 1 ( o 1 e 0 ).
+ 
+\textbf{Preset & clear}
+Permette di dare un valore noto al segnale iniziale del clock che altrimenti sarebbe incognito.
+
+\subsubsection*{Stato}: è l'insieme dei valori conservati in memoria in un dato istante. E' implementato con un vettore di variabili booleane.
+
+\textbf{Equazioni di stato}:
 
 
 \end{document}
