@@ -7,6 +7,7 @@
 \usepackage{titlesec}
 \usepackage{listings}
 \usepackage{xcolor}
+\usepackage{colortbl}
 \graphicspath{{images/}}
 \usepackage{wrapfig}
 \definecolor{codegreen}{rgb}{0,0.6,0}
@@ -52,10 +53,10 @@ Ciò poneva di fronte ad un problema, quello delle interferenze e dei disturbi d
 Si è perciò deciso di ricorrere al mezzo digitale, ossia un particolare modo di rappresentare le informazioni.
 Ogni segnale può assumere solo due possibili valori( da qui denominato segnale binario), che si distinguono grazie ad un confine detto soglia che li separa.
 Al di sotto di tale soglia il segnale ha ovunque lo stesso valore, così come al di sopra, ma tra una parte della soglia e l'altra, lì il valore cambia.
-Tanto più il segnale è lontano dalla soglia tanto più esso può subire distorsioni senza che il messaggio venga all'arrivo compromesso.
-
+Tanto più il segnale è lontano dalla soglia tanto più esso può subire distorsioni senza che il messaggio venga all'arrivo compromesso.\\
 Tale sistema però pone uno svantaggio, ossia l' impossibilità di comunicare un vasto numero di messaggi.
-Per risolvere questo inconveniente intrinseco di questo modo di comunicare si ricorre a più sorgenti di segnali, così che invece che avere solo 2 possibili valori, il messaggio costituito da n segnali avrà \(2^n\) possibili significati o sfumature.\newline\break\break
+Per risolvere questo inconveniente intrinseco di questo modo di comunicare si ricorre a più sorgenti di segnali, così che invece che avere solo 2 possibili valori, il messaggio costituito da n segnali avrà \(2^n\) possibili significati o sfumature.\newline
+\vspace{\baselineskip}
 \includegraphics[width=\textwidth]{SchemaDigitale}
 \chapter{Circuiti combinatori}
 \section{Operatori}
@@ -196,9 +197,7 @@ Non garantisce tuttavia un modo perfetto per trovare i minterm con facilità per
 Nel caso funzioni con più di due variabili è necessario cercare gli implicanti utilizzando altri modi per rappresentare le tabelle di verità così da far risaltare meglio le adiacenze tra i vari minterm.\\
 \vspace{\baselineskip}
 Qui entra in gioco \textbf{la mappa di Karnough}
-
 \vspace{\baselineskip}
-
 \begin{tabular}{|c|c|c|c|c|}
 \hline
 a\backslash bc & 00 & 01 & 11 & 10 \\
@@ -208,10 +207,7 @@ a\backslash bc & 00 & 01 & 11 & 10 \\
 1              & *  & *  & *  & *  \\
 \hline
 \end{tabular}
-
-
 \vspace{\baselineskip}
-
 Nella prima riga partendo dall'alto verranno messe in notazione Grey tutte le possibili combinazioni che la variabile bc può assumere.
 Nella prima colonna invece tutte le combinazioni (in questo caso solo due) che la variabile a può assumere.
 
@@ -289,7 +285,81 @@ Posso utilizzare due multiplexer 2 a 1 per ottenere due output e poi questi ulti
 
 
 \subsection{Odd Function}
+
+E' una funzione che vale 1 SOLO se il numero di ingressi ad 1 è dispari.\\
+Iniziamo sviluppando la tabella di Karnaugh.\\
+
+\vspace{\baselineskip}
+
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+a\backslash bc & 00 & 01 & 11 & 10 \\
+\hline
+0              & 0  &  \cellcolor{yellow}1 & 0  & \cellcolor{yellow}1  \\
+\hline
+1              & \cellcolor{yellow}1  &  0 & \cellcolor{yellow}1  & 0  \\
+\hline
+\end{tabular}
+\vspace{\baselineskip}
+
+Purtroppo i term in questo caso coincidono con i minterm della tabella di karnaugh e sono : ab'c' , a'b'c , abc , a'bc.
+
+Quindi la funzione logica dell' odd counter è :
+
+\(f=\)ab'c'+a'b'c+abc+a'bc'
+
+Possiamo ora procedere a raggruppare eventuali term sfruttando l'adiacenza logica.
+
+\(f=\)b'(ac'+a'c)+b(ac+a'c') che possiamo ulteriormente compattare riconoscendo in ac'+a'c l'operatore booleano XOR e in ac+a'c l'operatore booleano XNOR.
+
+
+
+
 \subsection{Conta Uni}
+
+Lo scopo di questo circuito è dire in uscita quanti degli ingressi sono a 1. Nel nostro caso ci saranno 3 ingressi, quindi il numero in uscita potrà variare da 0 a 3 ossia da 00 a 11 in binario.
+
+
+Chiamando gli ingressi a,b,c e le uscite s1 ed s2 , agiamo sulle uscite con due mappe di karnaugh distinte ma che in realtà sono parallele e sinergiche nel circuito.
+
+
+Iniziamo con s1, che rappresenterà il bit meno significativo del risultato e perciò dovrà essere 1 nel caso in cui in ingresso ci siano 1 (01) o 3(11) "uni" in ingresso.
+
+\vspace{\baselineskip}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+a \backslash bc & 00 & 01 & 11 & 10 \\
+\hline
+0              & 0  & {\cellcolor{yellow} 1 } &  0 & {\cellcolor{yellow}1}  \\
+\hline
+1             & {\cellcolor{yellow}1}  & 0  &  {\cellcolor{yellow}1} & 0  \\
+\hline
+\end{tabular}
+\newline \vspace{\baselineskip}
+Per s2 l'operazione sarà la stessa con la differenza che l'uscita sarà ad 1 nei casi in cui la quantità di "uni" in ingresso sia 2 (10) o 3 (11).
+\newline\vspace{\baselineskip}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+a\backslash bc & 00 & 01 & 11 & 10 \\
+\hline
+0              & 0  & 0  &  \cellcolor{yellow}1 & 0  \\
+\hline
+1              & 0  & \cellcolor{yellow}1  &  \cellcolor{yellow}1 & \cellcolor{yellow}1  \\
+\hline
+\end{tabular}
+
+
+
+
+Possiamo perciò ricavare le funzioni logiche per l'uscita s1 ed s2.
+
+\begin{itemize}
+\item{S1} \\ Osservando la mappa di Karnaugh si può riconoscere nella funzione s1 la stessa forma che poco fa abbiamo chiamato odd function, infatti è proprio quella la funzione di questa uscita.
+
+Perciò \(f_(s1)=\)ab'c'+a'b'c+abc+a'bc'
+
+\item{S2} \\ Qui invece richiede la ricerca da parte nostra di term all'interno della mappa, da cui otteniamo la seguente funzione : \(f_(s2)=\)bc+ac+ab .
+
 \subsection{Codifica e decodifica}
 
 
@@ -297,6 +367,69 @@ Posso utilizzare due multiplexer 2 a 1 per ottenere due output e poi questi ulti
 
 
 \subsubsection{Priority Encoder}
+
+Il priority encoder è un circuito la cui uscita corrisponderà all'indice dell'input con maggior precedenza ad 1. 
+Quindi prima di tutto è necessario assegnare ad ogni ingresso un indice, ossia un valore che lo identifichi.
+Nel nostro caso avremmo tre ingressi : a,b,c e perciò una possibile corrispondenza per gli indici è l'uso dei numeri 1,2,3 rispettivamente. Per nostra scelta imponiamo che a(ossia 1) sia quello con priorità minore, mentre c(ossia 3 ) quello con priorità maggiore.
+
+(Gli indici saranno smostrati in formato binario e perciò dato che abbiamo solo 3 ingressi basteranno 2 uscite perchè saranno da mostrare solo i valori 00, 01,10,11).
+
+Procediamo quindi con la tabella della verità:
+
+\begin{tabular}{|c|c|c|c|c|}
+a(1) & b(2) & c(3) & s1 & s2 \\
+\hline
+0 & 0 & 0 & 0 & 0 \\
+\hline
+0 & 0 & 1 & 1 & 1 \\
+\hline
+0 & 1 & 1 & 1 & 1 \\
+\hline
+1 & 1 & 1 & 1 & 1 \\
+\hline
+1 & 0 & 1 & 1 & 1 \\
+\hline
+0 & 1 & 0 & 1 & 0 \\
+\hline
+1 & 1 & 0 & 1 & 0 \\
+\hline
+1 & 0 & 0 & 0 & 1 \\
+\hline
+
+\end{tabular}
+
+Passiamo ora alle mappe di Karnaugh.
+
+S2, che rispecchierà la cifra meno significativa del risultato, avrà la seguente tabella:
+
+\begin{tabular}{|c|c|c|c|c|}
+a\backslash bc & 00 & 01 & 11 & 10 \\
+\hline
+0              & 0  & \cellcolor{yellow}1  &  \cellcolor{yellow}1 & 0  \\
+\hline
+1              & \cellcolor{yellow}1  & \cellcolor{yellow}1  &  \cellcolor{yellow}1 & 0  \\
+\hline
+
+\end{tabular}
+
+S1 invece che rispecchierà la cifra più significativa del risultato sarà:
+
+\begin{tabular}{|c|c|c|c|c|}
+a\backslash bc & 00 & 01 & 11 & 10 \\
+\hline
+0              & 0  & \cellcolor{yellow}1  &  \cellcolor{yellow}1 & \cellcolor{yellow}1  \\
+\hline
+1              & 0  & \cellcolor{yellow}1  &  \cellcolor{yellow}1 & \cellcolor{yellow}1  \\
+\hline
+
+\end{tabular}
+
+
+Perciò le equazioni che rispecchiano le uscite sono :
+
+\(f_s1=\)c+b'c \\
+\(f_s2=\)c+ab'
+
 
 \section{Indifferenze o don't care}
 
@@ -378,9 +511,6 @@ Il circuito dell'half adder è:
 
 
 \subsection*{Full adder}
-
-
-
 
 \subsection*{Prestazioni}
 
