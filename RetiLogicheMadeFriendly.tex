@@ -156,7 +156,7 @@ Procedendo iterando questo teorema sui pezzi di funzioni rimanenti si può arriv
 \newpage
 
 \chapter{Semplificazione di funzioni logiche}
-Introduciamo ora alcune definizioni:\newline\break
+Introduciamo ora alcune definizioni:\\
 \begin{itemize}
 \item\textbf{Letterale}
 Ogni variabile che sia affermata o negata.\\
@@ -178,8 +178,7 @@ Ogni minterm è un implicante della propria f, l'unico problema è che ognuno di
 
 
 \newpage
-
- La funzione logica sarà data dall' \text{OR} degli implicanti, ma quali cerco ?
+La funzione logica sarà data dall' \textbf{OR} degli implicanti, ma quali cerco ?
 \vspace{\baselineskip}
 
 Partendo dalla tabella della verità si possono trovare i minterm della funzione.\\Questi poi possono essere compattati utilizzando le proprietà dell'algebra di Boole (torna molto utile l'adiacenza logica).
@@ -201,7 +200,7 @@ Qui entra in gioco \textbf{la mappa di Karnough}
 \vspace{\baselineskip}
 \begin{tabular}{|c|c|c|c|c|}
 \hline
-a\backslash bc & 00 & 01 & 11 & 10 \\
+a$\backslash$ bc & 00 & 01 & 11 & 10 \\
 \hline
 0              & *  & *  & *  & *  \\
 \hline
@@ -297,7 +296,7 @@ Iniziamo sviluppando la tabella di Karnaugh.\\
 
 \begin{tabular}{|c|c|c|c|c|}
 \hline
-a\backslash bc & 00 & 01 & 11 & 10 \\
+a$\backslash$ bc & 00 & 01 & 11 & 10 \\
 \hline
 0              & 0  &  \cellcolor{yellow}1 & 0  & \cellcolor{yellow}1  \\
 \hline
@@ -332,7 +331,7 @@ Iniziamo con s1, che rappresenterà il bit meno significativo del risultato e pe
 \vspace{\baselineskip}
 \begin{tabular}{|c|c|c|c|c|}
 \hline
-a \backslash bc & 00 & 01 & 11 & 10 \\
+a $\backslash$ bc & 00 & 01 & 11 & 10 \\
 \hline
 0              & 0  & {\cellcolor{yellow} 1 } &  0 & {\cellcolor{yellow}1}  \\
 \hline
@@ -344,7 +343,7 @@ Per s2 l'operazione sarà la stessa con la differenza che l'uscita sarà ad 1 ne
 \newline\vspace{\baselineskip}
 \begin{tabular}{|c|c|c|c|c|}
 \hline
-a\backslash bc & 00 & 01 & 11 & 10 \\
+a$\backslash$ bc & 00 & 01 & 11 & 10 \\
 \hline
 0              & 0  & 0  &  \cellcolor{yellow}1 & 0  \\
 \hline
@@ -363,7 +362,7 @@ Possiamo perciò ricavare le funzioni logiche per l'uscita s1 ed s2.
 Perciò \(f_{S1}=\)ab'c'+a'b'c+abc+a'bc'
 
 \item{S2} \\ Qui invece richiede la ricerca da parte nostra di term all'interno della mappa, da cui otteniamo la seguente funzione : \(f_{s2}=\)bc+ac+ab .
-
+\end{itemize}
 \section{Codifica e decodifica}
 
 \subsection{Priority Encoder}
@@ -403,7 +402,7 @@ Passiamo ora alle mappe di Karnaugh.
 S2, che rispecchierà la cifra meno significativa del risultato, avrà la seguente tabella:
 
 \begin{tabular}{|c|c|c|c|c|}
-a\backslash bc & 00 & 01 & 11 & 10 \\
+a$\backslash$ bc & 00 & 01 & 11 & 10 \\
 \hline
 0              & 0  & \cellcolor{yellow}1  &  \cellcolor{yellow}1 & 0  \\
 \hline
@@ -415,7 +414,7 @@ a\backslash bc & 00 & 01 & 11 & 10 \\
 S1 invece che rispecchierà la cifra più significativa del risultato sarà:
 
 \begin{tabular}{|c|c|c|c|c|}
-a\backslash bc & 00 & 01 & 11 & 10 \\
+a$\backslash$ bc & 00 & 01 & 11 & 10 \\
 \hline
 0              & 0  & \cellcolor{yellow}1  &  \cellcolor{yellow}1 & \cellcolor{yellow}1  \\
 \hline
@@ -561,7 +560,7 @@ La mappa di Karnaugh per il valore di S è :
 
 \begin{tabular}{|c|c|c|c|c|}
 \hline
-c\backslash ab & 00 & 01 & 11 & 10 \\
+c$\backslash$ ab & 00 & 01 & 11 & 10 \\
 \hline
 0              & 0  & \cellcolor{yellow}1  &  0 & \cellcolor{yellow}1  \\
 \hline
@@ -573,7 +572,7 @@ La mappa di Karnaugh per il valore di C è :
 
 \begin{tabular}{|c|c|c|c|c|}
 \hline
-c\backslash ab & 00 & 01 & 11 & 10 \\
+c$\backslash$ ab & 00 & 01 & 11 & 10 \\
 \hline
 0              & 0  & 0  &  \cellcolor{yellow}1 & 0  \\
 \hline
@@ -733,7 +732,7 @@ E' un passaggio necessario ai fini dell'esecuzione. Nel token UNIT va specificat
 \end{verbatim}
 
 Questo comando esegue l'architettura dell'entità che inseriremo al posto di UNIT e che prima dovrà essere passata per i comandi -a e -e.
-\end{verbatim}
+
 
 
 Quindi se volessimo compilare ed eseguire l'entità baseEntity nel file baseTest.vhd seguiremo i seguenti passaggi:
@@ -743,7 +742,7 @@ ghdl -e baseEntity
 ghdl -r baseEntity
 \end{verbatim}
 
-\section*{VHDL}
+\section{VHDL}
 
 Il linguaggio che utilizzeremo è il \textbf{VHDL}, ossia \textbf{V}ery highspeed integrated circuit \textbf{H}ardware \textbf{D}escription \textbf{L}anguage.
 
@@ -862,21 +861,28 @@ end component;
 \section*{Operatori,Identificatori e operazioni multiple}
 
 Il linguaggio VHDL ha di default tutti gli operatori booleani .
-L'operatore \textbf{NOT} è l'unico con la \textbf{priorità alta} mentre gli altri hanno tutti la stessa priorità e quindi verrà data importanza all'ordine o ad eventuali parentesi per decidere quale operazione fare per prima.\newline
-VHDL è un linguaggio NON case sensitive.
+L'operatore \textbf{NOT} è l'unico con la \textbf{priorità alta} mentre gli altri hanno tutti la stessa priorità e quindi verrà data importanza all'ordine o ad eventuali parentesi per decidere quale operazione fare per prima.\\
+
+Gli \textbf{identificatori} sono l'insieme di nomi utilizzati per entità, architetture e segnali.\\
+
+VHDL è un linguaggio NON è case sensitive.\\
 
 Per specificare un delay si può utilizzare l'operatore \textbf{after}
+
 Con il tipo bit\_vector(n down to m) si crea un array di bit con gli indici che vanno da m ad n.
-VHDL possiede tutte le operazioni booleane come and,or,xor.
-\break \nextline
-La precedenza maggiore tra tali operazioni la ha la porta NOT mentre a differenza di quello che avviene nell'algebra booleana il resto degli operatori ha la stessa priorità perciò per forzare alcune operazioni prima di altre bisogna usare le parentesi !\nextline
-Nella descrizione delle architetture a volte è necessario instanziare variabili interne, queste vengono chiamate \textbf{signal} e necessitano di un nome univoco per essere riconosciuti nello svolgimento della logica del componente.\break\nextline
-(Attenzione che VDHL NON è case sensitive).
+VHDL possiede tutte le operazioni booleane come and,or,xor.\\
+
+La precedenza maggiore tra tali operazioni la ha la porta NOT mentre a differenza di quello che avviene nell'algebra booleana il resto degli operatori ha la stessa priorità perciò per forzare alcune operazioni prima di altre bisogna usare le parentesi !\\
+
+Nella descrizione delle architetture a volte è necessario instanziare variabili interne, queste vengono chiamate \textbf{signal} e necessitano di un nome univoco per essere riconosciuti nello svolgimento della logica del componente.\\
+(Attenzione che i signal sono visibili solo all'interno dell'architettura in cui sono dichiarati)
+
+Inoltre a differenza di altri lignuaggi in VHDL l'ordine in cui sono dichiarate le equazioni nell'architettura non è importante perchè avvengono contemporaneamente.
 
 \section*{Parametri formali ed effettivi}
 
 Le funzioni si richiamano nell'architettura tramite \textbf{port map} seguito da \textbf{notazione posizionale} e la loro instanziazione sarà contemporanea.
-All'interno della stessa architettura possono avvenire \textxtbf{più operazioni}. L'ordine in cui vengono specificate all'interno dell'architettura non è rilevante perchè vanno concepite come un sistema in cui \textbf{procedono in parallelo}.
+All'interno della stessa architettura possono avvenire \textbf{più operazioni}. L'ordine in cui vengono specificate all'interno dell'architettura non è rilevante perchè vanno concepite come un sistema in cui \textbf{procedono in parallelo}.
 
 \begin{lstlisting}[language=VHDL]
 nome_istanza : nome_master port map(parametri effettivi)
@@ -1108,7 +1114,7 @@ Viene impiegato per risolvere i problemi di sfasamento tra frequenza di clock ed
 \textbf{Edge Triggered}: \newline\break
 Significa che il flip flop diviene trasparente \textbf{SOLO} nella transizione (edge appunto) tra stato 0 ed 1 ( o 1 e 0 ).
  
-\textbf{Preset & clear}
+\textbf{Preset \& clear}
 Permette di dare un valore noto al segnale iniziale del clock che altrimenti sarebbe incognito.
 
 \subsubsection*{Stato}: è l'insieme dei valori conservati in memoria in un dato istante. E' implementato con un vettore di variabili booleane.

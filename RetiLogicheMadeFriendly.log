@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.17)  10 JAN 2022 17:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.17)  10 JAN 2022 21:55
 entering extended mode
 **./RetiLogicheMadeFriendly.tex
 (RetiLogicheMadeFriendly.tex
@@ -376,11 +376,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 159--160
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--160
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 161--163
 
  []
@@ -407,36 +402,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 175--176
 
 [9
 
-]
-! Undefined control sequence.
-l.182  La funzione logica sarà data dall' \text
-                                                {OR} degli implicanti, ma qu...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.204 a\backslash
-                  bc & 00 & 01 & 11 & 10 \\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.204 a\backslash bc &
-                       00 & 01 & 11 & 10 \\
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-[10]
+] [10]
 Overfull \hbox (23.16313pt too wide) has occurred while \output is active
 \OT1/cmr/m/sl/10 3.1.  INSIEMI DI OPERATORI COMPLETI ED USO DELLE PORTE LOGICHE
  \OT1/cmr/m/n/10 11
@@ -447,17 +413,17 @@ Overfull \hbox (23.16313pt too wide) has occurred while \output is active
 ]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 242--244
+Underfull \hbox (badness 10000) in paragraph at lines 241--243
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 245--252
+Underfull \hbox (badness 10000) in paragraph at lines 244--251
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 245--252
+Underfull \hbox (badness 10000) in paragraph at lines 244--251
 
  []
 
@@ -465,217 +431,49 @@ Underfull \hbox (badness 10000) in paragraph at lines 245--252
 <images//Multiplexer21.png, id=68, 24.84282pt x 45.16875pt>
 File: images//Multiplexer21.png Graphic file (type png)
 <use images//Multiplexer21.png>
-Package pdftex.def Info: images//Multiplexer21.png  used on input line 268.
+Package pdftex.def Info: images//Multiplexer21.png  used on input line 267.
 (pdftex.def)             Requested size: 24.84274pt x 45.16862pt.
 <images//Multiplexer21Circuito.png, id=69, 81.30376pt x 56.46094pt>
 File: images//Multiplexer21Circuito.png Graphic file (type png)
 <use images//Multiplexer21Circuito.png>
 Package pdftex.def Info: images//Multiplexer21Circuito.png  used on input line 
-277.
+276.
 (pdftex.def)             Requested size: 81.30354pt x 56.46078pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 293--295
+Underfull \hbox (badness 10000) in paragraph at lines 292--294
 
  []
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.300 a\backslash
-                  bc & 00 & 01 & 11 & 10 \\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.300 a\backslash bc &
-                       00 & 01 & 11 & 10 \\
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-Overfull \hbox (17.08397pt too wide) in paragraph at lines 317--318
+Overfull \hbox (17.08397pt too wide) in paragraph at lines 316--317
 []$\OML/cmm/m/it/10 f \OT1/cmr/m/n/10 =$b'(ac'+a'c)+b(ac+a'c') che pos-si-amo u
 l-te-ri-or-mente com-pattare ri-conoscendo
  []
 
 [14 <./images//Multiplexer21Circuito.png> <./images//Multiplexer21.png>]
-! Missing $ inserted.
-<inserted text> 
-                $
-l.335 a \backslash
-                   bc & 00 & 01 & 11 & 10 \\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.335 a \backslash bc &
-                        00 & 01 & 11 & 10 \\
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.347 a\backslash
-                  bc & 00 & 01 & 11 & 10 \\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.347 a\backslash bc &
-                       00 & 01 & 11 & 10 \\
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-
-Overfull \hbox (11.69505pt too wide) in paragraph at lines 371--374
-\OT1/cmr/m/n/10 Il pri-or-ity en-coder e un cir-cuito la cui us-cita cor-rispo
-n-dera all'indice dell'input
- []
-
-[15]
-Overfull \hbox (1.36168pt too wide) in paragraph at lines 403--404
-[]\OT1/cmr/m/n/10 S2, che rispec-chiera la cifra meno sig-ni-fica-tiva del ris
-ul-tato, avra la seguente
- []
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.406 a\backslash
-                  bc & 00 & 01 & 11 & 10 \\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.406 a\backslash bc &
-                       00 & 01 & 11 & 10 \\
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.418 a\backslash
-                  bc & 00 & 01 & 11 & 10 \\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.418 a\backslash bc &
-                       00 & 01 & 11 & 10 \\
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-[16]
+[15] [16]
 Chapter 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 446--450
+Underfull \hbox (badness 10000) in paragraph at lines 445--449
 
  []
 
-[17
 
-] [18]
+Underfull \vbox (badness 5741) has occurred while \output is active []
+
+ [17
+
+]
+[18]
 Chapter 6.
 [19
 
-]
-! Missing $ inserted.
-<inserted text> 
-                $
-l.564 c\backslash
-                  ab & 00 & 01 & 11 & 10 \\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.564 c\backslash ab &
-                       00 & 01 & 11 & 10 \\
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.576 c\backslash
-                  ab & 00 & 01 & 11 & 10 \\
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.576 c\backslash ab &
-                       00 & 01 & 11 & 10 \\
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-[20] [21]
-Overfull \hbox (3.94514pt too wide) in paragraph at lines 633--635
-\OT1/cmr/m/n/10 nu-mero -3 in bi-na-rio in com-ple-mento a 2 , [1][1][1]+[0][1]
-[1]= [1][0][1][0]
- []
-
-[22]
-Overfull \hbox (7.61066pt too wide) in paragraph at lines 669--670
-\OT1/cmr/m/n/10 Volendo molti-pli-care due nu-meri POS-I-TIVI si puo an-cora u
-na volta sfruttare
- []
-
-[23] [24
+] [20] [21] [22] [23] [24
 
 ]
 Chapter 7.
 [25]
-
-! LaTeX Error: \begin{itemize} on input line 360 ended by \end{verbatim}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.736 \end{verbatim}
-                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-Overfull \hbox (18.36166pt too wide) in paragraph at lines 739--740
+Overfull \hbox (18.36166pt too wide) in paragraph at lines 738--739
 []\OT1/cmr/m/n/10 Quindi se vo-lessimo com-pi-lare ed es-eguire l'entita baseE
 n-tity nel file baseTest.vhd
  []
@@ -683,56 +481,38 @@ n-tity nel file baseTest.vhd
 [26] (D:\SOFTWARE\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 ) [27]
-! Undefined control sequence.
-l.871 \break \nextline
-                      
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+Underfull \hbox (badness 10000) in paragraph at lines 863--865
 
-! Undefined control sequence.
-l.872 ...tre bisogna usare le parentesi !\nextline
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.873 ...lla logica del componente.\break\nextline
-                                                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Overfull \hbox (16.48929pt too wide) in paragraph at lines 868--875
-[]\OT1/cmr/m/n/10 Per speci-fi-care un de-lay si puo uti-liz-zare l'operatore 
-\OT1/cmr/bx/n/10 af-ter \OT1/cmr/m/n/10 Con il tipo bit[]vector(n
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 868--875
-\OT1/cmr/m/n/10 possiede tutte le op-er-azioni booleane come and,or,xor. 
+Underfull \hbox (badness 10000) in paragraph at lines 866--867
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 868--869
+
  []
 
 [28]
-! Undefined control sequence.
-l.879 ...a architettura possono avvenire \textxtbf
-                                                  {più operazioni}. L'ordin...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+Underfull \hbox (badness 10000) in paragraph at lines 872--874
 
-[29] [30]
-Overfull \hbox (140.58965pt too wide) in paragraph at lines 957--968
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 875--876
+
+ []
+
+[29]
+Overfull \hbox (4.3061pt too wide) in paragraph at lines 902--905
+\OT1/cmr/m/n/10 mente dalla parte dell'operatore di as-seg-nazione che subisce 
+l'assegnamento.
+ []
+
+[30]
+Overfull \hbox (143.58968pt too wide) in paragraph at lines 963--974
 [][] 
  []
 
@@ -745,36 +525,24 @@ Chapter 8.
 ]
 Chapter 9.
 [35]
-Underfull \hbox (badness 10000) in paragraph at lines 1106--1107
+Underfull \hbox (badness 10000) in paragraph at lines 1112--1113
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1108--1110
+Underfull \hbox (badness 10000) in paragraph at lines 1114--1116
 
  []
-
-! Misplaced alignment tab character &.
-<argument> Preset &
-                    clear
-l.1111 \textbf{Preset & clear}
-                              
-I can't figure out why you would want to use a tab mark
-here. If you just want an ampersand, the remedy is
-simple: Just type `I\&' now. But if some right brace
-up above has ended a previous alignment prematurely,
-you're probably due for more error messages, and you
-might try typing `S' now just to see what is salvageable.
 
 [36] (RetiLogicheMadeFriendly.aux) ) 
 Here is how much of TeX's memory you used:
  5054 strings out of 479334
  70938 string characters out of 2869356
- 656796 words of memory out of 3000000
+ 655838 words of memory out of 3000000
  22470 multiletter control sequences out of 15000+200000
  409622 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,8n,74p,424b,1729s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 68i,8n,74p,424b,1727s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\matte\AppData\Local\MiKTeX\fonts
 /pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><D:/SOFTWARE/MiKTeX/fonts/type1/publi
 c/amsfonts/cm/cmbx10.pfb><D:/SOFTWARE/MiKTeX/fonts/type1/public/amsfonts/cm/cmb
@@ -788,7 +556,7 @@ msfonts/cm/cmsl10.pfb><D:/SOFTWARE/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10
 .pfb><D:/SOFTWARE/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/SOFTWARE/
 MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><D:/SOFTWARE/MiKTeX/fonts/type
 1/public/amsfonts/cm/cmtt8.pfb>
-Output written on RetiLogicheMadeFriendly.pdf (36 pages, 252223 bytes).
+Output written on RetiLogicheMadeFriendly.pdf (36 pages, 252343 bytes).
 PDF statistics:
  195 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
