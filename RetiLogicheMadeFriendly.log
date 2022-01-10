@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.17)  10 JAN 2022 13:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.17)  10 JAN 2022 17:17
 entering extended mode
 **./RetiLogicheMadeFriendly.tex
 (RetiLogicheMadeFriendly.tex
@@ -660,17 +660,31 @@ na volta sfruttare
 
 ]
 Chapter 7.
-[25] [26] (D:\SOFTWARE\MiKTeX\tex/latex/listings\lstlang1.sty
-File: lstlang1.sty 2020/03/24 1.8d listings language file
-)
-Overfull \hbox (12.54771pt too wide) in paragraph at lines 763--765
-\OT1/cmr/m/n/10 La nozione di \OT1/cmr/bx/n/10 ar-chitet-tura \OT1/cmr/m/n/10 i
-n VHDL speci-fica il com-por-ta-mento di un'entita.
+[25]
+
+! LaTeX Error: \begin{itemize} on input line 360 ended by \end{verbatim}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.736 \end{verbatim}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (18.36166pt too wide) in paragraph at lines 739--740
+[]\OT1/cmr/m/n/10 Quindi se vo-lessimo com-pi-lare ed es-eguire l'entita baseE
+n-tity nel file baseTest.vhd
  []
 
-[27]
+[26] (D:\SOFTWARE\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+) [27]
 ! Undefined control sequence.
-l.833 \break \nextline
+l.871 \break \nextline
                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -679,7 +693,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.834 ...tre bisogna usare le parentesi !\nextline
+l.872 ...tre bisogna usare le parentesi !\nextline
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -688,7 +702,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.835 ...lla logica del componente.\break\nextline
+l.873 ...lla logica del componente.\break\nextline
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -697,13 +711,19 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 830--837
-\OT1/cmr/m/n/10 log-ica del com-po-nente.
+Overfull \hbox (16.48929pt too wide) in paragraph at lines 868--875
+[]\OT1/cmr/m/n/10 Per speci-fi-care un de-lay si puo uti-liz-zare l'operatore 
+\OT1/cmr/bx/n/10 af-ter \OT1/cmr/m/n/10 Con il tipo bit[]vector(n
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 868--875
+\OT1/cmr/m/n/10 possiede tutte le op-er-azioni booleane come and,or,xor. 
  []
 
 [28]
 ! Undefined control sequence.
-l.841 ...a architettura possono avvenire \textxtbf
+l.879 ...a architettura possono avvenire \textxtbf
                                                   {più operazioni}. L'ordin...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -711,91 +731,33 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-
-Overfull \hbox (12.15807pt too wide) in paragraph at lines 840--842
-\OT1/cmr/m/n/10 All'interno della stessa ar-chitet-tura pos-sono avvenire piu 
-op-er-azioni. L'ordine
- []
-
-
-Overfull \hbox (2.13947pt too wide) in paragraph at lines 840--842
-\OT1/cmr/m/n/10 in cui ven-gono spec-ifi-cate all'interno dell'architettura non
- e ril-e-vante perche
- []
-
-[29]
-Overfull \hbox (34.08391pt too wide) in paragraph at lines 858--861
-\OT1/cmr/m/n/10 la-mente dalla parte dell'operatore di as-seg-nazione che subis
-ce l'assegnamento.
- []
-
-[30]
-Overfull \hbox (165.58968pt too wide) in paragraph at lines 919--930
+[29] [30]
+Overfull \hbox (140.58965pt too wide) in paragraph at lines 957--968
 [][] 
  []
 
+[31] [32
 
-Underfull \hbox (badness 4954) in paragraph at lines 942--945
-\OT1/cmr/m/n/10 I pro-grammi che an-dremo ad uti-liz-zare sono ghdl e gtk-wave.
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 942--945
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 942--945
-\OT1/cmr/m/n/10 rate.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 942--945
-
- []
-
-
-! LaTeX Error: \begin{itemize} on input line 360 ended by \end{verbatim}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.966 \end{verbatim}
-                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-Overfull \hbox (18.36166pt too wide) in paragraph at lines 969--970
-[]\OT1/cmr/m/n/10 Quindi se vo-lessimo com-pi-lare ed es-eguire l'entita baseE
-n-tity nel file baseTest.vhd
- []
-
-[31] [32]
+]
 Chapter 8.
-[33
-
-] [34
+[33] [34
 
 ]
 Chapter 9.
 [35]
-Underfull \hbox (badness 10000) in paragraph at lines 1104--1105
+Underfull \hbox (badness 10000) in paragraph at lines 1106--1107
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1106--1108
+Underfull \hbox (badness 10000) in paragraph at lines 1108--1110
 
  []
 
 ! Misplaced alignment tab character &.
 <argument> Preset &
                     clear
-l.1109 \textbf{Preset & clear}
+l.1111 \textbf{Preset & clear}
                               
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -807,12 +769,12 @@ might try typing `S' now just to see what is salvageable.
 [36] (RetiLogicheMadeFriendly.aux) ) 
 Here is how much of TeX's memory you used:
  5054 strings out of 479334
- 70933 string characters out of 2869356
- 655843 words of memory out of 3000000
+ 70938 string characters out of 2869356
+ 656796 words of memory out of 3000000
  22470 multiletter control sequences out of 15000+200000
  409622 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,8n,74p,424b,1855s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 68i,8n,74p,424b,1729s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\matte\AppData\Local\MiKTeX\fonts
 /pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><D:/SOFTWARE/MiKTeX/fonts/type1/publi
 c/amsfonts/cm/cmbx10.pfb><D:/SOFTWARE/MiKTeX/fonts/type1/public/amsfonts/cm/cmb
@@ -826,7 +788,7 @@ msfonts/cm/cmsl10.pfb><D:/SOFTWARE/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10
 .pfb><D:/SOFTWARE/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/SOFTWARE/
 MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><D:/SOFTWARE/MiKTeX/fonts/type
 1/public/amsfonts/cm/cmtt8.pfb>
-Output written on RetiLogicheMadeFriendly.pdf (36 pages, 252822 bytes).
+Output written on RetiLogicheMadeFriendly.pdf (36 pages, 252223 bytes).
 PDF statistics:
  195 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

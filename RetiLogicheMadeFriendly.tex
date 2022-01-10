@@ -706,6 +706,42 @@ Una volta progettato un circuito e disegnato si potrebbe procedere a comprare le
 Molto meglio è invece utilizzare un linguaggio di descrizione che permette di simulare il funzionamento delle porte e quindi dei circuiti.
 
 
+\section{Programmi richiesti: ghdl e gtkwave}
+
+I programmi che andremo ad utilizzare sono ghdl e gtkwave.\\
+Una volta scaricate le versioni stabili correnti adatte al vostro dispositivo si consiglia di estrarre i contenuti di entrambe le cartelle in due cartelle separate.\\
+Poi aggiungere nel caso di windows i percorsi delle cartelle bin al PATH così da poterci accedere ogni volta senza dover andare nel percorso preciso in cui andremo a mettere gli eseguibili.
+
+\subsubsection*{ghdl}
+\subsubsection*{gtkwave}
+\subsubsection*{Comandi frequenti}
+
+I comandi più frequenti sono:
+
+\begin{verbatim}ghdl -h \end{verbatim}visualizzo i comandi che ghdl offre.
+
+\begin{verbatim}
+-a nomedelfile
+\end{verbatim}
+Compila il file .vhd che gli indichiamo
+\begin{verbatim}
+-e UNIT
+\end{verbatim}
+E' un passaggio necessario ai fini dell'esecuzione. Nel token UNIT va specificato il nome della entity che poi abbiamo intenzione di eseguire.
+\begin{verbatim}
+-r UNIT
+\end{verbatim}
+
+Questo comando esegue l'architettura dell'entità che inseriremo al posto di UNIT e che prima dovrà essere passata per i comandi -a e -e.
+\end{verbatim}
+
+
+Quindi se volessimo compilare ed eseguire l'entità baseEntity nel file baseTest.vhd seguiremo i seguenti passaggi:
+\begin{verbatim}
+ghdl -a baseTest.vhd
+ghdl -e baseEntity
+ghdl -r baseEntity
+\end{verbatim}
 
 \section*{VHDL}
 
@@ -731,10 +767,9 @@ e secondo 3 viste
 \newpage
 \subsection{Entità}
 
-La nozione di \textbf{entità} in VHDL corrisponde alla rappresentazione di un blocco \textbf{SENZA SPECIFICARNE} la logica interna.
+La nozione di \textbf{entità} in VHDL corrisponde alla rappresentazione di un blocco \textbf{SENZA SPECIFICARNE} la logica interna ma solamente l'interfaccia con l'esterno.
 
 Esso specifica :
-
 \begin{itemize}
 \item \textbf{nome}
 \item \textbf{numero di ingressi}
@@ -742,7 +777,7 @@ Esso specifica :
 
 \end{itemize}
 
-Di seguito il codice per dichiarare un'entità di nome nom$e_entity$ con n ingressi e m-n uscite.
+Di seguito il codice per dichiarare un'entità di nome "name\textunderscore entity" con n ingressi e m-n uscite.
 
 \begin{lstlisting}[language=VHDL]
 entity nome_entity is
@@ -755,7 +790,7 @@ port
 	nome_portan+2 : tipo_uscita,...
 	nome_portan+3 : tipo_uscita;
 );
-end  nome_entity;
+end entity nome_entity;
 \end{lstlisting}
 
 \subsection{Architettura}
@@ -765,17 +800,20 @@ La nozione di \textbf{architettura} in VHDL specifica il comportamento di un'ent
 
 \begin{lstlisting}[language=VHDL]
 
-architecture nomearchitettura of nome entita is
+architecture nome_architettura of nome_entita is
 --dichiarazione di eventuali signal o buffer ausiliari
 begin
 --le equazioni e le operazioni di assegnamento che verranno scirtte in questa zona verranno eseguite tutte in contemporanea, indipendentemente dalla sequenza in cui compariranno
 
 
-end architecture nomearchitettura;
+end architecture nome_architettura;
 
 
 \end{lstlisting}
 
+ATTENZIONE ! a differenza di linguaggi come il C, in VHDL l'operatore di assegnazione è '<=' mentre quello di comparazione di uguaglianza è '='.
+
+Per l'assegnazione si scrive a<=b per indicare che il valore di b viene assegnato ad a.
 
 \subsection{Testbench}
 
@@ -796,7 +834,7 @@ signal a,b,c : bit;
 
 begin
 --istanzio il modulo da testare
-g1 : entitadatestare portmap()
+g1 : entitadatestare port map()
 
 --definizione degli stimoli tramite equazioni in cui assegno ogni tot secondi un certo valore ai signal del mio testBench che a loro volta verranno assegnati alle porte dell entita da testare.
 
@@ -936,42 +974,6 @@ end record \\
 
 
 
-\section{Far girare il codice vhdl : ghdl e gtkwave}
-
-
-I programmi che andremo ad utilizzare sono ghdl e gtkwave.\break\newline
-Una volta scaricate le versioni stabili correnti adatte al vostro dispositivo si consiglia di estrarre i contenuti di entrambe le cartelle in due cartelle separate.\break\newline
-Poi aggiungere nel caso di windows i percorsi delle cartelle bin al PATH così da poterci accedere ogni volta senza dover andare nel percorso preciso in cui andremo a mettere gli eseguibili.
-
-\subsubsection*{ghdl}
-\subsubsection*{gtkwave}
-\subsubsection*{Sporcarsi le mani}
-I comandi più frequenti sono:
-
-\begin{verbatim}ghdl -h \end{verbatim}visualizzo i comandi che ghdl offre.
-
-\begin{verbatim}
--a nomedelfile
-\end{verbatim}
-Compila il file .vhd che gli indichiamo
-\begin{verbatim}
--e UNIT
-\end{verbatim}
-E' un passaggio necessario ai fini dell'esecuzione. Nel token UNIT va specificato il nome della entity che poi abbiamo intenzione di eseguire.
-\begin{verbatim}
--r UNIT
-\end{verbatim}
-
-Questo comando esegue l'architettura dell'entità che inseriremo al posto di UNIT e che prima dovrà essere passata per i comandi -a e -e.
-\end{verbatim}
-
-
-Quindi se volessimo compilare ed eseguire l'entità baseEntity nel file baseTest.vhd seguiremo i seguenti passaggi:
-\begin{verbatim}
-ghdl -a baseTest.vhd
-ghdl -e baseEntity
-ghdl -r baseEntity
-\end{verbatim}
 
 
 \section*{Tipo std\_logic}
