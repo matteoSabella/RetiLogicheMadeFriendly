@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.17)  9 JAN 2022 15:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.17)  10 JAN 2022 13:04
 entering extended mode
 **./RetiLogicheMadeFriendly.tex
 (RetiLogicheMadeFriendly.tex
@@ -186,20 +186,20 @@ File: l3backend-pdftex.def 2021-03-02 L3 backend support: PDF output (pdfTeX)
 (RetiLogicheMadeFriendly.aux)
 \openout1 = `RetiLogicheMadeFriendly.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
 
 (D:\SOFTWARE\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -221,27 +221,27 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 )
 \c@lstlisting=\count273
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 46.
+(Font)              <12> on input line 47.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 46.
+(Font)              <8> on input line 47.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 46.
+(Font)              <6> on input line 47.
  [1
 
 
 {C:/Users/matte/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2]
 Chapter 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 58.
+(Font)              <7> on input line 59.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 58.
+(Font)              <5> on input line 59.
 <images//SchemaDigitale.png, id=11, 466.74374pt x 72.27pt>
 File: images//SchemaDigitale.png Graphic file (type png)
 <use images//SchemaDigitale.png>
-Package pdftex.def Info: images//SchemaDigitale.png  used on input line 60.
+Package pdftex.def Info: images//SchemaDigitale.png  used on input line 61.
 (pdftex.def)             Requested size: 345.0pt x 53.4216pt.
 
-Overfull \hbox (4.07408pt too wide) in paragraph at lines 51--61
+Overfull \hbox (4.07408pt too wide) in paragraph at lines 52--62
  [] 
  []
 
@@ -252,110 +252,110 @@ Overfull \hbox (4.07408pt too wide) in paragraph at lines 51--61
 ]
 Chapter 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--65
+Underfull \hbox (badness 10000) in paragraph at lines 65--66
 
  []
 
 <images//AndPrecisa.png, id=23, 45.92157pt x 27.85406pt>
 File: images//AndPrecisa.png Graphic file (type png)
 <use images//AndPrecisa.png>
-Package pdftex.def Info: images//AndPrecisa.png  used on input line 67.
+Package pdftex.def Info: images//AndPrecisa.png  used on input line 68.
 (pdftex.def)             Requested size: 45.92145pt x 27.85397pt.
 
-Overfull \hbox (11.41934pt too wide) in paragraph at lines 67--68
+Overfull \hbox (11.41934pt too wide) in paragraph at lines 68--69
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 69--71
+Underfull \hbox (badness 10000) in paragraph at lines 70--72
 
  []
 
 <images//OrGate.png, id=24, 45.16875pt x 25.59563pt>
 File: images//OrGate.png Graphic file (type png)
 <use images//OrGate.png>
-Package pdftex.def Info: images//OrGate.png  used on input line 75.
+Package pdftex.def Info: images//OrGate.png  used on input line 76.
 (pdftex.def)             Requested size: 45.16862pt x 25.59555pt.
 
-Overfull \hbox (10.66652pt too wide) in paragraph at lines 75--76
+Overfull \hbox (10.66652pt too wide) in paragraph at lines 76--77
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 77--79
+Underfull \hbox (badness 10000) in paragraph at lines 78--80
 
  []
 
 <images//NotGate.png, id=25, 15.80907pt x 36.88782pt>
 File: images//NotGate.png Graphic file (type png)
 <use images//NotGate.png>
-Package pdftex.def Info: images//NotGate.png  used on input line 81.
+Package pdftex.def Info: images//NotGate.png  used on input line 82.
 (pdftex.def)             Requested size: 15.809pt x 36.88771pt.
 [5 <./images//AndPrecisa.png> <./images//OrGate.png> <./images//NotGate.png>]
 
 Package wrapfig Warning: Collision between wrapping environments on input line 
-89.
+90.
 
 <images//NandGate.png, id=36, 51.94406pt x 27.85406pt>
 File: images//NandGate.png Graphic file (type png)
 <use images//NandGate.png>
-Package pdftex.def Info: images//NandGate.png  used on input line 90.
+Package pdftex.def Info: images//NandGate.png  used on input line 91.
 (pdftex.def)             Requested size: 51.94392pt x 27.85397pt.
 
-Overfull \hbox (17.44182pt too wide) in paragraph at lines 90--91
+Overfull \hbox (17.44182pt too wide) in paragraph at lines 91--92
 [][] 
  []
 
 
-Package wrapfig Warning: Stationary wrapfigure forced to float on input line 91
+Package wrapfig Warning: Stationary wrapfigure forced to float on input line 92
 .
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 95.
+put line 96.
 
 <images//NorGate.png, id=37, 48.93282pt x 25.59563pt>
 File: images//NorGate.png Graphic file (type png)
 <use images//NorGate.png>
-Package pdftex.def Info: images//NorGate.png  used on input line 96.
+Package pdftex.def Info: images//NorGate.png  used on input line 97.
 (pdftex.def)             Requested size: 48.93268pt x 25.59555pt.
 
-Overfull \hbox (14.43057pt too wide) in paragraph at lines 96--97
+Overfull \hbox (14.43057pt too wide) in paragraph at lines 97--98
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--97
+Underfull \hbox (badness 10000) in paragraph at lines 95--98
 \OT1/cmr/m/n/10 un NOT.
  []
 
 
-Package wrapfig Warning: Stationary wrapfigure forced to float on input line 97
+Package wrapfig Warning: Stationary wrapfigure forced to float on input line 98
 .
 
 [6 <./images//NandGate.png> <./images//NorGate.png>] [7]
-Underfull \hbox (badness 10000) in paragraph at lines 146--149
+Underfull \hbox (badness 10000) in paragraph at lines 147--150
 \OT1/cmr/m/n/10 Per ogni fun-zione log-ica del tipo
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--149
+Underfull \hbox (badness 10000) in paragraph at lines 147--150
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--149
+Underfull \hbox (badness 10000) in paragraph at lines 147--150
 \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 ([]\OML/cmm/m/it/10 ; []; []; :::; []\OT1/cmr
 /m/n/10 )$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--149
+Underfull \hbox (badness 10000) in paragraph at lines 147--150
 
  []
 
 
-Underfull \hbox (badness 8000) in paragraph at lines 146--149
+Underfull \hbox (badness 8000) in paragraph at lines 147--150
 \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 ([]\OML/cmm/m/it/10 ; []; []; :::; []\OT1/cmr
 /m/n/10 ) = \OML/cmm/m/it/10 a \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 f\OT1/cmr/m/
 n/10 (1\OML/cmm/m/it/10 ; []; []; :::; []\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 a
@@ -364,44 +364,44 @@ n/10 (1\OML/cmm/m/it/10 ; []; []; :::; []\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 a
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--149
+Underfull \hbox (badness 10000) in paragraph at lines 147--150
 
  []
 
 [8]
 Chapter 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 158--159
+Underfull \hbox (badness 10000) in paragraph at lines 159--160
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 158--159
+Underfull \hbox (badness 10000) in paragraph at lines 159--160
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 160--162
+Underfull \hbox (badness 10000) in paragraph at lines 161--163
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 162--164
+Underfull \hbox (badness 10000) in paragraph at lines 163--165
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 164--166
+Underfull \hbox (badness 10000) in paragraph at lines 165--167
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--175
+Underfull \hbox (badness 10000) in paragraph at lines 175--176
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--175
+Underfull \hbox (badness 10000) in paragraph at lines 175--176
 
  []
 
@@ -409,8 +409,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 174--175
 
 ]
 ! Undefined control sequence.
-l.181 La funzione logica sarà data dall' \text
-                                               {OR} degli implicanti, ma qua...
+l.182  La funzione logica sarà data dall' \text
+                                                {OR} degli implicanti, ma qu...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -420,7 +420,7 @@ and I'll forget about whatever was undefined.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.203 a\backslash
+l.204 a\backslash
                   bc & 00 & 01 & 11 & 10 \\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -428,7 +428,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.203 a\backslash bc &
+l.204 a\backslash bc &
                        00 & 01 & 11 & 10 \\
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -447,17 +447,17 @@ Overfull \hbox (23.16313pt too wide) has occurred while \output is active
 ]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 238--240
+Underfull \hbox (badness 10000) in paragraph at lines 242--244
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--248
+Underfull \hbox (badness 10000) in paragraph at lines 245--252
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--248
+Underfull \hbox (badness 10000) in paragraph at lines 245--252
 
  []
 
@@ -465,23 +465,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 241--248
 <images//Multiplexer21.png, id=68, 24.84282pt x 45.16875pt>
 File: images//Multiplexer21.png Graphic file (type png)
 <use images//Multiplexer21.png>
-Package pdftex.def Info: images//Multiplexer21.png  used on input line 264.
+Package pdftex.def Info: images//Multiplexer21.png  used on input line 268.
 (pdftex.def)             Requested size: 24.84274pt x 45.16862pt.
 <images//Multiplexer21Circuito.png, id=69, 81.30376pt x 56.46094pt>
 File: images//Multiplexer21Circuito.png Graphic file (type png)
 <use images//Multiplexer21Circuito.png>
 Package pdftex.def Info: images//Multiplexer21Circuito.png  used on input line 
-273.
+277.
 (pdftex.def)             Requested size: 81.30354pt x 56.46078pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 289--291
+Underfull \hbox (badness 10000) in paragraph at lines 293--295
 
  []
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.296 a\backslash
+l.300 a\backslash
                   bc & 00 & 01 & 11 & 10 \\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -489,7 +489,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.296 a\backslash bc &
+l.300 a\backslash bc &
                        00 & 01 & 11 & 10 \\
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -498,7 +498,7 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Overfull \hbox (17.08397pt too wide) in paragraph at lines 313--314
+Overfull \hbox (17.08397pt too wide) in paragraph at lines 317--318
 []$\OML/cmm/m/it/10 f \OT1/cmr/m/n/10 =$b'(ac'+a'c)+b(ac+a'c') che pos-si-amo u
 l-te-ri-or-mente com-pattare ri-conoscendo
  []
@@ -507,7 +507,7 @@ l-te-ri-or-mente com-pattare ri-conoscendo
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.331 a \backslash
+l.335 a \backslash
                    bc & 00 & 01 & 11 & 10 \\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -515,7 +515,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.331 a \backslash bc &
+l.335 a \backslash bc &
                         00 & 01 & 11 & 10 \\
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -526,7 +526,7 @@ my insertion and my current dilemma will both disappear.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.343 a\backslash
+l.347 a\backslash
                   bc & 00 & 01 & 11 & 10 \\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -534,7 +534,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.343 a\backslash bc &
+l.347 a\backslash bc &
                        00 & 01 & 11 & 10 \\
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -595,7 +595,7 @@ my insertion and my current dilemma will both disappear.
 [16]
 Chapter 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 443--447
+Underfull \hbox (badness 10000) in paragraph at lines 446--450
 
  []
 
@@ -605,25 +605,72 @@ Underfull \hbox (badness 10000) in paragraph at lines 443--447
 Chapter 6.
 [19
 
-] [20]
-Chapter 7.
-[21
+]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.564 c\backslash
+                  ab & 00 & 01 & 11 & 10 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
-] [22
+! Missing $ inserted.
+<inserted text> 
+                $
+l.564 c\backslash ab &
+                       00 & 01 & 11 & 10 \\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.576 c\backslash
+                  ab & 00 & 01 & 11 & 10 \\
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.576 c\backslash ab &
+                       00 & 01 & 11 & 10 \\
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+[20] [21]
+Overfull \hbox (3.94514pt too wide) in paragraph at lines 633--635
+\OT1/cmr/m/n/10 nu-mero -3 in bi-na-rio in com-ple-mento a 2 , [1][1][1]+[0][1]
+[1]= [1][0][1][0]
+ []
+
+[22]
+Overfull \hbox (7.61066pt too wide) in paragraph at lines 669--670
+\OT1/cmr/m/n/10 Volendo molti-pli-care due nu-meri POS-I-TIVI si puo an-cora u
+na volta sfruttare
+ []
+
+[23] [24
 
 ]
-Chapter 8.
-[23] (D:\SOFTWARE\MiKTeX\tex/latex/listings\lstlang1.sty
+Chapter 7.
+[25] [26] (D:\SOFTWARE\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
-Overfull \hbox (12.54771pt too wide) in paragraph at lines 577--579
+Overfull \hbox (12.54771pt too wide) in paragraph at lines 763--765
 \OT1/cmr/m/n/10 La nozione di \OT1/cmr/bx/n/10 ar-chitet-tura \OT1/cmr/m/n/10 i
 n VHDL speci-fica il com-por-ta-mento di un'entita.
  []
 
-[24]
+[27]
 ! Undefined control sequence.
-l.647 \break \nextline
+l.833 \break \nextline
                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -632,7 +679,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.648 ...tre bisogna usare le parentesi !\nextline
+l.834 ...tre bisogna usare le parentesi !\nextline
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -641,7 +688,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.649 ...lla logica del componente.\break\nextline
+l.835 ...lla logica del componente.\break\nextline
                                                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -650,13 +697,13 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 644--651
+Underfull \hbox (badness 10000) in paragraph at lines 830--837
 \OT1/cmr/m/n/10 log-ica del com-po-nente.
  []
 
-[25]
+[28]
 ! Undefined control sequence.
-l.655 ...a architettura possono avvenire \textxtbf
+l.841 ...a architettura possono avvenire \textxtbf
                                                   {più operazioni}. L'ordin...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -665,91 +712,91 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (12.15807pt too wide) in paragraph at lines 654--656
+Overfull \hbox (12.15807pt too wide) in paragraph at lines 840--842
 \OT1/cmr/m/n/10 All'interno della stessa ar-chitet-tura pos-sono avvenire piu 
 op-er-azioni. L'ordine
  []
 
 
-Overfull \hbox (2.13947pt too wide) in paragraph at lines 654--656
+Overfull \hbox (2.13947pt too wide) in paragraph at lines 840--842
 \OT1/cmr/m/n/10 in cui ven-gono spec-ifi-cate all'interno dell'architettura non
  e ril-e-vante perche
  []
 
-[26]
-Overfull \hbox (34.08391pt too wide) in paragraph at lines 672--675
+[29]
+Overfull \hbox (34.08391pt too wide) in paragraph at lines 858--861
 \OT1/cmr/m/n/10 la-mente dalla parte dell'operatore di as-seg-nazione che subis
 ce l'assegnamento.
  []
 
-[27]
-Overfull \hbox (165.58968pt too wide) in paragraph at lines 733--744
+[30]
+Overfull \hbox (165.58968pt too wide) in paragraph at lines 919--930
 [][] 
  []
 
 
-Underfull \hbox (badness 4954) in paragraph at lines 756--759
+Underfull \hbox (badness 4954) in paragraph at lines 942--945
 \OT1/cmr/m/n/10 I pro-grammi che an-dremo ad uti-liz-zare sono ghdl e gtk-wave.
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 756--759
+Underfull \hbox (badness 10000) in paragraph at lines 942--945
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 756--759
+Underfull \hbox (badness 10000) in paragraph at lines 942--945
 \OT1/cmr/m/n/10 rate.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 756--759
+Underfull \hbox (badness 10000) in paragraph at lines 942--945
 
  []
 
 
-! LaTeX Error: \begin{itemize} on input line 356 ended by \end{verbatim}.
+! LaTeX Error: \begin{itemize} on input line 360 ended by \end{verbatim}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.780 \end{verbatim}
+l.966 \end{verbatim}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (18.36166pt too wide) in paragraph at lines 783--784
+Overfull \hbox (18.36166pt too wide) in paragraph at lines 969--970
 []\OT1/cmr/m/n/10 Quindi se vo-lessimo com-pi-lare ed es-eguire l'entita baseE
 n-tity nel file baseTest.vhd
  []
 
-[28] [29] [30
+[31] [32]
+Chapter 8.
+[33
+
+] [34
 
 ]
 Chapter 9.
-[31] [32
-
-]
-Chapter 10.
-[33]
-Underfull \hbox (badness 10000) in paragraph at lines 918--919
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 1104--1105
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 920--922
+Underfull \hbox (badness 10000) in paragraph at lines 1106--1108
 
  []
 
 ! Misplaced alignment tab character &.
 <argument> Preset &
                     clear
-l.923 \textbf{Preset & clear}
-                             
+l.1109 \textbf{Preset & clear}
+                              
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -757,15 +804,15 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[34] (RetiLogicheMadeFriendly.aux) ) 
+[36] (RetiLogicheMadeFriendly.aux) ) 
 Here is how much of TeX's memory you used:
- 5056 strings out of 479334
- 70975 string characters out of 2869356
- 655831 words of memory out of 3000000
- 22472 multiletter control sequences out of 15000+200000
+ 5054 strings out of 479334
+ 70933 string characters out of 2869356
+ 655843 words of memory out of 3000000
+ 22470 multiletter control sequences out of 15000+200000
  409622 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,8n,74p,367b,1865s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 68i,8n,74p,424b,1855s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\matte\AppData\Local\MiKTeX\fonts
 /pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><D:/SOFTWARE/MiKTeX/fonts/type1/publi
 c/amsfonts/cm/cmbx10.pfb><D:/SOFTWARE/MiKTeX/fonts/type1/public/amsfonts/cm/cmb
@@ -779,9 +826,9 @@ msfonts/cm/cmsl10.pfb><D:/SOFTWARE/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10
 .pfb><D:/SOFTWARE/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/SOFTWARE/
 MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><D:/SOFTWARE/MiKTeX/fonts/type
 1/public/amsfonts/cm/cmtt8.pfb>
-Output written on RetiLogicheMadeFriendly.pdf (34 pages, 242228 bytes).
+Output written on RetiLogicheMadeFriendly.pdf (36 pages, 252822 bytes).
 PDF statistics:
- 189 PDF objects out of 1000 (max. 8388607)
+ 195 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

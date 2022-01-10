@@ -10,16 +10,17 @@
 \usepackage{colortbl}
 \graphicspath{{images/}}
 \usepackage{wrapfig}
-\definecolor{codegreen}{rgb}{0,0.6,0}
-\definecolor{codegray}{rgb}{0.5,0.5,0.5}
-\definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{codegreen}{rgb}{0.4, 0.521, 0.454}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.850, 0.203, 0.419}
+
 
 
 \lstdefinestyle{mystyle}{
     backgroundcolor=\color{backcolour},   
     commentstyle=\color{codegreen},
-    keywordstyle=\color{magenta},
+    keywordstyle=\color{codepurple},
     numberstyle=\tiny\color{codegray},
     stringstyle=\color{codepurple},
     basicstyle=\ttfamily\footnotesize,
@@ -178,7 +179,7 @@ Ogni minterm è un implicante della propria f, l'unico problema è che ognuno di
 
 \newpage
 
-La funzione logica sarà data dall' \text{OR} degli implicanti, ma quali cerco ?
+ La funzione logica sarà data dall' \text{OR} degli implicanti, ma quali cerco ?
 \vspace{\baselineskip}
 
 Partendo dalla tabella della verità si possono trovare i minterm della funzione.\\Questi poi possono essere compattati utilizzando le proprietà dell'algebra di Boole (torna molto utile l'adiacenza logica).
@@ -208,7 +209,7 @@ a\backslash bc & 00 & 01 & 11 & 10 \\
 \hline
 \end{tabular}
 \vspace{\baselineskip}
-Nella prima riga partendo dall'alto verranno messe in notazione Grey tutte le possibili combinazioni che la variabile bc può assumere.
+Nella prima riga partendo dall'alto verranno messe in notazione Gray tutte le possibili combinazioni che la variabile bc può assumere.
 Nella prima colonna invece tutte le combinazioni (in questo caso solo due) che la variabile a può assumere.
 
 Nelle celle interne invece si procederà mettendo ad ogni incrocio, al posto di * l'uscita della funzione per i corrispondenti valori di a,b e c.
@@ -220,8 +221,11 @@ Nelle celle interne invece si procederà mettendo ad ogni incrocio, al posto di 
 \newpage
 \section{Insiemi di operatori completi ed uso delle porte logiche}
 
-\section{Mappe a 5 e 6 variabili}
-
+\section{Mappe a 4,5 e 6 variabili}
+Le mappe saranno fatte esattamente come fatto fino a qui con la differenza che aumenterà la loro dimensione in modo esponenziale.
+Infatti per ogni variabile che aggiungiamo le possibili combinazioni degli ingressi vengono raddoppiate !
+(Continueremo ad usare il codice Gray)
+Avremo quindi per mappe a 4 variabili delle mappe quadrate i cui minterm saranno composti da 4 letterali.
 
 \section{Altri metodi per sintetizzare circuiti}
 \section{Minimizzazione congiunta}
@@ -229,20 +233,20 @@ Nelle celle interne invece si procederà mettendo ad ogni incrocio, al posto di 
 \chapter{Circuiti Combinatori Fondamentali}
 
 Di seguito vengono rappresentati, analizzati e spiegati alcuni circuiti combinatori che sono ritenuti fondamentali in quanto compaiono molto spesso e per cui è bene ricordarsi come sono fatti per non perdere tempo.
-\subsection{Multiplexer}
+\section{Multiplexer}
 In generale un multiplexer è una funzione logica che tramite un criterio prende delle variabili in entrata e ne restituisce una di esse.
-\subsubsection{Da 2 a 1}
+\subsection{Da 2 a 1}
 Ora prendiamo in esame il più elementare tra i multiplexer, ovvero quello che fa una decisione tra due varibili in ingresso.
 Questo è il più elementare perchè altrimenti avrei una variabiule in ingresso ed una in uscita e ciò non è un vera scelta.
 
-Partiamo dalla tabella di verità scritta con il codice Grey e cerchiamone gli implicanti primi.
+Partiamo dalla tabella di verità scritta con il codice Gray e cerchiamone gli implicanti primi.
 Partiamo da qui perchè è il punto principale per impostare come funzionerà il nostro multiplexer.\\
 
 \begin{tabular}{|c|c|c|c|c|}
 \hline
 S-AB & 00 & 01 & 11 & 10 \\ \hline
-0 &    0  &  0 & 1  & 1  \\ \hline  
-1 &    0  &  1 & 1  & 0  \\
+0 &    0  &  0 & \cellcolor{yellow}1  & \cellcolor{yellow}1  \\ \hline  
+1 &    0  &  \cellcolor{yellow}1 & \cellcolor{yellow}1  & 0  \\
 \hline
 \end{tabular}\break
 
@@ -275,7 +279,7 @@ In cui i numeri indicano per quale valore di S venga selezionata la corrisponden
 \end{figure}
 
 
-\subsubsection{Da 4 a 1}
+\subsection{Da 4 a 1}
 
 Alla luce di quello che abbiamo appena letto riguardo al multiplexer 2 a 1 possiamo immaginare come realizzare questa versione più in grande.
 
@@ -284,7 +288,7 @@ Posso utilizzare due multiplexer 2 a 1 per ottenere due output e poi questi ulti
 \(S_01 \) si occuperà di scremare tra A e B mentre \(S_02 \) scremerà tra C e D.
 
 
-\subsection{Odd Function}
+\section{Odd Function}
 
 E' una funzione che vale 1 SOLO se il numero di ingressi ad 1 è dispari.\\
 Iniziamo sviluppando la tabella di Karnaugh.\\
@@ -315,7 +319,7 @@ Possiamo ora procedere a raggruppare eventuali term sfruttando l'adiacenza logic
 
 
 
-\subsection{Conta Uni}
+\section{Conta Uni}
 
 Lo scopo di questo circuito è dire in uscita quanti degli ingressi sono a 1. Nel nostro caso ci saranno 3 ingressi, quindi il numero in uscita potrà variare da 0 a 3 ossia da 00 a 11 in binario.
 
@@ -356,17 +360,13 @@ Possiamo perciò ricavare le funzioni logiche per l'uscita s1 ed s2.
 \begin{itemize}
 \item{S1} \\ Osservando la mappa di Karnaugh si può riconoscere nella funzione s1 la stessa forma che poco fa abbiamo chiamato odd function, infatti è proprio quella la funzione di questa uscita.
 
-Perciò \(f_(s1)=\)ab'c'+a'b'c+abc+a'bc'
+Perciò \(f_{S1}=\)ab'c'+a'b'c+abc+a'bc'
 
-\item{S2} \\ Qui invece richiede la ricerca da parte nostra di term all'interno della mappa, da cui otteniamo la seguente funzione : \(f_(s2)=\)bc+ac+ab .
+\item{S2} \\ Qui invece richiede la ricerca da parte nostra di term all'interno della mappa, da cui otteniamo la seguente funzione : \(f_{s2}=\)bc+ac+ab .
 
-\subsection{Codifica e decodifica}
+\section{Codifica e decodifica}
 
-
-\subsubsection{Decodifica per display a 7 segmenti}
-
-
-\subsubsection{Priority Encoder}
+\subsection{Priority Encoder}
 
 Il priority encoder è un circuito la cui uscita corrisponderà all'indice dell'input con maggior precedenza ad 1. 
 Quindi prima di tutto è necessario assegnare ad ogni ingresso un indice, ossia un valore che lo identifichi.
@@ -427,8 +427,11 @@ a\backslash bc & 00 & 01 & 11 & 10 \\
 
 Perciò le equazioni che rispecchiano le uscite sono :
 
-\(f_s1=\)c+b'c \\
-\(f_s2=\)c+ab'
+\(f_{s1}=\)c+b \\
+\(f_{s2}=\)c+ab'
+
+
+E il circuito rappresentante il priority encoder è il seguente:
 
 
 \section{Indifferenze o don't care}
@@ -443,9 +446,18 @@ I diagrammi temporali sono di due tipi:
 \textbf{SENZA RITARDO}\newline
 Quelli senza ritardi vengono impiegati per valutare la funzione logica ed effettuare operazioni di debugging se necessarie.\newline
 \textbf{CON RITARDO}\newline
-Quelle con ritardi invece vengono utilizzati per valutare le prestazioni della funzione logica.\newline
+Quelli con ritardi invece vengono utilizzati per valutare le prestazioni della funzione logica.\newline
 
 Un tempo utile da conoscere riguardo ad un circuito logico è quello massimo che può impiegare per restituire una risposta all'input sottopostogli.
+
+
+\section{Ottenere il diagramma temporale di un circuito}
+
+Prima di tutto è necessario identificare i nodi interni e assegnargli un nome identificativo.
+
+Poi si procede identificando gli stimoli di ingresso e successivamente si valuta l'uscita di ogni nodo sulla base degli ingressi che ha ricevuto.
+
+
 
 \section{Glitch}
 
@@ -463,13 +475,16 @@ Si chiamano \textbf{circuiti aritmetici} tutti quei circuiti che sfruttano porte
 
 \section{Struttura iterativa generica}
 
+Siccome il numero degli ingressi cresce con il numero delle cifre ben presto le dimensioni di input diventano ingestibili ecco che quindi si può ricorrere ad un metodo gerarchico, ossia un metodo iterativo che sfrutta un'operazione atomica e la replicaquante volte è necessario.
+
+
 \section{Somma}
 
-\subsection*{Half adder}
+\subsection{Half adder}
 Iniziamo con la tabella di verità del circuito che dovrebbe sommare due ingressi da 1 bit ciascuno.
 Esso restituirà un risultato con 2 bit in uscita.
 Indichiamo con a e b i due ingressi, mentre con s il bit meno significativo del risultato e con c quello più significativo.
-La lettera c ci ricorderà anche tale cifra è dovuta al carry dell'operazione.
+La lettera c ci ricorderà anche che tale cifra è dovuta al carry dell'operazione.
 \newline
 \begin{tabular}{|c|c|c|c|}
 
@@ -484,44 +499,215 @@ a & b & c & s \\ \hline
 
 
 
-Mettendo s e c in due mappe di Karnaugh separate si possono costruire le funzioni logiche di ognuno.
+Mettendo s e c in due mappe di Karnaugh separate si possono costruire le funzioni logiche di ognuno.\\
 Iniziamo con S:
 
 \begin{tabular}{|c|c|c|}
 \hline
 a/b & 0 & 1 \\ \hline
-0   & 0 & 1 \\ \hline
-1   & 1 & 0 \\ \hline
+0   & 0 & \cellcolor{yellow}1 \\ \hline
+1   & \cellcolor{yellow}1 & 0 \\ \hline
 \end{tabular}
 
-La funzione logica che rappresenta l'uscita s quindi è aXORb
-
+La funzione logica che rappresenta l'uscita s quindi è \(f_s=\)aXORb .\\
 Passando a C otteniamo poi:
 
 \begin{tabular}{|c|c|c|}
 \hline
 a/b & 0 & 1 \\ \hline
 0   & 0 & 0 \\ \hline
-1   & 0 & 1 \\ \hline
+1   & 0 & \cellcolor{yellow}1 \\ \hline
 \end{tabular}
 
-La funzione logica che esprime il comportamento di C è aANDb
+La funzione logica che esprime il comportamento di C è \(f_c=\)aANDb .
 
 Il circuito dell'half adder è:
 
 
-\subsection*{Full adder}
+\subsection{Full adder}
 
-\subsection*{Prestazioni}
+L'half adder però non tiene conto di un'evetuale riporto proveniente dal calcolo fatto in precedenza.
+Infatti se vogliamo sfruttare un'architettura gerarchica bisogna tener conto che la somma atomica fatta per la cifra con un grado di significatività in meno rispetto a quella che stiamo sommando potrebbe aver generato un carry con la conseguente necessità di doverne tener conto ora che facciamo la somma.
+
+
+Il problema si risolve aggiungendo un ingresso all'half adder per poter tenere conto di un0 eventuale carry non nullo.
+
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+a & b & c & C & s \\
+\hline
+0 & 0 & 0 & 0 & 0 \\
+\hline
+0 & 0 & 1 & 0 & 1 \\
+\hline
+0 & 1 & 1 & 1 & 0 \\
+\hline
+1 & 1 & 1 & 1 & 1 \\
+\hline
+1 & 1 & 0 & 1 & 0 \\
+\hline
+1 & 0 & 0 & 0 & 1 \\
+\hline
+1 & 0 & 1 & 1 & 0 \\
+\hline
+0 & 1 & 0 & 0 & 1 \\
+\hline 
+
+\end{tabular}
+
+
+
+La mappa di Karnaugh per il valore di S è :
+
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+c\backslash ab & 00 & 01 & 11 & 10 \\
+\hline
+0              & 0  & \cellcolor{yellow}1  &  0 & \cellcolor{yellow}1  \\
+\hline
+1              & \cellcolor{yellow}1  & 0  & \cellcolor{yellow}1  & 0  \\
+\hline
+\end{tabular}
+
+La mappa di Karnaugh per il valore di C è :
+
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+c\backslash ab & 00 & 01 & 11 & 10 \\
+\hline
+0              & 0  & 0  &  \cellcolor{yellow}1 & 0  \\
+\hline
+1              & 0  & \cellcolor{yellow}1  & \cellcolor{yellow}1  & \cellcolor{yellow}1  \\
+\hline
+\end{tabular}
+
+COnfrontando il circuito con quelli che abbiamo già visto ci si accorge che è lo stesso circuito del conta uni !
+
+\subsection{Sommatore ripple carry}
+Ora quindi possiamo unire i circuiti dell'half adder e del full adder per ottenere un sommatore con un arbitrario numero di ingressi.
+Analogamente possiamo ottenere un sommatore con arbitrario numero di ingressi anche con tutti e soli full adder a patto però di mettere a 0 l'adder della cifra meno significativa così da renderlo un half adder a tutti gli effetti.
+
+Il numero di uscite del ripple carry è pari al numero di ingressi +1 perchè deve anche mostrare un eventuale riporto dovuto all'ultimo sommatore.
+
+
+\subsubsection*{Prestazioni}
+
+Il sommatore ripple carry ha dimensioni ridotte che aumentano linearmente con l'aggiunta di degli ingressi.
+
+La catena dei carry forma un cammino molto lungo e ciò fa si che il sommatore sia lento con una lentezza proporzionale al numero di bit .
+
+Ciò fa si che sussistano delle alee impossibili da eliminare che fanno cambiare il risultato finchè il carry non si è propagato fino all'ultimo full adder.
+Questo perchè gli adder calcolano la somma prima che un eventuale carry venga comunicato dagli adder che si occupano delle cifre meno significative e quindi in caso di carry non nullo dovrà rifare il calcolo per quella cifra.
+
+
+\subsection{Sommatore carry look-ahead}
+
+Permette di ottimizzare il calcolo del carry riducendo a 2 livelli questa operazione. Ciò a però complica la realizzazione.
+
+Si comincia separando la somma dal carry. 
+
 
 \section{Sottrazione}
+
+Molto siile alla somma però ora ci possono essere dei prestiti dalle cifre più significative.
+Inoltre il risultato può essere negativo.
+
+
+Nel caso di risultati negativi, il calcolo si fa scambiando i numeri e poi mettendo un bit di segno.
+
+Scambiare però i numeri è come scambiare due cavi, è un'operazione complicata !
+
+Molto più semplice è l'uso di \textbf{notazione in complemento a 2}. 
+
+\subsection{Notazione in complemento a 2}
+
+La notazione in complemento a 2 permette di rappresentare i numeri negativi in binario in un modo che a noi torna comodo per poterci fare operazioni algebriche.\\
+Solitamente con n bit a disposizione noi avremmo la possibilità di rappresentare \(2^n\) numeri in binario, che sono i numeri da 0 (n zeri) fino a \(2^n-1\) (n uni).
+
+Con la notazione in complemento a 2 invece un qualsiasi numero M è rappresentato come \(2^n-M\).
+
+\begin{itemize}
+\item{\(M<2^n\)}
+Per esempio avendo 3 bit [*][*][*] e volendo rappresentare il numero 5 in binario si avrebbe [1][0][1].
+In complemento a 2 questo è [1][1][1]-[1][0][1]=[0][1][0] ossia 2.
+\item{\(M>2^n\)}
+Per esempio avendo 3 bit [*][*][*] e volendo rappresentare il numero -3 in binario in complemento a 2 , [1][1][1]+[0][1][1]= [1][0][1][0] ossia 9.
+
+\end{itemize}
+
+Questo perchè mettendo in una tabella il complemento a 2 si ottiene il seguente risultato:
+
+\begin{tabular}{|c|c|c|c||c|c|c|c|}
+\hline
+4 & 2 & 1 & M & -4 & 2 & 1 & M  \\
+\hline
+0 & 0 & 0 & 0 &  0 & 0 & 0 & 0  \\
+\hline
+1 & 1 & 1 & 7 &  1 & 1 & 1 & -1 \\
+\hline
+1 & 1 & 0 & 6 &  1 & 1 & 0 & -2 \\
+\hline
+1 & 0 & 1 & 5 &  1 & 0 & 1 & -3 \\
+\hline
+1 & 0 & 0 & 4 &  1 & 0 & 0 & -4 \\
+\hline
+0 & 1 & 1 & 3 &  0 & 1 & 1 & 3  \\
+\hline
+0 & 1 & 0 & 2 &  0 & 1 & 0 & 2  \\
+\hline
+0 & 0 & 1 & 1 &  0 & 0 & 1 & 1  \\
+\hline
+\end{tabular}
+
+
+
+
+
+\newpage
 \section{Moltiplicazione}
 
+Volendo moltiplicare due numeri POSITIVI si può ancora una volta sfruttare la struttura gerarchica.
 
+Utilizzando la rappresentazione binaria le moltiplicazioni tra due numeri possono essere costituite dalle seguenti combinazioni :
+
+\begin{tabular}{|c|c|c|}
+\hline
+a & b & res \\
+\hline
+0 & 0 & 0 \\
+\hline
+1 & 0 & 0 \\
+\hline
+0 & 1 & 0 \\
+\hline
+1 & 1 & 1 \\
+\hline
+\end{tabular}
+
+Quello sopra descritto è esattamente il comportamento della porta AND, per convincersene basta confrontare le due tabelle della verità.
+
+
+Perciò il prodotto di due numeri ciascuno costituito da 1 bit ha come risultato l'operazione logica AND tra di essi.
+
+Rendiamo ora il moltiplicatore multi-bit tramite struttura gerarchica:
+
+Dati due numeri a e b rispettivamente con m e n bit ciascuno, il moltiplicatore a*b sarà una concatenazione in cui il bit meno significativo di b moltiplicherà tutto a e questo si fa mettendo m porte and in cui entrano una cifra di a e la meno significativa di b.
+Poi ciò produce un risultato, il cui bit meno significativo sarà il bit meno significativo del risultato finale mentre invece il resto del risultato è parziale e dovrà essere sommato al risultato della moltiplicazione tra le cifre di a e il bit secondo bit meno significativo.
+Iterando questo processo si ottiene il risultato cercato.
+
+Attenzione che mentre la somma tra due numeri con n cifre può produrre al massimo un numero con n cifre+1 il prodotto tra due numeri di m ed n cifre può produrre un numero di cifre fino a 2*n, in quanto ogni moltiplicazione produce n cifre e per ogni risultato parziale ci sarò uno shift verso sinistra di 1 quindi alle n cifre si sommano n-1 cifre +1 per un eventuale carry out .
+
+Il circuito del moltiplicatore multi-bit è il seguente :
 
 
 \chapter{Linguaggi di descrizione dell'hardware}
-\chapter{VHDL}
+
+Una volta progettato un circuito e disegnato si potrebbe procedere a comprare le porte logiche ed assemblarlo ma la natura di test che quindi impone un alto tasso di variabilità del circuito durante la fase di progettazione ed affinamento e la crescente dimensione dei circuiti al giorno d'oggi non favoriscono questo approccio.
+Molto meglio è invece utilizzare un linguaggio di descrizione che permette di simulare il funzionamento delle porte e quindi dei circuiti.
+
+
+
+\section*{VHDL}
 
 Il linguaggio che utilizzeremo è il \textbf{VHDL}, ossia \textbf{V}ery highspeed integrated circuit \textbf{H}ardware \textbf{D}escription \textbf{L}anguage.
 
@@ -543,7 +729,7 @@ e secondo 3 viste
 
 
 \newpage
-\section{Entità}
+\subsection{Entità}
 
 La nozione di \textbf{entità} in VHDL corrisponde alla rappresentazione di un blocco \textbf{SENZA SPECIFICARNE} la logica interna.
 
@@ -572,7 +758,7 @@ port
 end  nome_entity;
 \end{lstlisting}
 
-\section{Architettura}
+\subsection{Architettura}
 
 La nozione di \textbf{architettura} in VHDL specifica il comportamento di un'entità.
 (Ad un'entità possono corrispondere più architetture.)
@@ -591,7 +777,7 @@ end architecture nomearchitettura;
 \end{lstlisting}
 
 
-\section{Testbench}
+\subsection{Testbench}
 
 Il \textbf{testbench} è un'unione della vista dataflow con quella strutturale che permette la simulazione del circuito dando dei dati in ingresso.
 
