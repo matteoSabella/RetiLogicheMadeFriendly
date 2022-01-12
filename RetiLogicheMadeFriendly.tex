@@ -46,7 +46,7 @@
 
 \maketitle
 
-Al mio fedele compagno di avventure, che mi piaceva girare a letto come un flip flop e che mi ha consentito di mantenere la fede.
+%Al mio fedele compagno di avventure, che mi piaceva girare a letto come un flip flop e che mi ha consentito di mantenere la fede.%
 
 \chapter{Da analogico a digitale}
 Nell'era pre digitale i segnali erano analogici, ossia il loro valore spaziava su una gamma potenzialmente infinita di valori.
@@ -842,9 +842,11 @@ g1 : entitadatestare port map()
 Il testbench può essere fatto nello stesso file di testo in cui si dichiarano le entità e le architetture che poi andranno ad essere usate.
 
 
-\subsection*{Components}
+\subsection{Components}
 
 Può capitare di avere una funzione logica implementata in un file e di volerla recuperare all'interno di un progetto più ampio o per eseguirne un test bench ma senza sporcare il codice.
+
+Questo si può fare alla  \textbf{vista strutturale}.
 
 Per fare ciò è necessario dunque all'interno del nuovo file pescare questa risorsa e ciò è possibile tramite un component.
 
@@ -857,8 +859,22 @@ component nomecomponent is
 end component;
 \end{lstlisting}
 
+Altrimenti si può fare direttamente all'interno dell'architettura che lo utilizzerà :
 
-\section*{Operatori,Identificatori e operazioni multiple}
+\begin{lstlisting}[language=VHDL]
+
+architecture nomeArchitetturaCheUtilizzeraComponent of nomeEntita is
+
+begin
+
+	identificatoreIstanzaComponent : entity work.nomeComponent port map ();
+	
+	--resto del codice
+
+
+\end{lstlisting}
+
+\subsection{Operatori,Identificatori e operazioni multiple}
 
 Il linguaggio VHDL ha di default tutti gli operatori booleani .
 L'operatore \textbf{NOT} è l'unico con la \textbf{priorità alta} mentre gli altri hanno tutti la stessa priorità e quindi verrà data importanza all'ordine o ad eventuali parentesi per decidere quale operazione fare per prima.\\
@@ -879,77 +895,115 @@ Nella descrizione delle architetture a volte è necessario instanziare variabili
 
 Inoltre a differenza di altri lignuaggi in VHDL l'ordine in cui sono dichiarate le equazioni nell'architettura non è importante perchè avvengono contemporaneamente.
 
-\section*{Parametri formali ed effettivi}
+\subsection{Parametri formali ed effettivi}
 
 Le funzioni si richiamano nell'architettura tramite \textbf{port map} seguito da \textbf{notazione posizionale} e la loro instanziazione sarà contemporanea.
-All'interno della stessa architettura possono avvenire \textbf{più operazioni}. L'ordine in cui vengono specificate all'interno dell'architettura non è rilevante perchè vanno concepite come un sistema in cui \textbf{procedono in parallelo}.
-
+All'interno della stessa architettura possono avvenire \textbf{più operazioni}.\\
+L'ordine in cui vengono specificate all'interno dell'architettura non è rilevante perchè vanno concepite come un sistema in cui \textbf{procedono in parallelo}.\\
 \begin{lstlisting}[language=VHDL]
 nome_istanza : nome_master port map(parametri effettivi)
-\end{lstlisting}
+\end{lstlisting}\vspace{\baselineskip}
+\textbf{portmap} è un operatore che permette di mappare le porte dell'istnza dell'entità che si vuole utilizzare con segnali provenienti dall'entità contenitrice, così che possano lavorare insieme.\vspace{\baselineskip}\\
 Si può anche optare per un'assegnazione di tipo esplicito e ciò aiuta a devitare gli errori e ad indentificarli prima.
+Questo si fa con l'operatore "=>" in cui a sx c'è la porta dell'entità che sto mappando e a destra un segnale dell'entità contenente.
+
+\begin{lstlisting}[language=VHDL]
+
+architecture strutturale of Adder4 is
+
+begin
+
+FA0: entity work.full_adder port map (a=>A(0),b=>B(0),...);
+
+
+--resto del codice
+
+end architecture strutturale;
+
+
+\end{lstlisting}
+
 
 \newpage
-\section{Modi dei segnali}
+\subsection{Modi dei segnali}
 
 I segnali possono assumere vari tipologie e ognuna di esse comporta un certo set di operazioni ammesse o no.
 
 \begin{itemize}
 
-\item\textbf{IN}
-I segnali in in possono essere solamente letti e perciò possono stare solo a destra dell'operatore di assegnazione.
+\item\textbf{IN}\\
+I segnali in possono essere solamente letti e perciò possono stare solo a destra dell'operatore di assegnazione.
 
-\item\textbf{OUT}
+\item\textbf{OUT}\\
 I segnali di out possono essere solo scritti e perciò staranno solamente dalla parte dell'operatore di assegnazione che subisce l'assegnamento.
-Inoltre nelle quazioni all'interno di un'architettura possono comparire una volta sola, questo perchè none ssendo sequenziali bensì contemporanee le istruzioni avrei un conflitto nell'assegnazione.
+Inoltre nelle quazioni all'interno di un'architettura possono comparire una volta sola, questo perchè non essendo sequenziali bensì contemporanee le istruzioni avrei un conflitto nell'assegnazione.
 
-\item\textbf{BUFFER}
+\item\textbf{BUFFER}\\
 I segnali buffer sono segnali in out ma leggibili e perciò possono stare da entrambe le parti di un'assegnazione.
-Ma possono subire un'assegnazione comunque una sola volta.
+Ma possono subire un'assegnazione una sola volta.
 
 \begin{lstlisting}[language=VHDL]
 port(var : buffer bit);
 \end{lstlisting}
 
-\item\textbf{SIGNAL}
-Sono segnali sia in ingresso sia in uscita ( venendo valutati una volta sola).
+\item\textbf{SIGNAL}\\
+Sono segnali sia in ingresso sia in uscita(venendo valutati una volta sola).
 
 \begin{lstlisting}[language=VHDL]
 --si scrive nell'architecture PRIMA del begin
 signal S: bit_vector(3 downto 1);
 \end{lstlisting}
 
-\item\textbf{INOUT}
-Sono componenti analoghi ad i buffer ma possono avere driver dall'esterno.
-
-Possono subire assegnazioni più volte ma stando attenti ai conflitti. (es. buffer tri-state)
+\item\textbf{INOUT}\\
+Sono componenti analoghi ad i buffer ma possono avere driver dall'esterno.\\
+Possono subire assegnazioni più volte ma stando attenti ai conflitti.\\(es. buffer tri-state)
 
 \begin{lstlisting}[language=VHDL]
 --in entity
 port (bus: inout bit)
 \end{lstlisting}
-\item\textbf{GENERIC}
 
+\item\textbf{GENERIC}\\
 Permette di parametrizzare un segnale così da rendere un'entità più versatile e riutilizzabile.
-
-nella definizione dell'entità si scrive
+Nella definizione dell'entità si scrive
 \begin{lstlisting}[language=VHDL]
 generic(nomesegnale : tiposegnale)
 \end{lstlisting}
-
-poi nella definizione dell'architettura di quella data entità si scriverà 
+Poi nella definizione dell'architettura di quella data entità si scriverà 
 \begin{lstlisting}[language=VHDL]
-g1 : entita generic map(nomesegnale <= valore)
+g1 : entita generic map(nomesegnale => valore)
 \end{lstlisting}
 oppure si può usare la notazione posizionale nel caso di più generic per rendere tutto più compatto.
-\item\textbf{CONSTANT}
 
+\item\textbf{CONSTANT}\\
 Permette di definire costanti per leggere ed interpretare il codice più agevolmente e poi per facilitare eventuali modifiche.
 
 \begin{lstlisting}[language=VHDL]
 --in architecture PRIMA di begin
-constant nomecostante : tipo :=valore;
+constant nomecostante : tipo := valore;
 \end{lstlisting}
+\end{itemize}
+
+
+\subsection{Tipi dei segnali}
+
+\begin{itemize}
+
+\item\textbf{bit}\\
+Tipo di segnale che può assumere solamente i valori 0 ed 1.
+\item\textbf{bit\textunderscore vector}\\
+Tipo di segnale che corrisponde ad un array di una certa dimensione.
+Si dischiara come 
+\begin{lstlisting}[language=VHDL]
+nomeSegnale : bit_vector(estremoSup downto estremoInf);
+\end{lstlisting}
+oppure
+\begin{lstlisting}[language=VHDL]
+nomeSegnale : bit_vector(estremoInf to estremoSup);
+\end{lstlisting}
+\item\textbf{integer}\\
+Tipo di dato che corrisponde ad un intero a 32 bit. Poco conveniente da utilizzare.
+\item\textbf{time}\\
 
 \item\textbf{TIPI DEFINITI DALL'UTENTE}
 
@@ -960,34 +1014,28 @@ type nomedeltipo is tipo
 
 \item\textbf{TIPI COMPOSITI}
 
+Vanno dichiarati come prima cosa tra la dichiarazione dell'architettura che li userà e il begin, questo perchè così saranno utilizzabili da eventuali signal per esempio dichiarati subito dopo.
+
 \begin{tabular}{|c|c|}
 \hline
 enum & type nomeenum is (lista di valori che può assumere)\\
 \hline
 array & type nomearray is array (come sono gli indici) of tipodicontenuto \\
 \hline
-struttura & type nomestruttura is record (dichiaro insieme di variabili che lo costituiscono )
-end record \\
+struttura & type nomestruttura is record end record \\
 \hline
 
 \end{tabular}
 
-
-
+(Nei tipi struttura dove c'è scritto record dichiaro insieme di variabili che lo costituiscono)
 
 \end{itemize}
 
+\newpage
+\subsubsection{Tipo std\_logic}
 
-
-
-
-
-\section*{Tipo std\_logic}
-
-Il tipo standard logic (std\_logic) è un' estensione del concetto di bit che permette di rappresentare ulteriori stati logici.
-
-
-\begin{tabular}{|c c|}
+Il tipo standard logic (std\_logic) è un' estensione del concetto di bit che permette di rappresentare ulteriori stati logici.\vspace{\baselineskip}\\
+\begin{tabular}{|c|c|}
 \hline
 U & Undefined \\
 \hline
@@ -1008,32 +1056,51 @@ H & segnale debole tendente ad 1 \\
 - & don't care \\
 \hline
 \end{tabular}
+\vspace{\baselineskip}\\
+La libreria standard 1164 della IEEE si può importare con il seguente codice:
+
+\begin{lstlisting}[language= VHDL]
+--l'importazione della libreria va fatta in cima al codice
+library ieee;
+use ieee.std_logic.all;
+
+\end{lstlisting}
+
+L'introduzione di nuovi valori assumuibili dal tipo bit comporta una necessaria estensione della definizione degli operatori logici, ciò si chiama \textbf{overloading dell'operatore}.
 
 
-\section*{Espressioni condizionate}
+Nella definizione dell'entità quindi ora una porta potrà essere invece di bit std\textunderscore logic e std\textunderscore logic\textunderscore vector invece di bit\textunderscore vector.
 
-Sono operazioni che si basano sul principio del multiplexer.
 
+
+\subsection{Espressioni condizionate}
+
+Sono operazioni che si basano sul principio del multiplexer e che vanno utilizzate nell'architettura di un'entità.\\
 L'assegnazione può essere di due tipi:
 
 \begin{itemize}
-\item\textbf{Assegnazione Condizionata}
+\item\textbf{Assegnazione Condizionata}\\
 Sono definite nella libreria ieee.
 Vanno implementate nell'architettura e sono tra di loro combinabili.
-
-\begin{verbatim}
-opzione1 when condizione else opzione2
-\end{verbatim}
-\item\textbf{Assegnazione Selezionata}
-
-E' simile ad uno switch e utilizza una variabile di tipo signal per effettuare la decisione.
+\begin{lstlisting}[language = VHDL]
+--architettura di un'entita
+identificatore <= opzione1 when condizione else opzione2,
+                  opzione2 ;
+\end{lstlisting}
+\item\textbf{Assegnazione Selezionata}\\
+E' simile ad uno switch e utilizza un segnale per effettuare la decisione.
 La condizione può anche considerare più segnali così da essere molto flessibile.
 
-\begin{verbatim}
+\begin{lstlisting}[language=VHDL]
 with segnale select
-\end{verbatim}
+identificatore <=opzione1 when condizione1,
+                 opzione2 when condizione2,
+                 opzione3 when condizione3 | condizione 4,
+                 opzione4 when others;
+\end{lstlisting}
 \end{itemize}
 
+La differenza principale tra di esse è che l'assegnazione condizionata può operare condizioni su segnali diversi mentre quella selezionata no. Inoltre da una priorità alle condizioni mentre quella selezionata no !
 
 \chapter{Stile Comportamentale}
 

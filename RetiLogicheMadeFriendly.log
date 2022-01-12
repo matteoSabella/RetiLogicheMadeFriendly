@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.17)  10 JAN 2022 21:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.17)  12 JAN 2022 13:12
 entering extended mode
 **./RetiLogicheMadeFriendly.tex
 (RetiLogicheMadeFriendly.tex
@@ -229,7 +229,9 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [1
 
 
-{C:/Users/matte/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2]
+{C:/Users/matte/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2
+
+]
 Chapter 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 59.
@@ -245,9 +247,7 @@ Overfull \hbox (4.07408pt too wide) in paragraph at lines 52--62
  [] 
  []
 
-[3
-
- <./images//SchemaDigitale.png>] [4
+[3 <./images//SchemaDigitale.png>] [4
 
 ]
 Chapter 2.
@@ -481,65 +481,69 @@ n-tity nel file baseTest.vhd
 [26] (D:\SOFTWARE\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 ) [27]
-Underfull \hbox (badness 10000) in paragraph at lines 863--865
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 866--867
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 868--869
+Underfull \hbox (badness 10000) in paragraph at lines 879--881
 
  []
 
 [28]
-Underfull \hbox (badness 10000) in paragraph at lines 872--874
+Underfull \hbox (badness 10000) in paragraph at lines 882--883
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 875--876
+Underfull \hbox (badness 10000) in paragraph at lines 884--885
 
  []
 
-[29]
-Overfull \hbox (4.3061pt too wide) in paragraph at lines 902--905
-\OT1/cmr/m/n/10 mente dalla parte dell'operatore di as-seg-nazione che subisce 
-l'assegnamento.
+
+Underfull \hbox (badness 10000) in paragraph at lines 888--890
+
  []
 
-[30]
-Overfull \hbox (143.58968pt too wide) in paragraph at lines 963--974
+
+Underfull \hbox (badness 10000) in paragraph at lines 891--892
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 900--903
+
+ []
+
+[29] [30] [31]
+Underfull \hbox (badness 10000) in paragraph at lines 1006--1007
+
+ []
+
+
+Overfull \hbox (30.53403pt too wide) in paragraph at lines 1019--1029
 [][] 
  []
 
-[31] [32
-
-]
+[32] [33] [34]
 Chapter 8.
-[33] [34
+[35
+
+] [36
 
 ]
 Chapter 9.
-[35]
-Underfull \hbox (badness 10000) in paragraph at lines 1112--1113
+[37]
+Underfull \hbox (badness 10000) in paragraph at lines 1179--1180
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1114--1116
+Underfull \hbox (badness 10000) in paragraph at lines 1181--1183
 
  []
 
-[36] (RetiLogicheMadeFriendly.aux) ) 
+[38] (RetiLogicheMadeFriendly.aux) ) 
 Here is how much of TeX's memory you used:
- 5054 strings out of 479334
- 70938 string characters out of 2869356
- 655838 words of memory out of 3000000
- 22470 multiletter control sequences out of 15000+200000
+ 5078 strings out of 479334
+ 71331 string characters out of 2869356
+ 675838 words of memory out of 3000000
+ 22494 multiletter control sequences out of 15000+200000
  409622 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  68i,8n,74p,424b,1727s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -556,9 +560,9 @@ msfonts/cm/cmsl10.pfb><D:/SOFTWARE/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10
 .pfb><D:/SOFTWARE/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/SOFTWARE/
 MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><D:/SOFTWARE/MiKTeX/fonts/type
 1/public/amsfonts/cm/cmtt8.pfb>
-Output written on RetiLogicheMadeFriendly.pdf (36 pages, 252343 bytes).
+Output written on RetiLogicheMadeFriendly.pdf (38 pages, 258557 bytes).
 PDF statistics:
- 195 PDF objects out of 1000 (max. 8388607)
+ 204 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
