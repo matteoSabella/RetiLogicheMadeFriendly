@@ -711,9 +711,9 @@ I programmi che andremo ad utilizzare sono ghdl e gtkwave.\\
 Una volta scaricate le versioni stabili correnti adatte al vostro dispositivo si consiglia di estrarre i contenuti di entrambe le cartelle in due cartelle separate.\\
 Poi aggiungere nel caso di windows i percorsi delle cartelle bin al PATH così da poterci accedere ogni volta senza dover andare nel percorso preciso in cui andremo a mettere gli eseguibili.
 
-\subsubsection*{ghdl}
-\subsubsection*{gtkwave}
-\subsubsection*{Comandi frequenti}
+\subsubsection{ghdl}
+\subsubsection{gtkwave}
+\subsubsection{Comandi frequenti}
 
 I comandi più frequenti sono:
 
@@ -1102,37 +1102,79 @@ identificatore <=opzione1 when condizione1,
 
 La differenza principale tra di esse è che l'assegnazione condizionata può operare condizioni su segnali diversi mentre quella selezionata no. Inoltre da una priorità alle condizioni mentre quella selezionata no !
 
-\chapter{Stile Comportamentale}
+\subsection{Stile Comportamentale}
 
 Permette di calcolare i valori di uscita tramite algoritmi.
-La peculiarità di questo stile è che a differenza di quanto visto fino ad ora le parti di codice sono eseguite in ordine \textbf{sequenziale}.
-
-
+La peculiarità di questo stile è che a differenza di quanto visto fino ad ora le parti di codice sono eseguite in \textbf{ordine sequenziale}.\\\\
 \textbf{Processo:}
 \begin{itemize}
-\item compare all'interno di dell'architettura.
-\item compare all'interno di una \textbf{sensitivity list}, ossia una lista di segnali che definiscono le condizioni di attivazioni de processo.
-Ogni volta che un parametro della lista varia il processo verrà eseguito.
+\item Compare all'interno di dell'architettura.
+\item Compare all'interno di una \textbf{sensitivity list}, ossia una lista di segnali che definiscono le condizioni di attivazioni del processo.\\\textbf{Ogni volta che un parametro della lista varia il processo verrà eseguito}.
 
 
 \end{itemize}
 
-\begin{verbatim}
+\begin{lstlisting}[language=VHDL]
 architecture comportamentale of mio_modulo is
 begin
 label: process (sensitivity-list) is
 	dichiarazioni di tipi,costanti,segnali,variabili;
 	begin
-	statement sequenziale;
-	statement sequenziale;
-	statement sequenziale;
+	 statement sequenziale;
+	 statement sequenziale;
+	 statement sequenziale;
 	end process;
 end architecture comportamentale;
-\end{verbatim}
+\end{lstlisting}
+
+Nello stile comportamentale possono essere usati "if then elsif else end if" all'interno di processi.
+
+
+\subsubsection{Variabili}
+
+Sono quantità definibili nei processi che vengono aggiornate immediatamente al momento dell'assegnazione mantenendo il loro valore tra un'attivazione e la successiva.
+
+\begin{lstlisting}[language=VHDL]
+
+process (sensitivity-list) is
+
+	variable nameVariable : tipodivariabile;
+	
+begin
+	namevariabile:= valoredaassegnare
+
+end process;
+
+
+\end{lstlisting}
+
+\subsubsection{Cicli}
+
+
+\begin{lstlisting}[language=VHDL]
+
+process (sensitivity-list) is
+	--eventuali dichiarazioni
+begin 
+	for i in estremoSuperiore loop
+		--codice del ciclo
+	end loop;
+	--eventuali variabili da restituire andranno assegnate qui ad uscite o segnali cos' da non essere perse all'uscita dal ciclo.
+end process;
+\end{lstlisting}
+
+\begin{itemize}
+
+\item\textbf{Variabile i} viene dichiarata automaticamente.
+
+\item\textbf{Estremo superiore} è il valore a cui si smetterà di entrare nel ciclo quando i lo raggiungerà.
+
+\end{itemize}
+
 
 \chapter{Macchine a stati}
 
-\section*{Ciruiti sequenziali}
+\section{Ciruiti sequenziali}
 Ci occupiamo ora di circuiti che possono \textbf{ricordare} la loro storia.
 QUesto sarà possibile grazie ad un nuovo ingresso che codificherà l'ultimo stato vissuto dal circuito.
 
