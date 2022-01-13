@@ -1071,6 +1071,22 @@ L'introduzione di nuovi valori assumuibili dal tipo bit comporta una necessaria 
 
 Nella definizione dell'entità quindi ora una porta potrà essere invece di bit std\textunderscore logic e std\textunderscore logic\textunderscore vector invece di bit\textunderscore vector.
 
+\subsubsection{Tipo numeric\_std}
+
+Introduce due nuovi tipi : signed e unsigned.
+Sono due vettori come std\textunderscore logic \textunderscore vector ma per cui si conosce la definizione delle operazioni algebriche.
+
+Signed usa la rappresentazione in complemento a 2.
+
+
+Si inseriscono nel codice vhdl come segue:
+
+\begin{lstlisting}[language=VHDL]
+library ieee;
+use ieee.numeric_std.all;
+\end{lstlisting}
+
+
 
 
 \subsection{Espressioni condizionate}
@@ -1171,10 +1187,25 @@ end process;
 
 \end{itemize}
 
+\subsubsection{Testbench con i processi}
 
-\chapter{Macchine a stati}
+ 
 
-\section{Ciruiti sequenziali}
+
+
+
+\chapter{Progetto Logico Sequenziale}
+
+I circuiti analizzati fino ad ora sono stati di tipo combinatorio, ossia che restituiscono un'uscita basandosi esclusivamente sugli input che ricevono.
+Non hanno capacità di ricordare. \\
+La capacità di ricordare si può realizzare basando le future scelte su feedback dalle precedenti e ciò si fa riportando in ingresso l'uscita (anello).
+Ciò amplia la tabella di verità e consente appunto capacità di memoria perchè le scelte si baseranno anche sullo stato precedente del circuito.
+
+Ciò produrrà equazioni booleane dove l'uscita comparirà ad entrambi i membri propriò a causa degli anelli di feedback. 
+
+\section{Macchine a stati}
+
+\subsection*{Ciruiti sequenziali}
 Ci occupiamo ora di circuiti che possono \textbf{ricordare} la loro storia.
 QUesto sarà possibile grazie ad un nuovo ingresso che codificherà l'ultimo stato vissuto dal circuito.
 
@@ -1191,10 +1222,10 @@ Un circuito sequenziale può essere di due tipi:
  \begin{itemize}
  \item \textbf{Sincrono}: Sono circuiti che aggiornano lo stato presente a cicli, detti \textbf{cicli di clock}
  \item \textbf{Asincrono}: Sono circuiti in cui lo stato presente continua ad aggiornarsi e ciò può essere compromettente per esempio nel caso di circuiti suscettibili a glitch.
- \end{itemize}
+\end{itemize}
 
 
-\section*{Elementi di memoria}
+\subsection*{Elementi di memoria}
 
 Gli elementi che verranno di seguito introdotti sono da considerare come black box, di cui verrà descritto solo il loro utilizzo mentre come implementano le porte logiche al loro interno per ottenere tali risultati verrà introdotto in altri corsi.
 

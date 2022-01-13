@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.17)  12 JAN 2022 16:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.17)  13 JAN 2022 11:14
 entering extended mode
 **./RetiLogicheMadeFriendly.tex
 (RetiLogicheMadeFriendly.tex
@@ -521,7 +521,7 @@ Overfull \hbox (30.53403pt too wide) in paragraph at lines 1019--1029
  []
 
 [32] [33]
-Underfull \hbox (badness 10000) in paragraph at lines 1107--1110
+Underfull \hbox (badness 10000) in paragraph at lines 1123--1126
 
  []
 
@@ -530,24 +530,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 1107--1110
 ]
 Chapter 8.
 [37]
-Underfull \hbox (badness 10000) in paragraph at lines 1221--1222
+Underfull \hbox (badness 10000) in paragraph at lines 1252--1253
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1223--1225
+Underfull \hbox (badness 10000) in paragraph at lines 1254--1256
 
  []
 
 [38] (RetiLogicheMadeFriendly.aux) ) 
 Here is how much of TeX's memory you used:
- 5096 strings out of 479334
- 71598 string characters out of 2869356
+ 5097 strings out of 479334
+ 71614 string characters out of 2869356
  675838 words of memory out of 3000000
- 22512 multiletter control sequences out of 15000+200000
+ 22513 multiletter control sequences out of 15000+200000
  409622 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,8n,74p,424b,1731s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 68i,8n,74p,424b,1727s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\matte\AppData\Local\MiKTeX\fonts
 /pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><D:/SOFTWARE/MiKTeX/fonts/type1/publi
 c/amsfonts/cm/cmbx10.pfb><D:/SOFTWARE/MiKTeX/fonts/type1/public/amsfonts/cm/cmb
@@ -561,7 +561,7 @@ msfonts/cm/cmsl10.pfb><D:/SOFTWARE/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10
 .pfb><D:/SOFTWARE/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/SOFTWARE/
 MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><D:/SOFTWARE/MiKTeX/fonts/type
 1/public/amsfonts/cm/cmtt8.pfb>
-Output written on RetiLogicheMadeFriendly.pdf (38 pages, 259659 bytes).
+Output written on RetiLogicheMadeFriendly.pdf (38 pages, 261148 bytes).
 PDF statistics:
  204 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
