@@ -1201,13 +1201,17 @@ Non hanno capacità di ricordare. \\
 La capacità di ricordare si può realizzare basando le future scelte su feedback dalle precedenti e ciò si fa riportando in ingresso l'uscita (anello).
 Ciò amplia la tabella di verità e consente appunto capacità di memoria perchè le scelte si baseranno anche sullo stato precedente del circuito.
 
+Tutto ciò implica che non solo la parte combinatoria si dovrà occupare di calcolare la nuova uscita ma anche di aggiornare lo stato della parte "mnemonica" del circuito.
+
 Ciò produrrà equazioni booleane dove l'uscita comparirà ad entrambi i membri propriò a causa degli anelli di feedback. 
 
-\section{Macchine a stati}
+\textbf{Stato}: è l'insieme dei valori conservati in memoria in un dato istante. E' implementato con un vettore di variabili booleane.
 
-\subsection*{Ciruiti sequenziali}
+
+
+\section{Circuiti sequenziali}
 Ci occupiamo ora di circuiti che possono \textbf{ricordare} la loro storia.
-QUesto sarà possibile grazie ad un nuovo ingresso che codificherà l'ultimo stato vissuto dal circuito.
+Questo sarà possibile grazie ad un nuovo ingresso che codificherà l'ultimo stato vissuto dal circuito.
 
 Per semplicità conviene separare il circuito in due macro aree:
 
@@ -1219,13 +1223,13 @@ Per semplicità conviene separare il circuito in due macro aree:
 Come nella figura accanto
 
 Un circuito sequenziale può essere di due tipi:
- \begin{itemize}
- \item \textbf{Sincrono}: Sono circuiti che aggiornano lo stato presente a cicli, detti \textbf{cicli di clock}
- \item \textbf{Asincrono}: Sono circuiti in cui lo stato presente continua ad aggiornarsi e ciò può essere compromettente per esempio nel caso di circuiti suscettibili a glitch.
+\begin{itemize}
+\item \textbf{Sincrono}: Sono circuiti che aggiornano lo stato presente a cicli, detti \textbf{cicli di clock}
+\item \textbf{Asincrono}: Sono circuiti in cui lo stato presente continua ad aggiornarsi e ciò può essere compromettente per esempio nel caso di circuiti suscettibili a glitch.
 \end{itemize}
 
 
-\subsection*{Elementi di memoria}
+\subsection{Elementi di memoria}
 
 Gli elementi che verranno di seguito introdotti sono da considerare come black box, di cui verrà descritto solo il loro utilizzo mentre come implementano le porte logiche al loro interno per ottenere tali risultati verrà introdotto in altri corsi.
 
@@ -1236,9 +1240,19 @@ I circuiti che impiegano memorie sincrone hanno due stati:
 \item Clock alto e  la rete combinatoria calcola con un nuovo stato presente.
 \end{itemize}
 
-\subsection*{Latch D}
 
-Il latch D ha due ingressi, di cui uno di clock e due ingressi Q e Q'.
+
+
+Ogni circuito sequenziale passa attraverso due fasi ciclicamente:
+\begin{itemize}
+\item{} calcolo delle nuove uscite e stato futuro.
+\item{} Stato futuro che diventa presente.
+\end{itemize}
+
+
+\subsubsection{Latch D}
+
+Il latch D ha due ingressi, di cui uno di clock e due uscite Q e Q'.
 
 Un latch durante il funzionamento del circuito vive due possibili stati che si alternano nel tempo:
 
@@ -1247,19 +1261,98 @@ Un latch durante il funzionamento del circuito vive due possibili stati che si a
 \item C=0 corrisponde a \textbf{latch in memoria} ossia stato in cui il valore in memoria viene conservato immutato.
 \end{itemize}	
 
-\subsection*{Flip Flop Edge Triggered} 
 
-Viene impiegato per risolvere i problemi di sfasamento tra frequenza di clock ed elaborazione del circuito.\\
+\begin{tabular}{|c|c|c|c|}
+\hline
+Clock & D & Q   & Q' \\
+\hline
+0     & - & \(Q_1\) & \(Q_2\)\\
+\hline
+1     & 0 & 0   & 1  \\
+\hline
+1     & 1 & 1   & 0  \\
+\hline
+\end{tabular}
 
-\textbf{Edge Triggered}: \newline\break
-Significa che il flip flop diviene trasparente \textbf{SOLO} nella transizione (edge appunto) tra stato 0 ed 1 ( o 1 e 0 ).
+
+
+Ce ne sono vari tipi:
+
+\begin{itemize}
+\item{Attivo alto}: ossia trasparente quando il clock è 1 .
+\item{Attivo basso} : ossia trasparente quando il clock è 0.
+\end{itemize}
+
+
+
+\subsubsection{Flip Flop Edge Triggered} 
+
+Viene impiegato per risolvere i problemi di sfasamento tra frequenza di clock ed elaborazione del circuito.\vspace{\baselineskip}\\
+\textbf{Edge Triggering}:\\
+Significa che il flip flop diviene trasparente \textbf{SOLO} nella transizione (edge appunto) tra stato 0 ed 1 ( o 1 e 0 ).\vspace{\baselineskip}\\
+\textbf{Preset \& clear}\\
+Al momento dell'accensione di un circuito il flipflop non ha alcuna memoria pregressa quindi il suo valore sarebbe ignoto e questo non è consigliabile.
+Ciò si può risolvere con dei segnali detti di preset e clear, ossia segnali asincroni esclusivamente di inizializzazione che danno al flip flop un valore noto.\\
+\vspace{\baselineskip}
+Spesso indicati come S ed R e attivi bassi entrambi.
+
+
+\section{Macchine a stati}
+
+\subsection{Stato presente o futuro ?}
+Nei flip flop edge triggered lo stato presente del ciclo n di clock corrisponde allo stato futuro alla fine del ciclo precedente, n-1.
+
+
+\subsection{Equazioni di stato}
+
+Indichiamo lo stato presente dell'ennesimo ciclo con X(n).
+
+Lo stato futuro Y(n) dipenderà dal valore degli ingressi del circuito combinatorio e da quello dello stato presente.
+
+Y(n)=\delta (IN(n), X(n)).
+
+Lo stato presente al ciclo successivo (n+1) è uguale aquello fuuro del ciclo precedente :
+
+X(n+1)=Y(n)
+
+Perciò X(n+1)=\delta( IN(n), X(n))
+
+\newpage
+\section{Progettazione di circuiti sequenziali}
+
+La progettazione segue dei macro step ben precisi:
+
+\begin{itemize}
+\item{Determinazione degli stati}: fase in cui è necessario capire quali sono i possibili stati del sistema.
+\item{Determinazione dell'evoluzione degli stati e delle uscite in base agli ingressi}: fase in cui si determina quale debba essere lo stato futuro sulla base dei possibili stati presenti.
+\item{Scrittura della tabella della verità}: fase in cui si trascrive la tabella della verità relativa alle equazioni di stato e delle uscite.
+\end{itemize}
+
+
+
+
+%riguardo il diagramma temporale della caldaia% lezione del 21/10
+
+
+\section{Diagramma degli stati}
+
+E' un modo alternativo e grafico per la rappresentazione dei passaggi di stato del circuito sequenziale ( transizioni ).
+
+\begin{itemize}
+\item{}Ogni stato viene rappresentato da un cerchio con il valore delle variabili di stato.\\
+\item{}Ogni transizione diventa una freccia che va dal cerchio con lo stato presente a quello futuro.
+Sulla freccia si indicano i valori degli ingressi per cui si effettua la transizione.
+E si indicano ivalori delle uscite corrispondenti allo srato di partenza e all'ingresso sulla trnasizione.
+\end{itemize}
+
+
+\section{Analisi di circuiti sequenziali}
+
+E' molto utile partire dal ciruicto ed estrarre il diagramma degli stati.
+
+Si analizza il circuito per risalire alle funzioni logiche che lo rappresentano.
+Successivamente si tabellano e poi si procede come visto per realizzare un diagramma a stati partendo dalla tabella del circuito.
  
-\textbf{Preset \& clear}
-Permette di dare un valore noto al segnale iniziale del clock che altrimenti sarebbe incognito.
-
-\subsubsection*{Stato}: è l'insieme dei valori conservati in memoria in un dato istante. E' implementato con un vettore di variabili booleane.
-
-\textbf{Equazioni di stato}:
 
 
 \end{document}

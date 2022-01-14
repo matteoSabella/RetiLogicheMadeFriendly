@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.17)  13 JAN 2022 11:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.17)  14 JAN 2022 12:42
 entering extended mode
 **./RetiLogicheMadeFriendly.tex
 (RetiLogicheMadeFriendly.tex
@@ -529,17 +529,45 @@ Underfull \hbox (badness 10000) in paragraph at lines 1123--1126
 
 ]
 Chapter 8.
-[37]
-Underfull \hbox (badness 10000) in paragraph at lines 1252--1253
+[37] [38]
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1312 Y(n)=\delta
+                   (IN(n), X(n)).
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1313 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1318 Perciò X(n+1)=\delta
+                            ( IN(n), X(n))
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1319 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+[39]
+Underfull \hbox (badness 10000) in paragraph at lines 1342--1343
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 1254--1256
-
- []
-
-[38] (RetiLogicheMadeFriendly.aux) ) 
+[40] (RetiLogicheMadeFriendly.aux) ) 
 Here is how much of TeX's memory you used:
  5097 strings out of 479334
  71614 string characters out of 2869356
@@ -561,9 +589,9 @@ msfonts/cm/cmsl10.pfb><D:/SOFTWARE/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10
 .pfb><D:/SOFTWARE/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/SOFTWARE/
 MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><D:/SOFTWARE/MiKTeX/fonts/type
 1/public/amsfonts/cm/cmtt8.pfb>
-Output written on RetiLogicheMadeFriendly.pdf (38 pages, 261148 bytes).
+Output written on RetiLogicheMadeFriendly.pdf (40 pages, 267106 bytes).
 PDF statistics:
- 204 PDF objects out of 1000 (max. 8388607)
+ 210 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
