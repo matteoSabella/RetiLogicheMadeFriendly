@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.17)  14 JAN 2022 12:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.17)  28 JAN 2022 19:30
 entering extended mode
 **./RetiLogicheMadeFriendly.tex
 (RetiLogicheMadeFriendly.tex
@@ -243,8 +243,8 @@ File: images//SchemaDigitale.png Graphic file (type png)
 Package pdftex.def Info: images//SchemaDigitale.png  used on input line 61.
 (pdftex.def)             Requested size: 345.0pt x 53.4216pt.
 
-Overfull \hbox (4.07408pt too wide) in paragraph at lines 52--62
- [] 
+Overfull \hbox (15.0pt too wide) in paragraph at lines 61--62
+[][] 
  []
 
 [3 <./images//SchemaDigitale.png>] [4
@@ -427,12 +427,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 244--251
 
  []
 
-[13]
-<images//Multiplexer21.png, id=68, 24.84282pt x 45.16875pt>
+<images//Multiplexer21.png, id=64, 24.84282pt x 45.16875pt>
 File: images//Multiplexer21.png Graphic file (type png)
 <use images//Multiplexer21.png>
 Package pdftex.def Info: images//Multiplexer21.png  used on input line 267.
 (pdftex.def)             Requested size: 24.84274pt x 45.16862pt.
+[13]
 <images//Multiplexer21Circuito.png, id=69, 81.30376pt x 56.46094pt>
 File: images//Multiplexer21Circuito.png Graphic file (type png)
 <use images//Multiplexer21Circuito.png>
@@ -451,24 +451,27 @@ l-te-ri-or-mente com-pattare ri-conoscendo
  []
 
 [14 <./images//Multiplexer21Circuito.png> <./images//Multiplexer21.png>]
-[15] [16]
+Underfull \vbox (badness 3525) has occurred while \output is active []
+
+ [15]
+[16]
 Chapter 5.
 
 Underfull \hbox (badness 10000) in paragraph at lines 445--449
 
  []
 
+[17
 
-Underfull \vbox (badness 5741) has occurred while \output is active []
-
- [17
-
-]
-[18]
+] [18]
 Chapter 6.
 [19
 
-] [20] [21] [22] [23] [24
+] [20]
+Underfull \vbox (badness 1057) has occurred while \output is active []
+
+ [21]
+[22] [23] [24
 
 ]
 Chapter 7.
@@ -485,12 +488,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 879--881
 
  []
 
-[28]
+
 Underfull \hbox (badness 10000) in paragraph at lines 882--883
 
  []
 
-
+[28]
 Underfull \hbox (badness 10000) in paragraph at lines 884--885
 
  []
@@ -529,53 +532,51 @@ Underfull \hbox (badness 10000) in paragraph at lines 1123--1126
 
 ]
 Chapter 8.
-[37] [38]
-! Missing $ inserted.
-<inserted text> 
-                $
-l.1312 Y(n)=\delta
-                   (IN(n), X(n)).
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
+[37]
+Underfull \hbox (badness 10000) in paragraph at lines 1290--1296
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.1313 
-       
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
+ []
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.1318 Perciò X(n+1)=\delta
-                            ( IN(n), X(n))
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.1319 
-       
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-[39]
+[38] [39]
 Underfull \hbox (badness 10000) in paragraph at lines 1342--1343
 
  []
 
-[40] (RetiLogicheMadeFriendly.aux) ) 
+[40]
+Overfull \hbox (63.44089pt too wide) has occurred while \output is active
+\OT1/cmr/m/sl/10 8.6.  CONSIDERAZIONI PRELIMINARI PER UN PROGETTO DI MACCHINA A
+ STATI \OT1/cmr/m/n/10 41
+ []
+
+[41]
+Underfull \hbox (badness 10000) in paragraph at lines 1429--1434
+
+ []
+
+[42] [43]
+Overfull \hbox (0.57462pt too wide) in paragraph at lines 1491--1492
+[]\OT1/cmr/m/n/10 Non us-are us-cite nelle con-dizioni di tran-sizione. Questo 
+perche non sarebbe
+ []
+
+[44]
+Chapter 9.
+[45
+
+]
+Overfull \hbox (59.73956pt too wide) in paragraph at lines 1546--1558
+[] 
+ []
+
+[46] (RetiLogicheMadeFriendly.aux) ) 
 Here is how much of TeX's memory you used:
  5097 strings out of 479334
- 71614 string characters out of 2869356
- 675838 words of memory out of 3000000
+ 71710 string characters out of 2869356
+ 661939 words of memory out of 3000000
  22513 multiletter control sequences out of 15000+200000
  409622 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,8n,74p,424b,1727s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 68i,8n,74p,437b,1797s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\matte\AppData\Local\MiKTeX\fonts
 /pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><D:/SOFTWARE/MiKTeX/fonts/type1/publi
 c/amsfonts/cm/cmbx10.pfb><D:/SOFTWARE/MiKTeX/fonts/type1/public/amsfonts/cm/cmb
@@ -589,9 +590,9 @@ msfonts/cm/cmsl10.pfb><D:/SOFTWARE/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10
 .pfb><D:/SOFTWARE/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/SOFTWARE/
 MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><D:/SOFTWARE/MiKTeX/fonts/type
 1/public/amsfonts/cm/cmtt8.pfb>
-Output written on RetiLogicheMadeFriendly.pdf (40 pages, 267106 bytes).
+Output written on RetiLogicheMadeFriendly.pdf (46 pages, 279520 bytes).
 PDF statistics:
- 210 PDF objects out of 1000 (max. 8388607)
+ 229 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
