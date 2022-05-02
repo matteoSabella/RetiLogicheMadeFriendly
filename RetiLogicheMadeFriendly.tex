@@ -49,16 +49,41 @@
 %Al mio fedele compagno di avventure, che mi piaceva girare a letto come un flip flop e che mi ha consentito di mantenere la fede.%
 
 \chapter{Da analogico a digitale}
-Nell'era pre digitale i segnali erano analogici, ossia il loro valore spaziava su una gamma potenzialmente infinita di valori.
+Nell'era pre digitale i segnali erano analogici, ossia il loro valore spaziava su una gamma potenzialmente infinita di valori, in qualche forma proporzionali ad una qualche grandezza di interesse.
 Ciò poneva di fronte ad un problema, quello delle interferenze e dei disturbi di segnale, che potevano distorcere o rendere impossibile la lettura del messaggio trasportato dal segnale in questione.
 Si è perciò deciso di ricorrere al mezzo digitale, ossia un particolare modo di rappresentare le informazioni.
-Ogni segnale può assumere solo due possibili valori( da qui denominato segnale binario), che si distinguono grazie ad un confine detto soglia che li separa.
+Ogni segnale può assumere solo due possibili valori(da qui denominato segnale binario), che si distinguono grazie ad un confine detto soglia che li separa.
 Al di sotto di tale soglia il segnale ha ovunque lo stesso valore, così come al di sopra, ma tra una parte della soglia e l'altra, lì il valore cambia.
 Tanto più il segnale è lontano dalla soglia tanto più esso può subire distorsioni senza che il messaggio venga all'arrivo compromesso.
-Tale sistema però pone uno svantaggio, ossia l' impossibilità di comunicare un vasto numero di messaggi.
-Per risolvere questo inconveniente intrinseco di questo modo di comunicare si ricorre a più sorgenti di segnali, così che invece che avere solo 2 possibili valori, il messaggio costituito da n segnali avrà \(2^n\) possibili significati o sfumature.
+Tale sistema però pone uno svantaggio, ossia l'impossibilità di comunicare un vasto numero di messaggi.
+Per risolvere questo inconveniente intrinseco del modo di comunicare si ricorre a più sorgenti di segnali, così che invece che avere solo 2 possibili valori, il messaggio costituito da n segnali avrà \(2^n\) possibili significati o sfumature.
+Questo non presenta un problema eccessivamente complicato da gestire, infatti essendo logaritmica la relazione tra il numero di rappresentazioni desiderate e il numero di segnali, il numero di segnali necessario cresce lentamente rispetto al numero rappresentazioni che si desiderano ! 
 
 \includegraphics[width=\textwidth]{SchemaDigitale}
+
+\newpage
+\section*{Tecnologie di implementazione}
+
+Successivamente alla descrizione della rete logica, c'è la sua realizzazione che produce un circuito integrato. 
+Questa implementazione può avvenire in modi differenti :
+\\(Si tenga presente che il prezzo per la realizzazione di un circuito dipende dalla sua estensione in superficie)
+
+\begin{itemize}
+\item
+	\textbf{Full custom}\\
+Un processo che permette di avere il controllo su ogni singolo transistore e collegamento. Fornisce un prodotto molto piccolo, con grandi prestazion ma è molto costoso. 
+\item
+	\textbf{Standard Cell / ASIC}\\
+Utilizza delle celle già realizzate che vengono unite in base alle necessità per realizzare il circuito integrato.
+E' meno costoso del progetto full custom e fornisce alte prestazioni.
+\item
+	\textbf{FPGA}\\
+Sono schede già pronte su cui l'utente può programmare e configurarne i componenti per ottenere il circuito che vuole.
+\item
+	\textbf{Embedded Software}\\
+Microprocessori senza controllo dei collegamenti e con logica programmabile.
+\end{itemize}
+
 \chapter{Circuiti combinatori}
 \section{Operatori}
 \subsection{OPERATORI SEMPLICI}
@@ -68,7 +93,7 @@ Gli operatori basilari che vengono utilizzati per la costruzione di reti logiche
 \includegraphics{AndPrecisa}
 \end{wrapfigure}
 L'operatore AND prende in input  due segnali e restituisce 1 se e solo se entrambi sono 1, altrimenti restituisce 0.
-\newline Si rappresenta come : \(x*y\)\newline
+\\ Si rappresenta come : \(x*y\)\\
 
 
 \subsubsection*{OR}
@@ -76,13 +101,13 @@ L'operatore AND prende in input  due segnali e restituisce 1 se e solo se entram
 \includegraphics{OrGate}
 \end{wrapfigure}
 L'operatore OR prende in input due segnali e restituisce 1 se almeno uno dei due è 1, altrimenti restituisce 0.
-\newline Si rappresenta come : \(x+y\)\newline
+\\ Si rappresenta come : \(x+y\)\\
 \subsubsection*{NOT}
 \begin{wrapfigure}{r}{0.10\textwidth}
 \includegraphics{NotGate}
 \end{wrapfigure}
 L'operatore NOT prende in input un solo segnali e restituisce 1 se il segnale è 0 e 0 se l'input è 1.
-\newline Si rappresenta come : \(x'\)
+\\ Si rappresenta come : \(x'\)
 
 \newpage
 \subsection{OPERATORI COMPLESSI}
@@ -91,7 +116,6 @@ Gli operatori che vediamo di seguito possono essere considerati come operatori "
 \includegraphics{NandGate}
 \end{wrapfigure}
 \subsubsection*{NAND}
-
 L'operatore NAND è costituito da un operatore AND seguito da un NOT.
 \begin{wrapfigure}{r}{0,10\textwidth}
 \includegraphics{NorGate}
@@ -107,77 +131,83 @@ L'operatore EXNOR è anche detto OR inclusivo perchè restituisce 1 se e solo se
 
 \newpage
 \section{Algebra di boole}
-Le operazioni svolte dagli operatori appena visti godono di proprietà che vanno sotto il nome di algebra di Boole.\newline (Ognuna di esse è dimsotrabile tramite induzione completa, ossia verificando totalmente la veridicità delle implicazioni tramite tabelle di verità).
+Le operazioni svolte dagli operatori appena visti godono di proprietà che vanno sotto il nome di algebra di Boole.\\ (Ognuna di esse è dimostrabile tramite induzione completa, ossia verificando totalmente la veridicità delle implicazioni tramite tabelle di verità).
+
 \subsection*{Identità}
 
-\(x+0=x \) \newline
+\(x+0=x \) \\
 \(x*1=x \)
+
+\subsection*{Complementazione}
+
+\(x+x'=1 \) \\
+\(x*x'=0 \)
 
 \subsection*{Proprietà commutativa}
 
-\(x+y=y*x \) \newline
+\(x+y=y*x \) \\
 \(x*y=y*x \) 
 
 \subsection*{Proprietà distributiva}
 
-\( x*(y+z)=(x*y)+(x*z)  \) \newline
+\( x*(y+z)=(x*y)+(x*z)  \) \\
 \( x+(y*z)=(x+y)*(x+z)  \)
-
-\subsection*{Complementazione}
-
-\(x+x'=1 \) \newline
-\(x*x'=0 \)
 
 \subsection*{Proprietà associativa}
 
-\(x+(y+z)=(x+y)+z \) \newline
+\(x+(y+z)=(x+y)+z \) \\
 \(x*(y*z)=(x*y)*z \) 
 
 \subsection*{Leggi di De Morgan}
 
-Consentono di trasformare delle funzioni in cui compaiono OR in funzioni equivalenti che usano delle AND.
-
-\( (x+y)' = x' * y' \) \hspace{3cm} \( (x'+y')' = x*y\) \newline
+Consentono di trasformare delle funzioni in cui compaiono OR in funzioni equivalenti che usano delle AND.\\
+\( (x+y)' = x' * y' \) \hspace{3cm} \( (x'+y')' = x*y\) \\
 \( (x*y)' = x' + y' \) \hspace{3cm} \( (x'*y')'= x+y\)
-\newline
-Tip : un modo utile per ricordarsele è che per passare da un operatore ad un altro , si cambia l'operatore e si "raccoglie" un not.
+\\
+\\
+\textbf{Tip}:\\ Un modo utile per ricordarsele è che per passare da un operatore ad un altro , si cambia l'operatore e si "raccoglie" un not.
 
 \newpage
 \section{Teorema Di Shennon}
 Nel processo di ricerca di un'espressione logica che impieghi gli operatori che ora conosciamo, torna utilissimo il teorema di Shennon.
-Per ogni funzione logica del tipo\break\newline \( f({x_1},{x_2},{x_3},...,{x_n}) \)\break\newline vale la seguente uguaglianza.\newline \(f({x_1},{x_2},{x_3},...,{x_n})=a*f(1,{x_2},{x_3},...,{x_n})+a'*f(0,{x_2},{x_3},...,{x_n})\)\break\newline
+Per ogni funzione logica del tipo\\\\ \( f({x_1},{x_2},{x_3},...,{x_n}) \)\\\\vale la seguente uguaglianza.\\\\ \(f({x_1},{x_2},{x_3},...,{x_n})=a*f(1,{x_2},{x_3},...,{x_n})+a'*f(0,{x_2},{x_3},...,{x_n})\)\\\\
 Questa uguaglianza è valida perchè se a valesse 1, allora la parte di destra dell'OR sarà un AND con sicuramente valore 0 e quindi verrà come risultato il valore della prima espressione, altrimenti se a fosse 0 varrebbe lo stesso discorso ma al contrario.
-\paragraph*{}
+\subsection{Forme canoniche}
 Procedendo iterando questo teorema sui pezzi di funzioni rimanenti si può arrivare ad un'espansione nella seguente forma:
-
-
+\\\\
 \(f({x_1},{x_2},{x_3},...,{x_n})=a*f(1,{x_2},{x_3},...,{x_n})+a'*f(0,{x_2},{x_3},...,{x_n})\)
+\\\\
+Ciò può essere iterato fino ad ottenere una funzione costituita da sole somme e prodotti logici senza alcuna funzione all'interno di essa !\\
+La forma così espansa della funzione logica iniziale è univoca per una data funzione e vien detta \textbf{forma canonica}\\\\
+La forma canonica rende possibile esprimere ogni funzione tramite gli operatori logici di base.
+Addirittura permette di esprimere ogni funzione logica anche solo con 'utilizzo di 2 su 3 operatori di base, perchè OR e AND possono essere esclusi mutuamente in quanto unendo uno dei due con una not seguendo le leggi di de morgan poss ottenere il comportamento dell'altra.
+Esiste anche una seconda forma canonica che usa OR ed AND in modo diverso permettendo di ottenere la stessa funzione in un'altra forma.
 
 \newpage
 
 \chapter{Semplificazione di funzioni logiche}
 Introduciamo ora alcune definizioni:\\
 \begin{itemize}
+\item\textbf{Livelli}
+Il numero di livelli di un circuito è il numero massimo di porte logiche che possono essere attraversate all'interno di esso dall'ingresso all'uscita.
+(non si tiene conto dei NOT)
 \item\textbf{Letterale}
 Ogni variabile che sia affermata o negata.\\
 \item\textbf{Minterm}
-Prodotto in cui ogni variabile compare una volta come letterale.\newline Esso è 1 per una e una sola combinazione di letterali.\\
+Prodotto in cui ogni variabile compare una volta come letterale.\\ Esso è 1 per una e una sola combinazione di letterali.\\
 \item\textbf{Maxterm}
-Somma in cui variabile compare una volta come letterale.\newline Esso è 0 per una e una sola combinazione dei suoi letterali.\\
+Somma in cui ogni variabile compare una volta come letterale.\\ Esso è 0 per una e una sola combinazione dei suoi letterali.\\
 \item\textbf{Implicante}
 f è implicante di g se e solo se quando f è 1 allora g è 1.
 \vspace{\baselineskip}
-\newline Si dice \textbf{implicante primo} ogni implicante che non è possibile racchiudere in uno più grande.
+\\ Si dice \textbf{implicante primo} ogni implicante che non è possibile racchiudere in uno più grande.
 Essi possono essere \textbf{ridondanti} nel caso in cui coprano zone coperte da altri implicanti primi mentre altri sono invece \textbf{essenziali} perchè sono gli unici a coprire quelle zone.
 
 \vspace{\baselineskip}
-
-Ogni minterm è un implicante della propria f, l'unico problema è che ognuno di essi rappresenta "pochi uni".\newline\break
+\newpage
+Ogni minterm è un implicante della propria f, l'unico problema è che ognuno di essi rappresenta "pochi uni".\\\break
 \end{itemize}
 
-
-
-\newpage
 La funzione logica sarà data dall' \textbf{OR} degli implicanti, ma quali cerco ?
 \vspace{\baselineskip}
 
@@ -338,9 +368,9 @@ a $\backslash$ bc & 00 & 01 & 11 & 10 \\
 1             & {\cellcolor{yellow}1}  & 0  &  {\cellcolor{yellow}1} & 0  \\
 \hline
 \end{tabular}
-\newline \vspace{\baselineskip}
+\\ \vspace{\baselineskip}
 Per s2 l'operazione sarà la stessa con la differenza che l'uscita sarà ad 1 nei casi in cui la quantità di "uni" in ingresso sia 2 (10) o 3 (11).
-\newline\vspace{\baselineskip}
+\\\vspace{\baselineskip}
 \begin{tabular}{|c|c|c|c|c|}
 \hline
 a$\backslash$ bc & 00 & 01 & 11 & 10 \\
@@ -442,10 +472,10 @@ Questi ritardi sono dati da motivi fisici e di solito sono specificati al moment
 
 I diagrammi temporali sono di due tipi:
  
-\textbf{SENZA RITARDO}\newline
-Quelli senza ritardi vengono impiegati per valutare la funzione logica ed effettuare operazioni di debugging se necessarie.\newline
-\textbf{CON RITARDO}\newline
-Quelli con ritardi invece vengono utilizzati per valutare le prestazioni della funzione logica.\newline
+\textbf{SENZA RITARDO}\\
+Quelli senza ritardi vengono impiegati per valutare la funzione logica ed effettuare operazioni di debugging se necessarie.\\
+\textbf{CON RITARDO}\\
+Quelli con ritardi invece vengono utilizzati per valutare le prestazioni della funzione logica.\\
 
 Un tempo utile da conoscere riguardo ad un circuito logico è quello massimo che può impiegare per restituire una risposta all'input sottopostogli.
 
@@ -484,7 +514,7 @@ Iniziamo con la tabella di verità del circuito che dovrebbe sommare due ingress
 Esso restituirà un risultato con 2 bit in uscita.
 Indichiamo con a e b i due ingressi, mentre con s il bit meno significativo del risultato e con c quello più significativo.
 La lettera c ci ricorderà anche che tale cifra è dovuta al carry dell'operazione.
-\newline
+\\
 \begin{tabular}{|c|c|c|c|}
 
 \hline
@@ -757,9 +787,9 @@ Il VHDL ci permette di lavorare secondo 3 \textbf{metodologie}
 e secondo 3 viste
 
 \begin{itemize}
-\item \textbf{Data flow}: \newline Consiste nella descrizione delle uscite in funzione degli ingressi. E' specificata con equazioni booleane messe a sistema tra loro.
-\item \textbf{Strutturale}:\newline Consiste nella descrizione del circuito grazie all'utilizzo di componenti già esistenti che verranno combinati ed aggregati tra di loro. 
-\item \textbf{Comportamentale}: \newline Consiste nella descrizione del circuito tramite l'algoritmo che dovrà implementare.
+\item \textbf{Data flow}: \\ Consiste nella descrizione delle uscite in funzione degli ingressi. E' specificata con equazioni booleane messe a sistema tra loro.
+\item \textbf{Strutturale}:\\ Consiste nella descrizione del circuito grazie all'utilizzo di componenti già esistenti che verranno combinati ed aggregati tra di loro. 
+\item \textbf{Comportamentale}: \\ Consiste nella descrizione del circuito tramite l'algoritmo che dovrà implementare.
 \end{itemize}
 
 

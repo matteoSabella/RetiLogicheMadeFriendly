@@ -1,154 +1,156 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.3) (preloaded format=pdflatex 2021.3.17)  28 JAN 2022 19:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.5.1)  2 MAY 2022 18:54
 entering extended mode
-**./RetiLogicheMadeFriendly.tex
-(RetiLogicheMadeFriendly.tex
-LaTeX2e <2020-10-01> patch level 4
-L3 programming layer <2021-02-18> xparse <2020-03-03>
-(D:\SOFTWARE\MiKTeX\tex/latex/base\book.cls
-Document Class: book 2020/04/10 v1.4m Standard LaTeX document class
-(D:\SOFTWARE\MiKTeX\tex/latex/base\bk10.clo
-File: bk10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**RetiLogicheMadeFriendly.tex
+(./RetiLogicheMadeFriendly.tex
+LaTeX2e <2020-02-02> patch level 2
+L3 programming layer <2020-02-14>
+(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/bk10.clo
+File: bk10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 )
-\c@part=\count179
-\c@chapter=\count180
-\c@section=\count181
-\c@subsection=\count182
-\c@subsubsection=\count183
-\c@paragraph=\count184
-\c@subparagraph=\count185
-\c@figure=\count186
-\c@table=\count187
+\c@part=\count167
+\c@chapter=\count168
+\c@section=\count169
+\c@subsection=\count170
+\c@subsubsection=\count171
+\c@paragraph=\count172
+\c@subparagraph=\count173
+\c@figure=\count174
+\c@table=\count175
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
-\bibindent=\dimen138
+\bibindent=\dimen134
 )
-(D:\SOFTWARE\MiKTeX\tex/latex/graphics\graphicx.sty
-Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
 
-(D:\SOFTWARE\MiKTeX\tex/latex/graphics\keyval.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks15
+\KV@toks@=\toks14
 )
-(D:\SOFTWARE\MiKTeX\tex/latex/graphics\graphics.sty
-Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
 
-(D:\SOFTWARE\MiKTeX\tex/latex/graphics\trig.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(D:\SOFTWARE\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
 
-(D:\SOFTWARE\MiKTeX\tex/latex/graphics-def\pdftex.def
-File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen139
-\Gin@req@width=\dimen140
+\Gin@req@height=\dimen135
+\Gin@req@width=\dimen136
 )
-(D:\SOFTWARE\MiKTeX\tex/latex/wrapfig\wrapfig.sty
-\wrapoverhang=\dimen141
-\WF@size=\dimen142
-\c@WF@wrappedlines=\count188
-\WF@box=\box47
-\WF@everypar=\toks16
+(/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen137
+\WF@size=\dimen138
+\c@WF@wrappedlines=\count176
+\WF@box=\box45
+\WF@everypar=\toks15
 Package: wrapfig 2003/01/31  v 3.6
 )
-(D:\SOFTWARE\MiKTeX\tex/latex/adjustbox\adjustbox.sty
-Package: adjustbox 2020/08/19 v1.3 Adjusting TeX boxes (trim, clip, ...)
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+Package: adjustbox 2019/01/04 v1.2 Adjusting TeX boxes (trim, clip, ...)
 
-(D:\SOFTWARE\MiKTeX\tex/latex/xkeyval\xkeyval.sty
-Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 
-(D:\SOFTWARE\MiKTeX\tex/generic/xkeyval\xkeyval.tex
-(D:\SOFTWARE\MiKTeX\tex/generic/xkeyval\xkvutils.tex
-\XKV@toks=\toks17
-\XKV@tempa@toks=\toks18
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks16
+\XKV@tempa@toks=\toks17
 )
-\XKV@depth=\count189
+\XKV@depth=\count177
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
-(D:\SOFTWARE\MiKTeX\tex/latex/adjustbox\adjcalc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/adjcalc.sty
 Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
 -ends (calc, etex, pgfmath)
 )
-(D:\SOFTWARE\MiKTeX\tex/latex/adjustbox\trimclip.sty
-Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/trimclip.sty
+Package: trimclip 2018/04/08 v1.1 Trim and clip general TeX material
 
-(D:\SOFTWARE\MiKTeX\tex/latex/collectbox\collectbox.sty
+(/usr/share/texlive/texmf-dist/tex/latex/collectbox/collectbox.sty
 Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
-\collectedbox=\box48
+\collectedbox=\box46
 )
-\tc@llx=\dimen143
-\tc@lly=\dimen144
-\tc@urx=\dimen145
-\tc@ury=\dimen146
+\tc@llx=\dimen139
+\tc@lly=\dimen140
+\tc@urx=\dimen141
+\tc@ury=\dimen142
 Package trimclip Info: Using driver 'tc-pdftex.def'.
 
-(D:\SOFTWARE\MiKTeX\tex/latex/adjustbox\tc-pdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
 File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
 ))
-\adjbox@Width=\dimen147
-\adjbox@Height=\dimen148
-\adjbox@Depth=\dimen149
-\adjbox@Totalheight=\dimen150
-\adjbox@pwidth=\dimen151
-\adjbox@pheight=\dimen152
-\adjbox@pdepth=\dimen153
-\adjbox@ptotalheight=\dimen154
+\adjbox@Width=\dimen143
+\adjbox@Height=\dimen144
+\adjbox@Depth=\dimen145
+\adjbox@Totalheight=\dimen146
+\adjbox@pwidth=\dimen147
+\adjbox@pheight=\dimen148
+\adjbox@pdepth=\dimen149
+\adjbox@ptotalheight=\dimen150
 
-(D:\SOFTWARE\MiKTeX\tex/latex/ifoddpage\ifoddpage.sty
+(/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count190
+\c@checkoddpage=\count178
 )
-(D:\SOFTWARE\MiKTeX\tex/latex/varwidth\varwidth.sty
+(/usr/share/texlive/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box49
-\sift@deathcycles=\count191
-\@vwid@loff=\dimen155
-\@vwid@roff=\dimen156
+\@vwid@box=\box47
+\sift@deathcycles=\count179
+\@vwid@loff=\dimen151
+\@vwid@roff=\dimen152
 ))
-(D:\SOFTWARE\MiKTeX\tex/latex/titlesec\titlesec.sty
-Package: titlesec 2021/07/05 v2.14 Sectioning titles
-\ttl@box=\box50
+(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2019/10/16 v2.13 Sectioning titles
+\ttl@box=\box48
 \beforetitleunit=\skip49
 \aftertitleunit=\skip50
-\ttl@plus=\dimen157
-\ttl@minus=\dimen158
-\ttl@toksa=\toks19
-\titlewidth=\dimen159
-\titlewidthlast=\dimen160
-\titlewidthfirst=\dimen161
+\ttl@plus=\dimen153
+\ttl@minus=\dimen154
+\ttl@toksa=\toks18
+\titlewidth=\dimen155
+\titlewidthlast=\dimen156
+\titlewidthfirst=\dimen157
 )
-(D:\SOFTWARE\MiKTeX\tex/latex/listings\listings.sty
-\lst@mode=\count192
-\lst@gtempboxa=\box51
-\lst@token=\toks20
-\lst@length=\count193
-\lst@currlwidth=\dimen162
-\lst@column=\count194
-\lst@pos=\count195
-\lst@lostspace=\dimen163
-\lst@width=\dimen164
-\lst@newlines=\count196
-\lst@lineno=\count197
-\lst@maxwidth=\dimen165
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count180
+\lst@gtempboxa=\box49
+\lst@token=\toks19
+\lst@length=\count181
+\lst@currlwidth=\dimen158
+\lst@column=\count182
+\lst@pos=\count183
+\lst@lostspace=\dimen159
+\lst@width=\dimen160
+\lst@newlines=\count184
+\lst@lineno=\count185
+\lst@maxwidth=\dimen161
 
-(D:\SOFTWARE\MiKTeX\tex/latex/listings\lstmisc.sty
-File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-\c@lstnumber=\count198
-\lst@skipnumbers=\count199
-\lst@framebox=\box52
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
+\c@lstnumber=\count186
+\lst@skipnumbers=\count187
+\lst@framebox=\box50
 )
-(D:\SOFTWARE\MiKTeX\tex/latex/listings\listings.cfg
-File: listings.cfg 2020/03/24 1.8d listings configuration
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2019/09/10 1.8c listings configuration
 ))
-Package: listings 2020/03/24 1.8d (Carsten Heinz)
+Package: listings 2019/09/10 1.8c (Carsten Heinz)
 
-(D:\SOFTWARE\MiKTeX\tex/latex/xcolor\xcolor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-(D:\SOFTWARE\MiKTeX\tex/latex/graphics-cfg\color.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
@@ -162,28 +164,28 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-(D:\SOFTWARE\MiKTeX\tex/latex/colortbl\colortbl.sty
+(/usr/share/texlive/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
 
-(D:\SOFTWARE\MiKTeX\tex/latex/latex-tools\array.sty
-Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
-\col@sep=\dimen166
-\ar@mcellbox=\box53
-\extrarowheight=\dimen167
-\NC@list=\toks21
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
+\col@sep=\dimen162
+\ar@mcellbox=\box51
+\extrarowheight=\dimen163
+\NC@list=\toks20
 \extratabsurround=\skip51
 \backup@length=\skip52
-\ar@cellbox=\box54
+\ar@cellbox=\box52
 )
-\everycr=\toks22
+\everycr=\toks21
 \minrowclearance=\skip53
 )
-(D:\SOFTWARE\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
-File: l3backend-pdftex.def 2021-03-02 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count266
-\l__pdf_internal_box=\box55
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count188
+\l__pdf_internal_box=\box53
 )
-(RetiLogicheMadeFriendly.aux)
+(./RetiLogicheMadeFriendly.aux)
 \openout1 = `RetiLogicheMadeFriendly.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
@@ -201,35 +203,40 @@ LaTeX Font Info:    ... okay on input line 45.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
 LaTeX Font Info:    ... okay on input line 45.
 
-(D:\SOFTWARE\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count267
-\scratchdimen=\dimen168
-\scratchbox=\box56
-\nofMPsegments=\count268
-\nofMParguments=\count269
-\everyMPshowfont=\toks23
-\MPscratchCnt=\count270
-\MPscratchDim=\dimen169
-\MPnumerator=\count271
-\makeMPintoPDFobject=\count272
-\everyMPtoPDFconversion=\toks24
-) (D:\SOFTWARE\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+\scratchcounter=\count189
+\scratchdimen=\dimen164
+\scratchbox=\box54
+\nofMPsegments=\count190
+\nofMParguments=\count191
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count192
+\MPscratchDim=\dimen165
+\MPnumerator=\count193
+\makeMPintoPDFobject=\count194
+\everyMPtoPDFconversion=\toks23
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
-)
-\c@lstlisting=\count273
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\c@lstlisting=\count195
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 47.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 47.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 47.
- [1
+
+[1
 
 
-{C:/Users/matte/AppData/Local/MiKTeX/pdftex/config/pdftex.map}] [2
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
 
 ]
 Chapter 1.
@@ -237,172 +244,177 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 59.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 59.
-<images//SchemaDigitale.png, id=11, 466.74374pt x 72.27pt>
-File: images//SchemaDigitale.png Graphic file (type png)
-<use images//SchemaDigitale.png>
-Package pdftex.def Info: images//SchemaDigitale.png  used on input line 61.
+<images/SchemaDigitale.png, id=12, 466.74374pt x 72.27pt>
+File: images/SchemaDigitale.png Graphic file (type png)
+<use images/SchemaDigitale.png>
+Package pdftex.def Info: images/SchemaDigitale.png  used on input line 62.
 (pdftex.def)             Requested size: 345.0pt x 53.4216pt.
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 61--62
+Overfull \hbox (15.0pt too wide) in paragraph at lines 62--63
 [][] 
  []
 
-[3 <./images//SchemaDigitale.png>] [4
-
-]
+[3 <./images/SchemaDigitale.png>] [4]
 Chapter 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--66
+Underfull \hbox (badness 10000) in paragraph at lines 90--91
 
  []
 
-<images//AndPrecisa.png, id=23, 45.92157pt x 27.85406pt>
-File: images//AndPrecisa.png Graphic file (type png)
-<use images//AndPrecisa.png>
-Package pdftex.def Info: images//AndPrecisa.png  used on input line 68.
+<images/AndPrecisa.png, id=26, 45.92157pt x 27.85406pt>
+File: images/AndPrecisa.png Graphic file (type png)
+<use images/AndPrecisa.png>
+Package pdftex.def Info: images/AndPrecisa.png  used on input line 93.
 (pdftex.def)             Requested size: 45.92145pt x 27.85397pt.
 
-Overfull \hbox (11.41934pt too wide) in paragraph at lines 68--69
+Overfull \hbox (11.41934pt too wide) in paragraph at lines 93--94
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 70--72
+Underfull \hbox (badness 10000) in paragraph at lines 95--97
 
  []
 
-<images//OrGate.png, id=24, 45.16875pt x 25.59563pt>
-File: images//OrGate.png Graphic file (type png)
-<use images//OrGate.png>
-Package pdftex.def Info: images//OrGate.png  used on input line 76.
+<images/OrGate.png, id=27, 45.16875pt x 25.59563pt>
+File: images/OrGate.png Graphic file (type png)
+<use images/OrGate.png>
+Package pdftex.def Info: images/OrGate.png  used on input line 101.
 (pdftex.def)             Requested size: 45.16862pt x 25.59555pt.
 
-Overfull \hbox (10.66652pt too wide) in paragraph at lines 76--77
+Overfull \hbox (10.66652pt too wide) in paragraph at lines 101--102
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--80
+Underfull \hbox (badness 10000) in paragraph at lines 103--105
 
  []
 
-<images//NotGate.png, id=25, 15.80907pt x 36.88782pt>
-File: images//NotGate.png Graphic file (type png)
-<use images//NotGate.png>
-Package pdftex.def Info: images//NotGate.png  used on input line 82.
+<images/NotGate.png, id=28, 15.80907pt x 36.88782pt>
+File: images/NotGate.png Graphic file (type png)
+<use images/NotGate.png>
+Package pdftex.def Info: images/NotGate.png  used on input line 107.
 (pdftex.def)             Requested size: 15.809pt x 36.88771pt.
-[5 <./images//AndPrecisa.png> <./images//OrGate.png> <./images//NotGate.png>]
+[5
+
+ <./images/AndPrecisa.png> <./images/OrGate.png> <./images/NotGate.png>]
 
 Package wrapfig Warning: Collision between wrapping environments on input line 
-90.
+115.
 
-<images//NandGate.png, id=36, 51.94406pt x 27.85406pt>
-File: images//NandGate.png Graphic file (type png)
-<use images//NandGate.png>
-Package pdftex.def Info: images//NandGate.png  used on input line 91.
+<images/NandGate.png, id=38, 51.94406pt x 27.85406pt>
+File: images/NandGate.png Graphic file (type png)
+<use images/NandGate.png>
+Package pdftex.def Info: images/NandGate.png  used on input line 116.
 (pdftex.def)             Requested size: 51.94392pt x 27.85397pt.
 
-Overfull \hbox (17.44182pt too wide) in paragraph at lines 91--92
+Overfull \hbox (17.44182pt too wide) in paragraph at lines 116--117
 [][] 
  []
 
 
-Package wrapfig Warning: Stationary wrapfigure forced to float on input line 92
-.
+Package wrapfig Warning: Stationary wrapfigure forced to float on input line 11
+7.
 
 
 Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 96.
+put line 120.
 
-<images//NorGate.png, id=37, 48.93282pt x 25.59563pt>
-File: images//NorGate.png Graphic file (type png)
-<use images//NorGate.png>
-Package pdftex.def Info: images//NorGate.png  used on input line 97.
+<images/NorGate.png, id=39, 48.93282pt x 25.59563pt>
+File: images/NorGate.png Graphic file (type png)
+<use images/NorGate.png>
+Package pdftex.def Info: images/NorGate.png  used on input line 121.
 (pdftex.def)             Requested size: 48.93268pt x 25.59555pt.
 
-Overfull \hbox (14.43057pt too wide) in paragraph at lines 97--98
+Overfull \hbox (14.43057pt too wide) in paragraph at lines 121--122
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--98
+Underfull \hbox (badness 10000) in paragraph at lines 119--122
 \OT1/cmr/m/n/10 un NOT.
  []
 
 
-Package wrapfig Warning: Stationary wrapfigure forced to float on input line 98
-.
+Package wrapfig Warning: Stationary wrapfigure forced to float on input line 12
+2.
 
-[6 <./images//NandGate.png> <./images//NorGate.png>] [7]
-Underfull \hbox (badness 10000) in paragraph at lines 147--150
-\OT1/cmr/m/n/10 Per ogni fun-zione log-ica del tipo
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 147--150
+[6 <./images/NandGate.png> <./images/NorGate.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 163--169
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 147--150
-\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 ([]\OML/cmm/m/it/10 ; []; []; :::; []\OT1/cmr
-/m/n/10 )$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 147--150
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 172--175
 
  []
 
 
-Underfull \hbox (badness 8000) in paragraph at lines 147--150
-\OML/cmm/m/it/10 f\OT1/cmr/m/n/10 ([]\OML/cmm/m/it/10 ; []; []; :::; []\OT1/cmr
-/m/n/10 ) = \OML/cmm/m/it/10 a \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 f\OT1/cmr/m/
-n/10 (1\OML/cmm/m/it/10 ; []; []; :::; []\OT1/cmr/m/n/10 ) + \OML/cmm/m/it/10 a
-[] \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 f\OT1/cmr/m/n/10 (0\OML/cmm/m/it/10 ; []
-; []; :::; []\OT1/cmr/m/n/10 )$
+Underfull \hbox (badness 10000) in paragraph at lines 172--175
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--150
+Underfull \hbox (badness 10000) in paragraph at lines 172--175
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--175
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--185
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--185
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--185
 
  []
 
 [8]
 Chapter 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--160
+Underfull \hbox (badness 10000) in paragraph at lines 189--190
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 161--163
+Underfull \hbox (badness 10000) in paragraph at lines 194--196
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 163--165
+Underfull \hbox (badness 10000) in paragraph at lines 196--198
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 165--167
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 175--176
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 175--176
+Underfull \hbox (badness 10000) in paragraph at lines 198--200
 
  []
 
 [9
 
-] [10]
+]
+Underfull \hbox (badness 10000) in paragraph at lines 208--209
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--209
+
+ []
+
+[10]
 Overfull \hbox (23.16313pt too wide) has occurred while \output is active
 \OT1/cmr/m/sl/10 3.1.  INSIEMI DI OPERATORI COMPLETI ED USO DELLE PORTE LOGICHE
  \OT1/cmr/m/n/10 11
@@ -413,51 +425,51 @@ Overfull \hbox (23.16313pt too wide) has occurred while \output is active
 ]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--243
+Underfull \hbox (badness 10000) in paragraph at lines 271--273
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 244--251
+Underfull \hbox (badness 10000) in paragraph at lines 274--281
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 244--251
+Underfull \hbox (badness 10000) in paragraph at lines 274--281
 
  []
 
-<images//Multiplexer21.png, id=64, 24.84282pt x 45.16875pt>
-File: images//Multiplexer21.png Graphic file (type png)
-<use images//Multiplexer21.png>
-Package pdftex.def Info: images//Multiplexer21.png  used on input line 267.
+<images/Multiplexer21.png, id=65, 24.84282pt x 45.16875pt>
+File: images/Multiplexer21.png Graphic file (type png)
+<use images/Multiplexer21.png>
+Package pdftex.def Info: images/Multiplexer21.png  used on input line 297.
 (pdftex.def)             Requested size: 24.84274pt x 45.16862pt.
 [13]
-<images//Multiplexer21Circuito.png, id=69, 81.30376pt x 56.46094pt>
-File: images//Multiplexer21Circuito.png Graphic file (type png)
-<use images//Multiplexer21Circuito.png>
-Package pdftex.def Info: images//Multiplexer21Circuito.png  used on input line 
-276.
+<images/Multiplexer21Circuito.png, id=70, 81.30376pt x 56.46094pt>
+File: images/Multiplexer21Circuito.png Graphic file (type png)
+<use images/Multiplexer21Circuito.png>
+Package pdftex.def Info: images/Multiplexer21Circuito.png  used on input line 3
+06.
 (pdftex.def)             Requested size: 81.30354pt x 56.46078pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 292--294
+Underfull \hbox (badness 10000) in paragraph at lines 322--324
 
  []
 
 
-Overfull \hbox (17.08397pt too wide) in paragraph at lines 316--317
+Overfull \hbox (17.08397pt too wide) in paragraph at lines 346--347
 []$\OML/cmm/m/it/10 f \OT1/cmr/m/n/10 =$b'(ac'+a'c)+b(ac+a'c') che pos-si-amo u
 l-te-ri-or-mente com-pattare ri-conoscendo
  []
 
-[14 <./images//Multiplexer21Circuito.png> <./images//Multiplexer21.png>]
+[14 <./images/Multiplexer21Circuito.png> <./images/Multiplexer21.png>]
 Underfull \vbox (badness 3525) has occurred while \output is active []
 
  [15]
 [16]
 Chapter 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 445--449
+Underfull \hbox (badness 10000) in paragraph at lines 475--479
 
  []
 
@@ -476,55 +488,55 @@ Underfull \vbox (badness 1057) has occurred while \output is active []
 ]
 Chapter 7.
 [25]
-Overfull \hbox (18.36166pt too wide) in paragraph at lines 738--739
-[]\OT1/cmr/m/n/10 Quindi se vo-lessimo com-pi-lare ed es-eguire l'entita baseE
-n-tity nel file baseTest.vhd
+Overfull \hbox (18.36166pt too wide) in paragraph at lines 768--769
+[]\OT1/cmr/m/n/10 Quindi se vo-lessimo com-pi-lare ed es-eguire l'entit^^Ra bas
+eEn-tity nel file baseTest.vhd
  []
 
-[26] (D:\SOFTWARE\MiKTeX\tex/latex/listings\lstlang1.sty
-File: lstlang1.sty 2020/03/24 1.8d listings language file
+[26] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2019/09/10 1.8c listings language file
 ) [27]
-Underfull \hbox (badness 10000) in paragraph at lines 879--881
+Underfull \hbox (badness 10000) in paragraph at lines 909--911
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 882--883
+Underfull \hbox (badness 10000) in paragraph at lines 912--913
 
  []
 
 [28]
-Underfull \hbox (badness 10000) in paragraph at lines 884--885
+Underfull \hbox (badness 10000) in paragraph at lines 914--915
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 888--890
+Underfull \hbox (badness 10000) in paragraph at lines 918--920
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 891--892
+Underfull \hbox (badness 10000) in paragraph at lines 921--922
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 900--903
+Underfull \hbox (badness 10000) in paragraph at lines 930--933
 
  []
 
 [29] [30] [31]
-Underfull \hbox (badness 10000) in paragraph at lines 1006--1007
+Underfull \hbox (badness 10000) in paragraph at lines 1036--1037
 
  []
 
 
-Overfull \hbox (30.53403pt too wide) in paragraph at lines 1019--1029
+Overfull \hbox (30.53403pt too wide) in paragraph at lines 1049--1059
 [][] 
  []
 
 [32] [33]
-Underfull \hbox (badness 10000) in paragraph at lines 1123--1126
+Underfull \hbox (badness 10000) in paragraph at lines 1153--1156
 
  []
 
@@ -533,12 +545,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 1123--1126
 ]
 Chapter 8.
 [37]
-Underfull \hbox (badness 10000) in paragraph at lines 1290--1296
+Underfull \hbox (badness 10000) in paragraph at lines 1320--1326
 
  []
 
 [38] [39]
-Underfull \hbox (badness 10000) in paragraph at lines 1342--1343
+Underfull \hbox (badness 10000) in paragraph at lines 1372--1373
 
  []
 
@@ -549,14 +561,14 @@ Overfull \hbox (63.44089pt too wide) has occurred while \output is active
  []
 
 [41]
-Underfull \hbox (badness 10000) in paragraph at lines 1429--1434
+Underfull \hbox (badness 10000) in paragraph at lines 1459--1464
 
  []
 
 [42] [43]
-Overfull \hbox (0.57462pt too wide) in paragraph at lines 1491--1492
+Overfull \hbox (0.57462pt too wide) in paragraph at lines 1521--1522
 []\OT1/cmr/m/n/10 Non us-are us-cite nelle con-dizioni di tran-sizione. Questo 
-perche non sarebbe
+perch^^Re non sarebbe
  []
 
 [44]
@@ -564,35 +576,38 @@ Chapter 9.
 [45
 
 ]
-Overfull \hbox (59.73956pt too wide) in paragraph at lines 1546--1558
+Overfull \hbox (59.73956pt too wide) in paragraph at lines 1580--1592
 [] 
  []
 
-[46] (RetiLogicheMadeFriendly.aux) ) 
+[46] (./RetiLogicheMadeFriendly.aux) ) 
 Here is how much of TeX's memory you used:
- 5097 strings out of 479334
- 71710 string characters out of 2869356
- 661939 words of memory out of 3000000
- 22513 multiletter control sequences out of 15000+200000
- 409622 words of font info for 48 fonts, out of 3000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 68i,8n,74p,437b,1797s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\matte\AppData\Local\MiKTeX\fonts
-/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><D:/SOFTWARE/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmbx10.pfb><D:/SOFTWARE/MiKTeX/fonts/type1/public/amsfonts/cm/cmb
-x12.pfb><D:/SOFTWARE/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/SOFTW
-ARE/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><D:/SOFTWARE/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb><D:/SOFTWARE/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmr12.pfb><D:/SOFTWARE/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><D
-:/SOFTWARE/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><D:/SOFTWARE/MiKTeX/f
-onts/type1/public/amsfonts/cm/cmr7.pfb><D:/SOFTWARE/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmsl10.pfb><D:/SOFTWARE/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10
-.pfb><D:/SOFTWARE/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/SOFTWARE/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><D:/SOFTWARE/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmtt8.pfb>
-Output written on RetiLogicheMadeFriendly.pdf (46 pages, 279520 bytes).
+ 4993 strings out of 483140
+ 69885 string characters out of 5965152
+ 549508 words of memory out of 5000000
+ 19977 multiletter control sequences out of 15000+600000
+ 538530 words of font info for 45 fonts, out of 8000000 for 9000
+ 36 hyphenation exceptions out of 8191
+ 35i,8n,74p,435b,1795s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/matteo/.texlive2019/texmf-var/fon
+ts/pk/ljfour/jknappen/ec/tcrm1000.600pk></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmtt8.pfb>
+Output written on RetiLogicheMadeFriendly.pdf (46 pages, 257734 bytes).
 PDF statistics:
- 229 PDF objects out of 1000 (max. 8388607)
+ 232 PDF objects out of 1000 (max. 8388607)
+ 151 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
