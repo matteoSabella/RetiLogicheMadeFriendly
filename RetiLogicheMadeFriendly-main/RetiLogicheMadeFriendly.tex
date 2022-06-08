@@ -830,24 +830,20 @@ end entity nome_entity;
 \subsection{Architettura}
 
 La nozione di \textbf{architettura} in VHDL specifica il comportamento di un'entità.
-(Ad un'entità possono corrispondere più architetture.)
+(Ad un'entità possono corrispondere più architetture, così da rendere possibile avere un componente la cui interfaccia con l'esterno è costante ma in base all'utilizzo cambia il funzionamento interno)
 
 \begin{lstlisting}[language=VHDL]
 
 architecture nome_architettura of nome_entita is
 --dichiarazione di eventuali signal o buffer ausiliari
 begin
---le equazioni e le operazioni di assegnamento che verranno scirtte in questa zona verranno eseguite tutte in contemporanea, indipendentemente dalla sequenza in cui compariranno
+--le equazioni e le operazioni di assegnamento che verranno scritte in questa zona verranno eseguite tutte in contemporanea, indipendentemente dalla sequenza in cui compariranno
 
 
 end architecture nome_architettura;
-
-
 \end{lstlisting}
-
-ATTENZIONE ! a differenza di linguaggi come il C, in VHDL l'operatore di assegnazione è '<=' mentre quello di comparazione di uguaglianza è '='.
-
-Per l'assegnazione si scrive a<=b per indicare che il valore di b viene assegnato ad a.
+ATTENZIONE ! a differenza di linguaggi come il C, in VHDL l'operatore di assegnazione è '$<$=' mentre quello di comparazione di uguaglianza è '='.\\
+Per l'assegnazione si scrive a$<$=b per indicare che il valore di b viene assegnato ad a.
 
 \subsection{Testbench}
 
@@ -855,7 +851,7 @@ Il \textbf{testbench} è un'unione della vista dataflow con quella strutturale c
 
 \begin{lstlisting}[language=VHDL]
 
---dichiaro un entita senza interfaccia perche non ha necessita di porte di ingresso ne di uscita.
+--dichiaro un entita senza interfaccia perche non ha necessita di porte di ingresso e nemmeno di uscita.
 entity TestBench is 
 end entity TestBench;
 
@@ -868,13 +864,45 @@ signal a,b,c : bit;
 
 begin
 --istanzio il modulo da testare
-g1 : entitadatestare port map()
+nome_istanza_entita: entitadatestare port map()
 
 --definizione degli stimoli tramite equazioni in cui assegno ogni tot secondi un certo valore ai signal del mio testBench che a loro volta verranno assegnati alle porte dell entita da testare.
 
 \end{lstlisting}
 
 Il testbench può essere fatto nello stesso file di testo in cui si dichiarano le entità e le architetture che poi andranno ad essere usate.
+
+\subsection{Tipi definiti dall'utente}
+
+Per facilitare la lettura e la scrittura, ma anche per non imporre da subito una codifica è opportuno usare dei tipi definiti dall'utente.
+
+Si possono definire vari tipi:
+
+\begin{itemize}
+\item \textbf{tipi enumerati}
+\item \textbf{tipi array}
+\item \textbf{tipi struttura}
+\end{itemize}
+
+
+
+\begin{lstlisting} [language=VHDL]
+
+--tipi enumerati
+
+type nome_tipo is (enum1,enum2,enum3,...,enumn)
+
+--tipi array
+
+type nome_tipo is array (n downto m) of tipo_elemento
+
+--tipi struttura
+
+type nome_tipo is tipo_struttura...
+
+\end{lstlisting}
+
+La decisione della codifica è possibile delegarla alla macchina che effettua la sintetizzazione, se la funzione è disponibile.
 
 
 \subsection{Components}
