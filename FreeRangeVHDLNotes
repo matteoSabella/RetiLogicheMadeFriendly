@@ -1,0 +1,72 @@
+
+
+An important aspect of VHDL is that it's instructions are executed concurrently, which means that are all executed at the same time !
+
+VHDL usages:
+
+> Describe a digital circuit with some level of detail.
+> A way to implement through synthesis the model into a fpga.
+
+
+----------------------GOLDEN RULES----------------------
+
+
+> When writing VHDL you're designing hardware ! So the approach should be different than writing higher level languages.
+
+> It's vital to have a general idea of the hardware you're writing and it's aim.ù
+
+---------------------VHDL INVARIANTS--------------------
+
+
+
+> VHDL is not case sensitive and even not space sensitive
+> Comment starts with "--" and there is no way to write block-style comments apart from writing line after line starting everyone with "--"
+> Parenthesis make precedences more clear 
+> Warnings over statements:
+	Each if has a then
+	Each if ends with "end if;"
+	Else if in vhdl becomes "elsif"
+	Each case statement ends with "end case;"
+	Each loop statement ends with "end loop;"
+
+
+
+---------------------VHDL DESIGN UNITS-----------------
+
+
+
+Entity is the blsck-box view of the unit, whereas architecture instead is the view of what resides inside it.
+
+
+> ENTITY:
+
+	--------------------------------------------------------------------------
+	|	entity name_entity is 												 |
+	|	port          														 |
+	|		(  																 |
+	|			port_name1 : direction_of_data type;                         |
+	|			port_name2 : direction_of_data type;                         |
+	|			...                                                          |
+	|			port_namen : direction_of_data type                          |
+	|		);					--never forget this semicolon                |
+	|	end name_entity;		-- nor this one 							 |
+	--------------------------------------------------------------------------
+
+	Direction_of_data may be in,out or inout.
+
+
+	When specifiying groups of signals, they're declared using the type "std_logic_vector", and firther may be specified using a "downto" view or a "to" view. 
+
+> ARCHITECTURE:
+
+
+SIGNALS are the software equivalent of wires. THey can hold many different types.
+They have to be declared before the begin.
+Assigning to a signal is done with "<=".
+
+VARIABLES stores informations.
+THey have to be declared in the process construct.
+Assigning to a variable is done with ":=".
+
+CONSTANTS are like variables but the value they store cannot be changed.
+
