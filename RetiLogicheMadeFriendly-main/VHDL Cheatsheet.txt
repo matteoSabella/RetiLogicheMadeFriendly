@@ -1,0 +1,118 @@
+
+
+
+
+ELEMENTI INDISPENSABILI nella descrizione vhdl:
+
+>definizione di entità : descrive le porte di ingresso ed uscita del sistema.
+>definizione dell'architettura: descrive il funzionamento dl sistema.
+
+
+
+-----------------------------------DICHIARAZIONE DI ENTITA':---------------------------------
+
+entity nome_entità is
+port ( nome_segnale : modo tipo_segnale;
+	...	);
+end nome_entità;
+
+
+>MODI: sono la direzione con la quale i dati possono essere trasferiti attraverso i terminale
+
+-IN : solo in ingresso, pro vengono dall'esterno del sistema.
+-OUT : solo in uscita, sono in allontanamento dal sistema e possono solo essere letti quando 
+	ne escono.
+-INOUT
+-BUFFER: segnale in out che può essere letto mentre p nel sistema.
+
+>TIPO:  è l'insieme dei valori che il segnale può assumere e le operazioni che si possono
+	fare con esso.
+
+	-bit: può assumere valori 0 o 1.
+	-bit_vector(bus): ossia un array di bit .   es. b:in bit_vector(3 downto 0);
+
+	Sostituibili da std_logic e std_logic_vector nella libreria ieee 1164.
+
+
+
+-----------------------------------DEFINIZIONE DELL'ARCHITETTURA:---------------------------
+
+architecture nome_architettura of nome_entità is
+
+	dichiarazioni 
+begin
+
+	statement concorrenti
+end nome_architettura.
+
+
+Nell'architettura possono essere dichiarati molti oggetti.
+Uno dei più semplici è il SEGNALE signal nome_segnale : tipo_segnale;
+Le COSTANTI invece si dichiarano come constant nome_costante : tipo_costante := valore;
+
+
+
+-----------------------------------VHDL STRUTTURALE:----------------------------------
+
+La descrizione strutturale è come approccio simile alla costruzione a blocchi quindi ci saranno
+dei componenti dichiarati che compariranno una o più volte nell'architettura.
+
+--dichiarazione di un component
+component nome_component is
+port (nome_segnale: modo tipo_segnale;...); end component;
+
+--istanziazione di un component
+--notazione posizionale
+nome_label: nome_componente
+port map( segnale1,segnale2,segnale3,....);
+
+oppure
+
+--notazione di corrsipondenza per nome
+nome_label: nome_componente
+port map(port1=>segnale1,...,portN=>segnaleN);
+
+
+
+
+
+la funzione GENERATE permette di istanziare in modo più veloce una grossa quantità
+di oggetti tutti dello stesso tipo.
+
+nome_label: for identificatore del range ( es. k 15 downto 0) generate
+	nome_istanza_componente con portmapping;
+end generate; 
+
+
+Per rendere più versatile un' entità posso utilizzare dei parametri GENERIC che poi andranno
+ad essere specificati con generic map.
+
+---------------------------------VHDL DATAFLOW------------------------------------------
+
+Consiste nel descrivere nell'architettura come fluiscono i dati dai terminali di ingresso 
+a quelli in uscita passando anche per eventuali segnali interni.
+
+>ASSEGNAZIONI:
+
+SELEZIONATA:
+
+with segnale_selezione select
+segnale <=valore_a when caso_a,
+valore_b when caso_b,...;
+
+!devo prendere casi mutuamente esclusivi e includerli 
+TUTTI ( o usando il carattere'|' per concatenarli in una stessa casistica o anche con others).
+
+CONDIZIONATA: le condizioni non sono per forza mutuamente esclusive e viene eseguita la prima
+	che verifica le condizioni.
+
+
+
+
+
+
+
+
+
+---------------------------------TESTBENCH:------------------------------------------
+
