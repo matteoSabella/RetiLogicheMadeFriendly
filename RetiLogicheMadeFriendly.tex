@@ -1,3 +1,4 @@
+
 \documentclass[a4paper]{book}
 \title{Reti Logiche made Friendly}
 \author{Matteo Sabella 218614}
@@ -196,7 +197,7 @@ Ogni variabile che sia affermata o negata.\\
 \item\textbf{Minterm}
 Prodotto in cui ogni variabile compare una volta come letterale.\\ Esso è 1 per una e una sola combinazione di letterali.\\
 \item\textbf{Maxterm}
-Somma in cui ogni variabile compare una volta come letterale.\\ Esso è 0 per una e una sola combinazione dei suoi letterali.\\
+Somma in cui ogni variabile compare una volta come letterale.\\ Esso è 0 per una e una sola combinazione di letterali.\\
 \item\textbf{Implicante}
 f è implicante di g se e solo se quando f è 1 allora g è 1.
 \vspace{\baselineskip}
@@ -238,15 +239,16 @@ a$\backslash$ bc & 00 & 01 & 11 & 10 \\
 \hline
 \end{tabular}
 \vspace{\baselineskip}
+L'unica adiacenza non immediata è quella tra prima ed ultima colonna e tra prima ed ultima riga !
 Nella prima riga partendo dall'alto verranno messe in notazione Gray tutte le possibili combinazioni che la variabile bc può assumere.
-Nella prima colonna invece tutte le combinazioni (in questo caso solo due) che la variabile a può assumere.
+Nella prima colonna invece tutte le combinazioni (in questo caso solo essere raccolto e che finisce nella parentesi in OR con il suo negato e quindi come risultato da 1 
+"scomparendo". 
 
-Nelle celle interne invece si procederà mettendo ad ogni incrocio, al posto di * l'uscita della funzione per i corrispondenti valori di a,b e c.
+L'unica adiacenza non immediata è quella tra prima ed ultima colonna e tra prima ed ultima riga !
 
-
-...
-
-
+Trovati i term, prima di fermarci, dobbiamo minimizzare il più possibile gli elementi in OR tra loro.
+Questo è possibile trovando un certo tipo di implicanti, gli \textbf{implicanti primi}.
+Ossia gli implicanti che non sono contenuti in nessun altro implicante più grande.
 \newpage
 \section{Insiemi di operatori completi ed uso delle porte logiche}
 
@@ -255,6 +257,15 @@ Le mappe saranno fatte esattamente come fatto fino a qui con la differenza che a
 Infatti per ogni variabile che aggiungiamo le possibili combinazioni degli ingressi vengono raddoppiate !
 (Continueremo ad usare il codice Gray)
 Avremo quindi per mappe a 4 variabili delle mappe quadrate i cui minterm saranno composti da 4 letterali.
+
+Nel caso di mappe da 4 variabili, ora esse saranno quadrate perchè avrò combinazioni di due ingressi sia sulle righe che sulle colonne.
+
+Nel processo di sintetizzazione di una funzione quando si hanno a disposizione più scelte bisogna scegliere quella con minori implicanti, così che il circuito corrispondente poi abbia misure più contenute.
+Per arrivare a ciò è utile cercare di minimizzare le sovrapposizioni.
+
+
+
+
 
 \section{Altri metodi per sintetizzare circuiti}
 \section{Minimizzazione congiunta}
@@ -333,16 +344,14 @@ a$\backslash$ bc & 00 & 01 & 11 & 10 \\
 1              & \cellcolor{yellow}1  &  0 & \cellcolor{yellow}1  & 0  \\
 \hline
 \end{tabular}
-\vspace{\baselineskip}
-
-Purtroppo i term in questo caso coincidono con i minterm della tabella di karnaugh e sono : ab'c' , a'b'c , abc , a'bc.
-
-Quindi la funzione logica dell' odd counter è :
-
+\vspace{\baselineskip}\\
+Purtroppo i term in questo caso coincidono con i minterm della tabella di karnaugh e sono : ab'c' , a'b'c , abc , a'bc.\\
+Quindi la funzione logica dell'odd counter è :
+\\\\
 \(f=\)ab'c'+a'b'c+abc+a'bc'
-
+\\\\
 Possiamo ora procedere a raggruppare eventuali term sfruttando l'adiacenza logica.
-
+\\
 \(f=\)b'(ac'+a'c)+b(ac+a'c') che possiamo ulteriormente compattare riconoscendo in ac'+a'c l'operatore booleano XOR e in ac+a'c l'operatore booleano XNOR.
 
 
@@ -472,30 +481,34 @@ Questi ritardi sono dati da motivi fisici e di solito sono specificati al moment
 
 I diagrammi temporali sono di due tipi:
  
-\textbf{SENZA RITARDO}\\
+\begin{itemize}
+\item\textbf{SENZA RITARDO}\\
 Quelli senza ritardi vengono impiegati per valutare la funzione logica ed effettuare operazioni di debugging se necessarie.\\
-\textbf{CON RITARDO}\\
+\item\textbf{CON RITARDO}\\
 Quelli con ritardi invece vengono utilizzati per valutare le prestazioni della funzione logica.\\
-
+\end{itemize}
 Un tempo utile da conoscere riguardo ad un circuito logico è quello massimo che può impiegare per restituire una risposta all'input sottopostogli.
 
 
 \section{Ottenere il diagramma temporale di un circuito}
 
-Prima di tutto è necessario identificare i nodi interni e assegnargli un nome identificativo.
-
-Poi si procede identificando gli stimoli di ingresso e successivamente si valuta l'uscita di ogni nodo sulla base degli ingressi che ha ricevuto.
-
+Prima di tutto è necessario identificare i nodi interni e assegnargli un nome identificativo.\\
+Poi si procede identificando gli stimoli di ingresso e successivamente si valuta l'uscita di ogni nodo sulla base degli ingressi che ha ricevuto.\\
+Ogni nodo viene poi eventualmente traslato lungo l'asse temporale nel caso in cui si considerasse un diagramma con ritardo, in modo da rappresentarlo.\\
+Un diagramma conserva i valori di ogni segnale finchè uno qualunque di essi, esterno o interno non cambia.
+Ogni volta che un segnale ha un \textbf{evento}, si valutano tutti gli altri segnali sulla base della funzione logica che il circuito implementa e si riportano eventuali cambiamenti sul diagramma, che li conserverà fino al prossimo evento, dove la procedura sarà ripetuta.
 
 
 \section{Glitch}
 
-In un circuito possono verificarsi dei fenomeni detti \textbf{Alee o Glitch} e sono dovuti a brevi e rapidi cambiamenti di valore che avvengono con particolati combinazioni di ritardi. Influiscono sul risultato istantaneo ottenibile dal circuito (transitorio) ma non sulla correttezza della funzione logica.
-
-
-Per ovviare a ciò si utilizza la tipologia di\textbf{ circuito sincrono}
+In un circuito possono verificarsi dei fenomeni detti \textbf{Alee o Glitch} e sono dovuti a brevi e rapidi cambiamenti di valore che avvengono con particolati combinazioni di ritardi. Influiscono sul risultato istantaneo ottenibile dal circuito (transitorio) ma non sulla correttezza della funzione logica.\\
+Per ovviare a ciò si utilizzano i circuiti di tipo \textbf{sincrono}
 
 \subsection{Alee su Karnaugh}
+
+Un glitch si verifica quando un evento si propaga all'interno del circuito seguendo più cammini e quindi accumulando con buona probabilità ritardi diversi a seconda del cammino che si considera.
+Un evento che agisce su una sola porta, ovvero su un solo implicante non causa glitch,perciò sarà necessario aggiungere implicanti di raccordo affichè l'uscita non sia influenzata dalla propagazione dell'evento con tempistiche diverse.
+Ciò elimina i glitch ma rende più grosso il circuito.
 
 \chapter{Circuiti aritmetici}
 
@@ -504,13 +517,13 @@ Si chiamano \textbf{circuiti aritmetici} tutti quei circuiti che sfruttano porte
 
 \section{Struttura iterativa generica}
 
-Siccome il numero degli ingressi cresce con il numero delle cifre ben presto le dimensioni di input diventano ingestibili ecco che quindi si può ricorrere ad un metodo gerarchico, ossia un metodo iterativo che sfrutta un'operazione atomica e la replicaquante volte è necessario.
+Siccome il numero degli ingressi cresce con il numero delle cifre ben presto le dimensioni di input diventano ingestibili ecco che quindi si può ricorrere ad un metodo gerarchico, ossia un metodo iterativo che sfrutta un'operazione atomica e la replica quante volte è necessario.
 
 
 \section{Somma}
 
 \subsection{Half adder}
-Iniziamo con la tabella di verità del circuito che dovrebbe sommare due ingressi da 1 bit ciascuno.
+Iniziamo con la tabella di verità del circuito che somma due ingressi da 1 bit ciascuno.
 Esso restituirà un risultato con 2 bit in uscita.
 Indichiamo con a e b i due ingressi, mentre con s il bit meno significativo del risultato e con c quello più significativo.
 La lettera c ci ricorderà anche che tale cifra è dovuta al carry dell'operazione.
@@ -525,19 +538,14 @@ a & b & c & s \\ \hline
 1 & 0 & 0 & 1 \\ 
 \hline
 \end{tabular}
-
-
-
-Mettendo s e c in due mappe di Karnaugh separate si possono costruire le funzioni logiche di ognuno.\\
-Iniziamo con S:
-
+\\Mettendo s e c in due mappe di Karnaugh separate si possono costruire le funzioni logiche di ognuno.\\
+Iniziamo con S:\\\\
 \begin{tabular}{|c|c|c|}
 \hline
 a/b & 0 & 1 \\ \hline
 0   & 0 & \cellcolor{yellow}1 \\ \hline
 1   & \cellcolor{yellow}1 & 0 \\ \hline
-\end{tabular}
-
+\end{tabular}\\
 La funzione logica che rappresenta l'uscita s quindi è \(f_s=\)aXORb .\\
 Passando a C otteniamo poi:
 
@@ -551,13 +559,14 @@ a/b & 0 & 1 \\ \hline
 La funzione logica che esprime il comportamento di C è \(f_c=\)aANDb .
 
 Il circuito dell'half adder è:
-
+\\
+Il significato della funzione su s è che la cifra delle unità sarà 0 se le cifre che somma sono entrambe 0 oppure 1  ( e quindi nell'ultimo caso causano un riporto).\\
+Il significato di c invece è che solo se entrambe le cifre che si stanno sommando sono 1 allora si avrà un riporto non nullo.
 
 \subsection{Full adder}
 
 L'half adder però non tiene conto di un'evetuale riporto proveniente dal calcolo fatto in precedenza.
 Infatti se vogliamo sfruttare un'architettura gerarchica bisogna tener conto che la somma atomica fatta per la cifra con un grado di significatività in meno rispetto a quella che stiamo sommando potrebbe aver generato un carry con la conseguente necessità di doverne tener conto ora che facciamo la somma.
-
 
 Il problema si risolve aggiungendo un ingresso all'half adder per poter tenere conto di un0 eventuale carry non nullo.
 
@@ -610,7 +619,7 @@ c$\backslash$ ab & 00 & 01 & 11 & 10 \\
 \hline
 \end{tabular}
 
-COnfrontando il circuito con quelli che abbiamo già visto ci si accorge che è lo stesso circuito del conta uni !
+Confrontando il circuito con quelli che abbiamo già visto ci si accorge che è lo stesso circuito del conta uni !
 
 \subsection{Sommatore ripple carry}
 Ora quindi possiamo unire i circuiti dell'half adder e del full adder per ottenere un sommatore con un arbitrario numero di ingressi.
@@ -633,8 +642,19 @@ Questo perchè gli adder calcolano la somma prima che un eventuale carry venga c
 
 Permette di ottimizzare il calcolo del carry riducendo a 2 livelli questa operazione. Ciò a però complica la realizzazione.
 
-Si comincia separando la somma dal carry. 
+Si comincia separando la somma dal carry.
 
+Successivamente si procede con una semplificazione congiunta, infatti la parte che calcola la somma senza curarsi del carry fornisce già a xor b, che è dunque riutilizzabile.
+
+Ora abbiamo dunque:
+
+\[c=ab+ac+bc\]
+\[c=ab+ab'c+a'bc\]
+\[c=ab+c(ab'+a'b)\]
+\[c=ab+c(a xor b)\]
+
+
+Mettendo a xor b in and con c lo condizioniamo a far si che se c è 0, ossia non è presente carry... MISSING
 
 \section{Sottrazione}
 
@@ -663,9 +683,9 @@ In complemento a 2 questo è [1][1][1]-[1][0][1]=[0][1][0] ossia 2.
 Per esempio avendo 3 bit [*][*][*] e volendo rappresentare il numero -3 in binario in complemento a 2 , [1][1][1]+[0][1][1]= [1][0][1][0] ossia 9.
 
 \end{itemize}
+Questo perchè mettendo in una tabella il complemento a 2 si ottiene il seguente risultato:\\
 
-Questo perchè mettendo in una tabella il complemento a 2 si ottiene il seguente risultato:
-
+\begin{center}
 \begin{tabular}{|c|c|c|c||c|c|c|c|}
 \hline
 4 & 2 & 1 & M & -4 & 2 & 1 & M  \\
@@ -687,18 +707,13 @@ Questo perchè mettendo in una tabella il complemento a 2 si ottiene il seguente
 0 & 0 & 1 & 1 &  0 & 0 & 1 & 1  \\
 \hline
 \end{tabular}
+\end{center}
 
-
-
-
-
-\newpage
 \section{Moltiplicazione}
 
-Volendo moltiplicare due numeri POSITIVI si può ancora una volta sfruttare la struttura gerarchica.
-
-Utilizzando la rappresentazione binaria le moltiplicazioni tra due numeri possono essere costituite dalle seguenti combinazioni :
-
+Volendo moltiplicare due numeri POSITIVI si può ancora una volta sfruttare la struttura gerarchica.\\
+Utilizzando la rappresentazione binaria le moltiplicazioni tra due numeri possono essere costituite dalle seguenti combinazioni :\\
+\begin{center}
 \begin{tabular}{|c|c|c|}
 \hline
 a & b & res \\
@@ -712,20 +727,14 @@ a & b & res \\
 1 & 1 & 1 \\
 \hline
 \end{tabular}
-
-Quello sopra descritto è esattamente il comportamento della porta AND, per convincersene basta confrontare le due tabelle della verità.
-
-
-Perciò il prodotto di due numeri ciascuno costituito da 1 bit ha come risultato l'operazione logica AND tra di essi.
-
-Rendiamo ora il moltiplicatore multi-bit tramite struttura gerarchica:
-
+\end{center}
+Quello sopra descritto è esattamente il comportamento della porta AND, infatti il risultato (res) è 1 solamente quando entrambi gli ingressi (a,b) sono ad 1, altrimenti è 0.\\
+Perciò il prodotto di due numeri ciascuno costituito da 1 bit ha come risultato l'operazione logica AND tra di essi.\\ \\
+Rendiamo ora il moltiplicatore multi-bit tramite struttura gerarchica:\\ \\
 Dati due numeri a e b rispettivamente con m e n bit ciascuno, il moltiplicatore a*b sarà una concatenazione in cui il bit meno significativo di b moltiplicherà tutto a e questo si fa mettendo m porte and in cui entrano una cifra di a e la meno significativa di b.
-Poi ciò produce un risultato, il cui bit meno significativo sarà il bit meno significativo del risultato finale mentre invece il resto del risultato è parziale e dovrà essere sommato al risultato della moltiplicazione tra le cifre di a e il bit secondo bit meno significativo.
-Iterando questo processo si ottiene il risultato cercato.
-
-Attenzione che mentre la somma tra due numeri con n cifre può produrre al massimo un numero con n cifre+1 il prodotto tra due numeri di m ed n cifre può produrre un numero di cifre fino a 2*n, in quanto ogni moltiplicazione produce n cifre e per ogni risultato parziale ci sarò uno shift verso sinistra di 1 quindi alle n cifre si sommano n-1 cifre +1 per un eventuale carry out .
-
+Ciò produce un risultato, il cui bit meno significativo sarà il bit meno significativo del risultato finale mentre invece il resto del risultato è parziale e dovrà essere sommato al risultato della moltiplicazione tra le cifre di a e il secondo bit meno significativo di b.
+Iterando questo processo si ottiene il risultato cercato.\\ \\
+Attenzione che mentre la somma tra due numeri con n cifre può produrre al massimo un numero con n cifre+1 il prodotto tra due numeri di m ed n cifre può produrre un numero di cifre fino a 2*n, in quanto ogni moltiplicazione produce n cifre e per ogni risultato parziale ci sarò uno shift verso sinistra di 1 quindi alle n cifre si sommano n-1 cifre +1 per un eventuale carry out .\\ \\
 Il circuito del moltiplicatore multi-bit è il seguente :
 
 
@@ -741,8 +750,6 @@ I programmi che andremo ad utilizzare sono ghdl e gtkwave.\\
 Una volta scaricate le versioni stabili correnti adatte al vostro dispositivo si consiglia di estrarre i contenuti di entrambe le cartelle in due cartelle separate.\\
 Poi aggiungere nel caso di windows i percorsi delle cartelle bin al PATH così da poterci accedere ogni volta senza dover andare nel percorso preciso in cui andremo a mettere gli eseguibili.
 
-\subsubsection{ghdl}
-\subsubsection{gtkwave}
 \subsubsection{Comandi frequenti}
 
 I comandi più frequenti sono:
@@ -774,10 +781,8 @@ ghdl -r baseEntity
 
 \section{VHDL}
 
-Il linguaggio che utilizzeremo è il \textbf{VHDL}, ossia \textbf{V}ery highspeed integrated circuit \textbf{H}ardware \textbf{D}escription \textbf{L}anguage.
-
-Il VHDL ci permette di lavorare secondo 3 \textbf{metodologie}
-
+Il linguaggio che utilizzeremo è il \textbf{VHDL}, ossia \textbf{V}ery highspeed integrated circuit \textbf{H}ardware \textbf{D}escription \textbf{L}anguage.\\
+Il VHDL ci permette di lavorare secondo 3 \textbf{metodologie}: 
 \begin{itemize}
 \item \textbf{Top-Down}
 \item \textbf{Buttom-Up}
@@ -793,31 +798,29 @@ e secondo 3 viste
 \end{itemize}
 
 
-\newpage
+
 \subsection{Entità}
 
-La nozione di \textbf{entità} in VHDL corrisponde alla rappresentazione di un blocco \textbf{SENZA SPECIFICARNE} la logica interna ma solamente l'interfaccia con l'esterno.
+Il concetto di \textbf{entità} in VHDL corrisponde alla rappresentazione di un blocco \textbf{SENZA SPECIFICARNE} la logica interna ma solamente l'interfaccia con l'esterno.
 
 Esso specifica :
 \begin{itemize}
 \item \textbf{nome}
 \item \textbf{numero di ingressi}
 \item \textbf{numero di uscite}
-
 \end{itemize}
-
 Di seguito il codice per dichiarare un'entità di nome "name\textunderscore entity" con n ingressi e m-n uscite.
 
 \begin{lstlisting}[language=VHDL]
 entity nome_entity is
 port
 (	
-	nome_porta1 : tipo_ingresso,
-	nome porta2 : tipo_ingresso,...
-	nome_portan : tipo_ingresso;
-	nome_portan+1 : tipo_uscita,
-	nome_portan+2 : tipo_uscita,...
-	nome_portan+3 : tipo_uscita;
+	nome_porta1   : in tipo_ingresso,
+	nome porta2   : in tipo_ingresso,...
+	nome_portan   : in tipo_ingresso;
+	nome_portan+1 : out tipo_uscita,
+	nome_portan+2 : out tipo_uscita,...
+	nome_portan+3 : out tipo_uscita;
 );
 end entity nome_entity;
 \end{lstlisting}
@@ -825,24 +828,20 @@ end entity nome_entity;
 \subsection{Architettura}
 
 La nozione di \textbf{architettura} in VHDL specifica il comportamento di un'entità.
-(Ad un'entità possono corrispondere più architetture.)
+(Ad un'entità possono corrispondere più architetture, così da rendere possibile avere un componente la cui interfaccia con l'esterno è costante ma in base all'utilizzo cambia il funzionamento interno)
 
 \begin{lstlisting}[language=VHDL]
 
 architecture nome_architettura of nome_entita is
 --dichiarazione di eventuali signal o buffer ausiliari
 begin
---le equazioni e le operazioni di assegnamento che verranno scirtte in questa zona verranno eseguite tutte in contemporanea, indipendentemente dalla sequenza in cui compariranno
+--le equazioni e le operazioni di assegnamento che verranno scritte in questa zona verranno eseguite tutte in contemporanea, indipendentemente dalla sequenza in cui compariranno
 
 
 end architecture nome_architettura;
-
-
 \end{lstlisting}
-
-ATTENZIONE ! a differenza di linguaggi come il C, in VHDL l'operatore di assegnazione è '<=' mentre quello di comparazione di uguaglianza è '='.
-
-Per l'assegnazione si scrive a<=b per indicare che il valore di b viene assegnato ad a.
+ATTENZIONE ! a differenza di linguaggi come il C, in VHDL l'operatore di assegnazione è '$<$=' mentre quello di comparazione di uguaglianza è '='.\\
+Per l'assegnazione si scrive a$<$=b per indicare che il valore di b viene assegnato ad a.
 
 \subsection{Testbench}
 
@@ -850,7 +849,7 @@ Il \textbf{testbench} è un'unione della vista dataflow con quella strutturale c
 
 \begin{lstlisting}[language=VHDL]
 
---dichiaro un entita senza interfaccia perche non ha necessita di porte di ingresso ne di uscita.
+--dichiaro un entita senza interfaccia perche non ha necessita di porte di ingresso e nemmeno di uscita.
 entity TestBench is 
 end entity TestBench;
 
@@ -863,7 +862,7 @@ signal a,b,c : bit;
 
 begin
 --istanzio il modulo da testare
-g1 : entitadatestare port map()
+nome_istanza_entita: entitadatestare port map()
 
 --definizione degli stimoli tramite equazioni in cui assegno ogni tot secondi un certo valore ai signal del mio testBench che a loro volta verranno assegnati alle porte dell entita da testare.
 
@@ -871,14 +870,46 @@ g1 : entitadatestare port map()
 
 Il testbench può essere fatto nello stesso file di testo in cui si dichiarano le entità e le architetture che poi andranno ad essere usate.
 
+\subsection{Tipi definiti dall'utente}
+
+Per facilitare la lettura e la scrittura, ma anche per non imporre da subito una codifica è opportuno usare dei tipi definiti dall'utente.
+
+Si possono definire vari tipi:
+
+\begin{itemize}
+\item \textbf{tipi enumerati}
+\item \textbf{tipi array}
+\item \textbf{tipi struttura}
+\end{itemize}
+
+
+
+\begin{lstlisting} [language=VHDL]
+
+--tipi enumerati
+
+type nome_tipo is (enum1,enum2,enum3,...,enumn)
+
+--tipi array
+
+type nome_tipo is array (n downto m) of tipo_elemento
+
+--tipi struttura
+
+type nome_tipo is tipo_struttura...
+
+\end{lstlisting}
+
+La decisione della codifica è possibile delegarla alla macchina che effettua la sintetizzazione, se la funzione è disponibile.
+
 
 \subsection{Components}
 
-Può capitare di avere una funzione logica implementata in un file e di volerla recuperare all'interno di un progetto più ampio o per eseguirne un test bench ma senza sporcare il codice.
+Può capitare di avere una funzione logica implementata in un file e di volerla recuperare all'interno di un progetto più ampio o per eseguirne un testbench ma senza sporcare il codice.
 
-Questo si può fare alla  \textbf{vista strutturale}.
+Questo si può fare grazie alla \textbf{vista strutturale}.
 
-Per fare ciò è necessario dunque all'interno del nuovo file pescare questa risorsa e ciò è possibile tramite un component.
+Per fare questo è necessario dunque richiamare questa risorsa all'interno del nuovo file . Ciò è possibile tramite un component.
 
 
 \begin{lstlisting}[language=VHDL]
@@ -904,20 +935,15 @@ begin
 
 \end{lstlisting}
 
-\subsection{Operatori,Identificatori e operazioni multiple}
+\subsection{Operatori,Identificatori e Operazioni Multiple}
 
 Il linguaggio VHDL ha di default tutti gli operatori booleani .
 L'operatore \textbf{NOT} è l'unico con la \textbf{priorità alta} mentre gli altri hanno tutti la stessa priorità e quindi verrà data importanza all'ordine o ad eventuali parentesi per decidere quale operazione fare per prima.\\
-
 Gli \textbf{identificatori} sono l'insieme di nomi utilizzati per entità, architetture e segnali.\\
-
-VHDL è un linguaggio NON è case sensitive.\\
-
-Per specificare un delay si può utilizzare l'operatore \textbf{after}
-
-Con il tipo bit\_vector(n down to m) si crea un array di bit con gli indici che vanno da m ad n.
+VHDL è un linguaggio NON case sensitive.\\
+Per specificare un delay si può utilizzare l'operatore \textbf{after}\\
+Con il tipo \textbf{bit\_vector(n downto m)} si crea un array di bit con gli indici che vanno da m ad n.
 VHDL possiede tutte le operazioni booleane come and,or,xor.\\
-
 La precedenza maggiore tra tali operazioni la ha la porta NOT mentre a differenza di quello che avviene nell'algebra booleana il resto degli operatori ha la stessa priorità perciò per forzare alcune operazioni prima di altre bisogna usare le parentesi !\\
 
 Nella descrizione delle architetture a volte è necessario instanziare variabili interne, queste vengono chiamate \textbf{signal} e necessitano di un nome univoco per essere riconosciuti nello svolgimento della logica del componente.\\
@@ -927,15 +953,16 @@ Inoltre a differenza di altri lignuaggi in VHDL l'ordine in cui sono dichiarate 
 
 \subsection{Parametri formali ed effettivi}
 
-Le funzioni si richiamano nell'architettura tramite \textbf{port map} seguito da \textbf{notazione posizionale} e la loro instanziazione sarà contemporanea.
+Nell'utilizzo di vista strutturale, è necessario istanziare i componenti che si andranno ad utilizzare. 
+Un'istanza si richiama nell'architettura tramite \textbf{port map} seguito dall'assegnazione tra segnali dell'architettura più esterna e gli elementi disponibili nell'interfaccia del modulo che stiamo instanziando. L'assegnazione può essere esplicita o seguire una \textbf{notazione posizionale}.
 All'interno della stessa architettura possono avvenire \textbf{più operazioni}.\\
 L'ordine in cui vengono specificate all'interno dell'architettura non è rilevante perchè vanno concepite come un sistema in cui \textbf{procedono in parallelo}.\\
 \begin{lstlisting}[language=VHDL]
 nome_istanza : nome_master port map(parametri effettivi)
 \end{lstlisting}\vspace{\baselineskip}
-\textbf{portmap} è un operatore che permette di mappare le porte dell'istnza dell'entità che si vuole utilizzare con segnali provenienti dall'entità contenitrice, così che possano lavorare insieme.\vspace{\baselineskip}\\
-Si può anche optare per un'assegnazione di tipo esplicito e ciò aiuta a devitare gli errori e ad indentificarli prima.
-Questo si fa con l'operatore "=>" in cui a sx c'è la porta dell'entità che sto mappando e a destra un segnale dell'entità contenente.
+\textbf{port map} è un operatore che permette di mappare le porte dell'istanza dell'entità più interna con i segnali provenienti dall'entità contenitrice, così che possano lavorare insieme.\\
+Si può anche optare per un'assegnazione di tipo esplicito e ciò aiuta ad evitare gli errori e ad indentificarli prima.
+Questo si fa con l'operatore "=$>$" in cui a sx c'è la porta dell'entità che sto mappando e a destra un segnale dell'entità contenente.
 
 \begin{lstlisting}[language=VHDL]
 
@@ -954,7 +981,7 @@ end architecture strutturale;
 \end{lstlisting}
 
 
-\newpage
+
 \subsection{Modi dei segnali}
 
 I segnali possono assumere vari tipologie e ognuna di esse comporta un certo set di operazioni ammesse o no.
@@ -969,7 +996,7 @@ I segnali di out possono essere solo scritti e perciò staranno solamente dalla 
 Inoltre nelle quazioni all'interno di un'architettura possono comparire una volta sola, questo perchè non essendo sequenziali bensì contemporanee le istruzioni avrei un conflitto nell'assegnazione.
 
 \item\textbf{BUFFER}\\
-I segnali buffer sono segnali in out ma leggibili e perciò possono stare da entrambe le parti di un'assegnazione.
+I segnali buffer sono segnali out ma leggibili e perciò possono stare da entrambe le parti di un'assegnazione.
 Ma possono subire un'assegnazione una sola volta.
 
 \begin{lstlisting}[language=VHDL]
@@ -1023,7 +1050,7 @@ constant nomecostante : tipo := valore;
 Tipo di segnale che può assumere solamente i valori 0 ed 1.
 \item\textbf{bit\textunderscore vector}\\
 Tipo di segnale che corrisponde ad un array di una certa dimensione.
-Si dischiara come 
+Si dichiara come 
 \begin{lstlisting}[language=VHDL]
 nomeSegnale : bit_vector(estremoSup downto estremoInf);
 \end{lstlisting}
@@ -1061,7 +1088,7 @@ struttura & type nomestruttura is record end record \\
 
 \end{itemize}
 
-\newpage
+
 \subsubsection{Tipo std\_logic}
 
 Il tipo standard logic (std\_logic) è un' estensione del concetto di bit che permette di rappresentare ulteriori stati logici.\vspace{\baselineskip}\\
@@ -1116,9 +1143,6 @@ library ieee;
 use ieee.numeric_std.all;
 \end{lstlisting}
 
-
-
-
 \subsection{Espressioni condizionate}
 
 Sono operazioni che si basano sul principio del multiplexer e che vanno utilizzate nell'architettura di un'entità.\\
@@ -1130,8 +1154,7 @@ Sono definite nella libreria ieee.
 Vanno implementate nell'architettura e sono tra di loro combinabili.
 \begin{lstlisting}[language = VHDL]
 --architettura di un'entita
-identificatore <= opzione1 when condizione else opzione2,
-                  opzione2 ;
+identificatore <= opzione1 when condizione else opzione2;
 \end{lstlisting}
 \item\textbf{Assegnazione Selezionata}\\
 E' simile ad uno switch e utilizza un segnale per effettuare la decisione.
@@ -1150,12 +1173,12 @@ La differenza principale tra di esse è che l'assegnazione condizionata può ope
 
 \subsection{Stile Comportamentale}
 
-Permette di calcolare i valori di uscita tramite algoritmi.
+Permette di calcolare i valori di uscita tramite algoritmi.\\
 La peculiarità di questo stile è che a differenza di quanto visto fino ad ora le parti di codice sono eseguite in \textbf{ordine sequenziale}.\\\\
 \textbf{Processo:}
 \begin{itemize}
 \item Compare all'interno di dell'architettura.
-\item Compare all'interno di una \textbf{sensitivity list}, ossia una lista di segnali che definiscono le condizioni di attivazioni del processo.\\\textbf{Ogni volta che un parametro della lista varia il processo verrà eseguito}.
+\item E' legato ad una \textbf{sensitivity list}, ossia una lista di segnali che definiscono le condizioni di attivazioni del processo.\\\textbf{Ogni volta che un parametro della lista varia il processo verrà eseguito}.
 
 
 \end{itemize}
@@ -1172,7 +1195,6 @@ label: process (sensitivity-list) is
 	end process;
 end architecture comportamentale;
 \end{lstlisting}
-
 Nello stile comportamentale possono essere usati "if then elsif else end if" all'interno di processi.
 
 
@@ -1347,7 +1369,7 @@ X(n+1)=Y(n)
 
 Perciò X(n+1)=\(\delta\)( IN(n), X(n))
 
-\newpage
+
 \section{Progettazione di circuiti sequenziali}
 
 La progettazione segue dei macro step ben precisi:
@@ -1558,11 +1580,8 @@ Parallelizzando vari registri con load enable che condividono sia load che clock
 
 E' un tipo di registro costituito da un insieme di registri messi in serie e condividono il segnale di clock.
 \\
-Così facendo ogni registro inserisce un ritardo di 1 ciclo di clock.
-
+Così facendo ogni registro inserisce un ritardo di 1 ciclo di clock.\\
 Sono molto utilizzati per le comunicazioni.
-
-
 
 \subsubsection*{Shift register con shift enable}
 
