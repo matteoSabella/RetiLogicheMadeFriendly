@@ -16,6 +16,10 @@
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.850, 0.203, 0.419}
 
+\usepackage{tikz}
+\usetikzlibrary{arrows,automata,positioning}
+
+
 
 
 \lstdefinestyle{mystyle}{
@@ -1131,17 +1135,29 @@ Nella definizione dell'entità quindi ora una porta potrà essere invece di bit 
 \subsubsection{Tipo numeric\_std}
 
 Introduce due nuovi tipi : signed e unsigned.
-Sono due vettori come std\textunderscore logic \textunderscore vector ma per cui si conosce la definizione delle operazioni algebriche.
-
-Signed usa la rappresentazione in complemento a 2.
-
-
-Si inseriscono nel codice vhdl come segue:
+Sono due vettori come std\textunderscore logic \textunderscore vector ma per cui si conosce la definizione delle operazioni algebriche.\\
+Signed usa la rappresentazione in complemento a 2.\\
+Si inseriscono nel codice vhdl così :\\
 
 \begin{lstlisting}[language=VHDL]
 library ieee;
 use ieee.numeric_std.all;
 \end{lstlisting}
+
+QUesta libreria permette anche l'utilizzo di funzioni per convertire in modo rapido un tipo in un altro.
+
+Per esempio per convertire un numero da decimale alla sua rappresentazione binaria con un certo numero b di bit, si può ricorrere alla funzione to\textunderscore unsigned.
+
+\begin{lstlisting}
+
+s <= to_unsigned(numero_base10, b);
+
+\end{lstlisting}
+
+\subsubsection{TIP}
+Se fosse necessario concatenare due dati dello \textbf{stesso tipo}, questo si fa mettendo tra di essi una e commerciale .
+
+Altrimenti l'estensione è possibile con la funzione resize.
 
 \subsection{Espressioni condizionate}
 
@@ -1174,8 +1190,8 @@ La differenza principale tra di esse è che l'assegnazione condizionata può ope
 \subsection{Stile Comportamentale}
 
 Permette di calcolare i valori di uscita tramite algoritmi.\\
-La peculiarità di questo stile è che a differenza di quanto visto fino ad ora le parti di codice sono eseguite in \textbf{ordine sequenziale}.\\\\
-\textbf{Processo:}
+La peculiarità di questo stile è che a differenza di quanto visto fino ad ora le parti di codice sono eseguite in \textbf{ordine sequenziale}.
+\subsubsection{Processi}
 \begin{itemize}
 \item Compare all'interno di dell'architettura.
 \item E' legato ad una \textbf{sensitivity list}, ossia una lista di segnali che definiscono le condizioni di attivazioni del processo.\\\textbf{Ogni volta che un parametro della lista varia il processo verrà eseguito}.
@@ -1184,6 +1200,7 @@ La peculiarità di questo stile è che a differenza di quanto visto fino ad ora 
 \end{itemize}
 
 \begin{lstlisting}[language=VHDL]
+
 architecture comportamentale of mio_modulo is
 begin
 label: process (sensitivity-list) is
@@ -1194,9 +1211,42 @@ label: process (sensitivity-list) is
 	 statement sequenziale;
 	end process;
 end architecture comportamentale;
+
 \end{lstlisting}
 Nello stile comportamentale possono essere usati "if then elsif else end if" all'interno di processi.
 
+\subsubsection{Assegnazione condizionata nei processi}
+
+All'interno dei processi il codice viene eseguito in modo sequenziale e non come visto fino ad ora in modo concorrente.
+
+Questo vuol dire che nel caso in cui volessimo fare scelte, bisogna cambiare sintassi per rispecchiare questo cambio di paradigma.
+
+\begin{lstlisting} [language=VHDL]
+
+--assegnazione condizionale sequenziale interna ad un processo
+
+architecture arch of entity is
+
+	begin
+
+		label : process (sensitivity_list) is
+	
+		if condizione 
+			then 
+				segnale/variabile <= valore ;
+		elsif condizione 
+			then 
+				segnale/variabile <= valore2;
+				segnale2/variabile2 <= valore3;
+		else 
+			segnalen/variabilen <= valoren;
+		
+		end if;	
+		
+	end process;
+end architecture arch;		
+
+\end{lstlisting}
 
 \subsubsection{Variabili}
 
@@ -1215,6 +1265,7 @@ end process;
 
 
 \end{lstlisting}
+Se all'interno di un processo vengono eseguite delle operazioni i cui risultati devono essere utilizzati all'interno dello stesso processo DEVO usare dei dati di tipo variable, altrimenti usando i segnali, tutti i dati verrebbero aggiornati concorrentemente al concludersi del processo e quindi le operazioni dipendenti da dati elaborati precedentemente ma all'interno dello stesso processo non terrebbero traccia dei cambiamenti avvenuti nel corso del processo.
 
 \subsubsection{Cicli}
 
@@ -1239,10 +1290,39 @@ end process;
 
 \end{itemize}
 
+
+
 \subsubsection{Testbench con i processi}
 
- 
+E' una pratica molto comoda che si appoggia su un processo senza sensitivity list, così che il processo possa partire immediatamente all'avvio della simulazione e non vi sia mai un momento in cui quel processo è inattivo.\\ \\
+All'interno di questo processo vengono specificati i segnali che daranno i valori per effettuare la simulazione e ogni assegnazione è staccata temporalmente dalle altre grazie all'uso dell'operatore \textbf{wait for}, che mette in stallo per il tempo specificato il processo e poi riprende la sua esecuzione dall'istruzione successiva al wait che si è appena concluso.
 
+Per terminare il processo, che altrimenti proseguirebbe all'infinito, si usa wait \textbf{senza} specificare un valore di tempo da attendere.
+
+\begin{lstlisting} [language=VHDL]
+--testbench implementato con process
+
+architecture arch of entity is 
+
+begin
+
+testprocess: process is
+	signal s : bit;
+begin
+
+	s<="01"
+	wait for tempo;
+	s<="11"
+	wait for tempo;
+	s<="10"
+	wait;
+	
+	
+
+end process;
+
+end architecture arch;
+\end{lstlisting}
 
 
 
@@ -1289,7 +1369,7 @@ I circuiti che impiegano memorie sincrone hanno due stati:
 
 \begin{itemize}
 \item Clock basso e la rete combinatoria calcola.
-\item Clock alto e  la rete combinatoria calcola con un nuovo stato presente.
+\item Clock alto e la rete combinatoria calcola con un nuovo stato presente.
 \end{itemize}
 
 
@@ -1297,7 +1377,7 @@ I circuiti che impiegano memorie sincrone hanno due stati:
 
 Ogni circuito sequenziale passa attraverso due fasi ciclicamente:
 \begin{itemize}
-\item{} calcolo delle nuove uscite e stato futuro.
+\item{} calcolo delle nuove uscite e dello stato futuro.
 \item{} Stato futuro che diventa presente.
 \end{itemize}
 
@@ -1309,8 +1389,8 @@ Il latch D ha due ingressi, di cui uno di clock e due uscite Q e Q'.
 Un latch durante il funzionamento del circuito vive due possibili stati che si alternano nel tempo:
 
 \begin{itemize}
-\item C=1 corrisponde a \textbf{latch trasparente} ossia stato in cui viene messo un nuovo valore in memoria.
-\item C=0 corrisponde a \textbf{latch in memoria} ossia stato in cui il valore in memoria viene conservato immutato.
+\item C=1 corrisponde a \textbf{latch trasparente} ossia stato in cui lo stato conservato in memoria viene immesso nel circuito.
+\item C=0 corrisponde a \textbf{latch in memoria} ossia stato in cui il valore in memoria viene conservato immutato e corrisponde all'ultimo valore entrato in memoria prima che il segnale di clock passasse da 1 a 0.
 \end{itemize}	
 
 
@@ -1341,12 +1421,14 @@ Ce ne sono vari tipi:
 
 Viene impiegato per risolvere i problemi di sfasamento tra frequenza di clock ed elaborazione del circuito.\vspace{\baselineskip}\\
 \textbf{Edge Triggering}:\\
-Significa che il flip flop diviene trasparente \textbf{SOLO} nella transizione (edge appunto) tra stato 0 ed 1 ( o 1 e 0 ).\vspace{\baselineskip}\\
+Significa che il flip flop diviene trasparente \textbf{SOLO} nella transizione (edge appunto) tra stato 0 ed 1 ( o 1 e 0 ).
+Questo si ottiene mettendo due flip flop in serie e facendo si che abbiano lo stesso clock MA il clock del secondo flip flop viene propagato su un filo su cui sta una porta NOT.
+Così facendo il segnale che viene salvato in memoria nell flip flop master invece di venire propagato per tutta la durata del clock quando questo lo attiva, in quell'istante passa solo al secondo flip flop, che lo immetterà nel circuito solo quandoil clock passa torna al valore iniziale.\\ \\
 \textbf{Preset \& clear}\\
 Al momento dell'accensione di un circuito il flipflop non ha alcuna memoria pregressa quindi il suo valore sarebbe ignoto e questo non è consigliabile.
 Ciò si può risolvere con dei segnali detti di preset e clear, ossia segnali asincroni esclusivamente di inizializzazione che danno al flip flop un valore noto.\\
-
 Spesso indicati come S ed R e attivi bassi entrambi.
+Per esempio S potrebbe dare valore iniziale 1 mentre R da 0 se attivato.
 
 
 \section{Macchine a stati}
@@ -1357,17 +1439,12 @@ Nei flip flop edge triggered lo stato presente del ciclo n di clock corrisponde 
 
 \subsection{Equazioni di stato}
 
-Indichiamo lo stato presente dell'ennesimo ciclo con X(n).
-
+Indichiamo lo stato presente dell'ennesimo ciclo con X(n).\\
 Lo stato futuro Y(n) dipenderà dal valore degli ingressi del circuito combinatorio e da quello dello stato presente.
-
-Y(n)=\(\delta\)(IN(n), X(n)).
-
-Lo stato presente al ciclo successivo (n+1) è uguale aquello fuuro del ciclo precedente :
-
-X(n+1)=Y(n)
-
-Perciò X(n+1)=\(\delta\)( IN(n), X(n))
+\[Y(n)=\delta(IN(n), X(n))\]
+Lo stato presente al ciclo successivo (n+1) è uguale a quello futuro del ciclo precedente :
+\[X(n+1)=Y(n)\]
+Perciò \[X(n+1)=\delta( IN(n), X(n))\]
 
 
 \section{Progettazione di circuiti sequenziali}
@@ -1381,8 +1458,6 @@ La progettazione segue dei macro step ben precisi:
 \end{itemize}
 
 
-
-
 %riguardo il diagramma temporale della caldaia% lezione del 21/10
 
 
@@ -1392,11 +1467,25 @@ E' un modo alternativo e grafico per la rappresentazione dei passaggi di stato d
 
 \begin{itemize}
 \item{}Ogni stato viene rappresentato da un cerchio con il valore delle variabili di stato.\\
+
+
 \item{}Ogni transizione diventa una freccia che va dal cerchio con lo stato presente a quello futuro.
 Sulla freccia si indicano i valori degli ingressi per cui si effettua la transizione.
-E si indicano i valori delle uscite corrispondenti allo srato di partenza e all'ingresso sulla trnasizione.
+E si indicano i valori delle uscite corrispondenti allo srato di partenza e all'ingresso sulla transizione.
 \end{itemize}
 
+\begin{center}
+
+\begin{tikzpicture}
+    \node(s_0) [state] {$s_0$};
+    \node(s_1) [state] at (2,0) {$s_1$};
+    
+    \path [-stealth, thick]
+    (s_0) edge node {} (s_1)
+    (s_1) edge [loop above] node {} (s_1);    
+\end{tikzpicture}
+
+\end{center}
 
 \subsection*{Codifica one-hot}
 
@@ -1420,7 +1509,7 @@ Successivamente si tabellano e poi si procede come visto per realizzare un diagr
 
 \subsubsection{Influenze sullo stato}
 Lo stato cambia solo quando sopraggiunge il fronte attivo di clock.
-Nel frattempo la rete combinatoria calcola o stato futuro secondo l'andamento degli ingressi e la transizione che verrà considerata sarà quella a cui è la rete cobinatoria nel momento in cui sopraggiunge il fronte del clock.
+Nel frattempo la rete combinatoria calcola lo stato futuro secondo l'andamento degli ingressi e la transizione che verrà considerata sarà quella a cui è la rete combinatoria nel momento in cui sopraggiunge il fronte del clock.
 
 \subsubsection{Influenze sulle uscite}
 
@@ -1428,7 +1517,7 @@ Se gli ingressi cambiano durante un ciclo di clock e le uscite dipendono anche d
 
 \subsection{Tempistiche dei flip flop}
 
-Lo stato del flip flop dipende sia dal clock 8CHE causa un cambiamento di stato) che dal valore di ingresso.
+Lo stato del flip flop dipende sia dal clock ( che causa un cambiamento di stato) che dal valore di ingresso.
 
 % da controllare
 Il segnale di ingresso necessita di entrare nel flip flop quindi avrà bisogno di cambiare e poter percorrere la rete che lo separa dal flip flop PRIMA del fronte d'onda.
@@ -1478,7 +1567,7 @@ E' il caso di macchina a stati più generale, in cui le uscite possono dipendere
 
 \subsection*{Macchina di Moore}
  
-E' un caso specifico in cui le uscite dipendono solamente dallo stato corrente e non dagli ingressi.\\
+E' un caso specifico in cui \textbf{le uscite dipendono solamente dallo stato corrente e non dagli ingressi}.\\
 Ciò fa si che le uscite non cambino durante l'intero ciclo di clock dato che lo stato si mantiene.\\
 Il valore delle uscite si può scrivere perciò nello stato e non sulle transizioni.\\
 Dal punto di vista dei ritardi il ritardo che può avvenire arriva fino ad un ciclo di clock.
