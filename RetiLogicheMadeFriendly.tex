@@ -1,4 +1,4 @@
-
+ 
 \documentclass[a4paper]{book}
 \title{Reti Logiche made Friendly}
 \author{Matteo Sabella 218614}
@@ -1026,7 +1026,7 @@ port (bus: inout bit)
 
 \item\textbf{GENERIC}\\
 Permette di parametrizzare un segnale così da rendere un'entità più versatile e riutilizzabile.
-Nella definizione dell'entità si scrive
+Nella definizione dell'entità, prima della dichiarazione port, si scrive:
 \begin{lstlisting}[language=VHDL]
 generic(nomesegnale : tiposegnale)
 \end{lstlisting}
@@ -1214,7 +1214,7 @@ end architecture comportamentale;
 
 \end{lstlisting}
 Nello stile comportamentale possono essere usati "if then elsif else end if" all'interno di processi.
-
+Inoltre per la scelta selezionata si deve usare "case is when end case".
 \subsubsection{Assegnazione condizionata nei processi}
 
 All'interno dei processi il codice viene eseguito in modo sequenziale e non come visto fino ad ora in modo concorrente.
@@ -1434,12 +1434,12 @@ Per esempio S potrebbe dare valore iniziale 1 mentre R da 0 se attivato.
 \section{Macchine a stati}
 
 \subsection{Stato presente o futuro ?}
-Nei flip flop edge triggered lo stato presente del ciclo n di clock corrisponde allo stato futuro alla fine del ciclo precedente, n-1.
-
+Nei flip flop edge triggered lo stato presente del ciclo n di clock corrisponde allo stato futuro alla fine del ciclo precedente, n-1.\\ \\
+Inoltre il circuito è scandito dai fronti di clock , per cui nel lasso di tempo tra due di essi lo stato presente \textbf{NON CAMBIA}, mentre invece lo stato futuro può farlo.
 
 \subsection{Equazioni di stato}
 
-Indichiamo lo stato presente dell'ennesimo ciclo con X(n).\\
+Indichiamo lo stato presente dell'n-esimo ciclo con X(n).\\
 Lo stato futuro Y(n) dipenderà dal valore degli ingressi del circuito combinatorio e da quello dello stato presente.
 \[Y(n)=\delta(IN(n), X(n))\]
 Lo stato presente al ciclo successivo (n+1) è uguale a quello futuro del ciclo precedente :
@@ -1456,22 +1456,21 @@ La progettazione segue dei macro step ben precisi:
 \item{Determinazione dell'evoluzione degli stati e delle uscite in base agli ingressi}: fase in cui si determina quale debba essere lo stato futuro sulla base dei possibili stati presenti.
 \item{Scrittura della tabella della verità}: fase in cui si trascrive la tabella della verità relativa alle equazioni di stato e delle uscite.
 \end{itemize}
+ATTENZIONE !\\
+Quando si trattano le uscite della struttura logica nella tabella della verità, bisogna ricordarsi che quelle uscite sono in corrispondenza dello stato che la macchina sta vivendo e non sono le uscite corrispondenti allo stato che seguirà l'attuale.
 
 
 %riguardo il diagramma temporale della caldaia% lezione del 21/10
 
-
 \section{Diagramma degli stati}
 
-E' un modo alternativo e grafico per la rappresentazione dei passaggi di stato del circuito sequenziale ( transizioni ).
+E'un modo alternativo e grafico per la rappresentazione dei passaggi di stato di un circuito sequenziale (transizioni).
 
 \begin{itemize}
-\item{}Ogni stato viene rappresentato da un cerchio con il valore delle variabili di stato.\\
-
-
+\item{}Ogni stato viene rappresentato da un cerchio con il valore delle variabili di stato.
 \item{}Ogni transizione diventa una freccia che va dal cerchio con lo stato presente a quello futuro.
 Sulla freccia si indicano i valori degli ingressi per cui si effettua la transizione.
-E si indicano i valori delle uscite corrispondenti allo srato di partenza e all'ingresso sulla transizione.
+E si indicano i valori delle uscite corrispondenti allo stato di partenza e all'ingresso sulla transizione.
 \end{itemize}
 
 \begin{center}
@@ -1481,7 +1480,7 @@ E si indicano i valori delle uscite corrispondenti allo srato di partenza e all'
     \node(s_1) [state] at (2,0) {$s_1$};
     
     \path [-stealth, thick]
-    (s_0) edge node {} (s_1)
+    (s_0) edge [above] node {a=0/c=1} (s_1)
     (s_1) edge [loop above] node {} (s_1);    
 \end{tikzpicture}
 
@@ -1503,28 +1502,26 @@ E' molto utile partire dal circuito ed estrarre il diagramma degli stati.
 Si analizza il circuito per risalire alle funzioni logiche che lo rappresentano.
 Successivamente si tabellano e poi si procede come visto per realizzare un diagramma a stati partendo dalla tabella del circuito.
 
+Il numero degli stati che compaiono nel diagramma sono $2^(numero_di_flip_flop)$.
+
+"Seguendo" il percorso degli ingressi si risale alla funzione booleana che calcola lo stato futuro e si può fare lo stesso per quanto riguarda l'uscita dello stato presente.
+
 \section{Considerazioni preliminari per un progetto di macchina a stati}
 
 \subsection*{Cambiamento degli ingressi durante ciclo di clock}
 
-\subsubsection{Influenze sullo stato}
-Lo stato cambia solo quando sopraggiunge il fronte attivo di clock.
-Nel frattempo la rete combinatoria calcola lo stato futuro secondo l'andamento degli ingressi e la transizione che verrà considerata sarà quella a cui è la rete combinatoria nel momento in cui sopraggiunge il fronte del clock.
+Tra un fronte di clock e il successivo lo stato presente non cambia !\\Invece possono cambiare le uscite, se dipendent dagli ingressi, allo stesso modo dello stato futuro.
+Tra gli stati futuri che si presentano durante il ciclo di clock, viene selezionato come stato presente del ciclo di clock successivo lo stato futuro che era in ingresso al flip flop al momento del fronte successivo del clock.
 
-\subsubsection{Influenze sulle uscite}
-
-Se gli ingressi cambiano durante un ciclo di clock e le uscite dipendono anche da essi allora le uscite cambieranno di conseguenza.
 
 \subsection{Tempistiche dei flip flop}
 
-Lo stato del flip flop dipende sia dal clock ( che causa un cambiamento di stato) che dal valore di ingresso.
+Lo stato del flip flop dipende sia dal clock (che causa un cambiamento di stato) che dal valore di ingresso.
 
 % da controllare
 Il segnale di ingresso necessita di entrare nel flip flop quindi avrà bisogno di cambiare e poter percorrere la rete che lo separa dal flip flop PRIMA del fronte d'onda.
-Poi avrà bisogno di rimanere costante finchè il ciclo di autosostenimento non si sarà instaurato, ciò è successivo al fronte attivo del clock.
-
-
-Il segnale di ingresso dovrà essere costante er un certo lasso di tempo prima (tempo di setup) e dopo (tempo di hold) il fronte attivo di clock altrimenti il flip flop rischia uno \textbf{stato di metastabilità}.
+Poi avrà bisogno di rimanere costante finchè il ciclo di autosostenimento non si sarà instaurato, ciò è successivo al fronte attivo del clock.\\
+Il segnale di ingresso dovrà essere costante per un certo lasso di tempo prima (tempo di setup) e dopo (tempo di hold) il fronte attivo di clock altrimenti il flip flop rischia uno \textbf{stato di metastabilità}.
 
 
 \section{Tempistiche e velocità}
@@ -1532,7 +1529,7 @@ Il segnale di ingresso dovrà essere costante er un certo lasso di tempo prima (
 \subsection*{Scelta della velocità di clock}
 
 La velocità di clock indica ogni quanto avviene il campionamento dello stato futuro per renderlo presente.
-Le reti combinatorie durante il ciclo di clock (ossia tra due fronti attivi) presentano glitch con tempi vari prima di diventare stabili perciò il minimo valore di clock , ossia la sua frequenza massima ,sarà il massimo valore tra quelli delle durate dei glitch, così che scegliendo quel tempo tutti i segnali della rete combinatoria saranno stabili e lo stato sarà campionato correttamente.
+Le reti combinatorie durante il ciclo di clock (ossia tra due fronti attivi) presentano glitch con tempi vari prima di diventare stabili perciò il minimo valore di clock, ossia la sua frequenza massima, sarà il massimo valore tra quelli delle durate dei glitch, così che scegliendo quel tempo tutti i segnali della rete combinatoria saranno stabili e lo stato sarà campionato correttamente.
 
 \subsection*{Tempistiche dei flip flop}
 
@@ -1545,7 +1542,7 @@ Quindi il segnale di ingresso dovrà essere costante sia per un certo tempo prim
 Se uno dei due tempi dovesse risultare violato rischiano di insorgere problemi.
 In caso di \textbf{setup violation} può essere risolta utilizzando una struttura di calcolo più veloce oppure si può rallentare il clock.
 
-La massima frequenza di clock dipende dal ritardo massimo tra ogni coppia di registri più il tempo di setup.\vspace{\baselineskip}
+La massima frequenza di clock dipende dal ritardo massimo tra ogni coppia di registri più il tempo di setup.\\
 Le case produttrici per esempio usano il processo detto binning, ossia testano i loro dispositivi e poi in base alle performance che offrono le mettono in un determinata determinata categoria (bin) di prestazioni.
 
 In caso di \textbf{hold violation} il motivo è una logica combinatoria troppo veloce.
@@ -1571,11 +1568,12 @@ E' un caso specifico in cui \textbf{le uscite dipendono solamente dallo stato co
 Ciò fa si che le uscite non cambino durante l'intero ciclo di clock dato che lo stato si mantiene.\\
 Il valore delle uscite si può scrivere perciò nello stato e non sulle transizioni.\\
 Dal punto di vista dei ritardi il ritardo che può avvenire arriva fino ad un ciclo di clock.
-Questo perchè se dovessero cambiare gli ingressi, ciò potrebbe non essere riscontrato se non avviene in tempo il cambiamento dello stato futuro e ciò fa saltare la presa d'atto del cambiamento al ciclo di clock successivo.\\
+Questo perchè essendo le uscite dipendenti solo dallo stato presente, qualora cambiassero gli input e lo stato futuro, si dovrebbe aspettare che questo diventi presente per vedere anche le uscite cambiare.
+Se questo cambiamento di input avvenisse appena dopo il fronte del clock, si dovrà aspettare un ciclo intero per vederne le conseguenze sull'uscita.
 
 \subsection*{Da Moore a Mealy}
 
-Una macchina di Moore può diventare di Miley andando a modificare la risposta del circuito affinchè si anticipi il cambiamento di stato.\\
+Una macchina di Moore può diventare di Meay andando a modificare la risposta del circuito affinchè si anticipi il cambiamento di stato.\\
 Ciò fa cambiare il circuito ed avrà equazioni di uscita in cui compaiono gli ingressi.
 
 Uno dei motivi per preferire la macchina di Mealy a quella di Moore è che Moore non ha il collegamento tra gli ingressi e le uscite e questo evita problemi che invece possono presentarsi con le macchine di Mealy.\\
@@ -1588,7 +1586,7 @@ Questo NON può accadere con delle macchine di Moore.
 \item Decisione degli stati del sistema:
 
 Corrisponde ai ricordi del passato in cui è stata la macchina. Non è necessario ricordarsi tutto, dipende da ciò che si deve ottenere.
-Solitamente si parte da uno stato iniziale e poi sulla base di ciò che può succedere all'ingresso si compongono nuovi stati o se ne usniscono alcuni già decisi per introdurre ottimizzazioni.
+Solitamente si parte da uno stato iniziale e poi sulla base di ciò che può succedere all'ingresso si compongono nuovi stati o se ne uniscono alcuni già decisi per introdurre ottimizzazioni.
 
 
 \item Disegno del diagramma degli stati con le transizioni
@@ -1599,7 +1597,7 @@ Solitamente si parte da uno stato iniziale e poi sulla base di ciò che può suc
 
 \end{itemize}
 
-\section{Algorithmic State Machines (ASM)}
+\section{Algorithmic State Machines(ASM)}
 
 E' una delle molte varianti di diagramma a stati che ricalca il modo in cui si fanno i diagrammi di flusso di un programma.
 
@@ -1614,7 +1612,8 @@ E' possibile anche indicarci la codifica ma non obbligatoriamente e nel caso di 
 Ogni condizione è rappresentata da un rombo con una condizione sugli ingressi.
 Da ogni rombo escono due rami, uno per la condizione vera e uno per quella falsa.
 
-
+Nel caso di circuiti sincroni di Mealy, un ingresso può far cambiare anche varie volte durante il ciclo di clock lo stato futuro !
+Verrà scelto quello che segue dal valore che aveva l'uscita nel momento prima del fronte.
 
 \subsection*{Transizione}
 
@@ -1637,19 +1636,171 @@ L'uscita si riferisce sempre allo stato di partenza e non a quello di arrivo.
 
 \chapter{Circuiti sequenziali di base}
 
-\section{Registro}
+\section{Corse sugli ingressi}
 
-Nella sua realizzazione più semplice è solamente un flip flop D che memorizza quindi valori a un bit.
-Di solito è composto da molti flip flop in parallelo e funziona praticamente come una variabile per i linguaggi di programmazione, perchè la sua funzione è memorizzare un valore.
 
-\subsection{Registro singolo con clear}
+
+%MISSING
+
+Un altro metodo per risolvere le corse è quello di impedire l'accesso accesso diretto  dell'ingresso al circuito, e invece campionarlo.
+Interponendo un flip flop tra ingresso e circuito sostanzialmente fa si che anche l'ingresso, dal ciclo successivo di clock sia sincronizzatto con il resto del circuito perchè verrà immesso in quest'ultimo all'inizio del ciclo.
+
+
+\section{Edge detector / Derivatore}
+
+E'un circuito sequenziale il cui scopo è identificare un fronte di clock.
+
+\section{VHDL per circuiti sequenziali}
+
+A differenza dei circuiti combinatori, nei circuiti sequenziali i segnali devono poter dipendere dai valori che hanno avuto precedentemente.
+
+Questo è possibile con il tipo \textbf{buffer}.
+
+\subsection*{Latch in VHDL}
+
+\begin{lstlisting}[language=VHDL]
+
+entity latch is
+	port
+		(
+		-- interfaccia per input del segnale da ricordare e del segnale di clock
+			i_d,i_c : in std_logic; 
+			q :buffer std_logic
+		);
+end entity latch;
+
+
+architecture latch_arch of latch is
+
+begin
+	
+	-- q mantiene il valore che gli e' stato assegnato lultima volta che c e stato ad 1 finche non si presenta nuovamente ad 1
+	q <= d when c='1' else q ; 
+	
+	
+end architecture latch_arch;
+
+\end{lstlisting}
+
+\subsubsection*{Latch con process}
+\begin{lstlisting} [language=VHDL]
+
+entity latch is
+    port
+        (
+            i_d,i_c : in std_logic;
+            b_q : buffer std_logic
+        );
+end entity latch;
+
+architecture latch_arch of latch is
+begin
+
+    latch_proc:process (i_d,i_c) is
+    begin
+
+        if i_c='1'
+            then
+                b_q <= i_d;
+            end if;
+
+    end process;
+
+end architecture latch_arch;
+\end{lstlisting}
+
+
+\subsection*{Flip Flop in VHDL}
+
+Il flip flop a differenza del latch fa memoria solo ad un certo tipo di transizione del valore di clock.
+Un fronte può essere rilevato grazie agli \textbf{attributi} di un segnale, che sono dei costrutti del VHDL per rilevare alcune proprietà di un segnale.
+
+
+\begin{lstlisting}[language=VHDL]
+
+entity flip_flop is
+	port
+		(
+			i_d,i_c : in std_logic;
+			q : buffer std_logic 
+		);
+end entity flip_flop
+
+
+architecture ff_arch of flip_flop is
+
+begin
+
+	--aggiorna il valore di q a i_d solo se il valore di i_c e' ad 1 E il clock ha anche appena avuto un evento, quindi e' un fronte di salita.
+
+	q <= i_d when i_c='1' and i_c'event else q;
+
+
+end architecture ff_arch;
+
+
+\end{lstlisting}
+Altrimenti VHDL propone direttamente una funziona apposita per individuare fronti di salita e discesa di segnali.
+
+\begin{lstlisting}[language =VHDL]
+
+architecture ff_arch of flip_flop is
+
+begin
+
+	q<= i_d when rising_edge(i_c) else q;
+
+end architecture ff_arch;
+\end{lstlisting}
+In caso si volesse il fronte di discesa si usa falling\textunderscore edge.
+
+
+
+\subsection*{Processi sequenziali}
+
+
+
+\section{Macchine a stati in VHDL}
+
+Ricordiamo che una macchina a stati è costituita da 3 parti :
+
+\begin{itemize}
+\item \textbf{Parte Sequenziale}
+\item \textbf{Parte Combinatoria per le Uscite}
+\item \textbf{Parte Combinatoria per lo Stato Futuro}
+\end{itemize}
+Un metodo per realizzare una macchina a stati potrebbe essere quello di realizzare le tre parti come entità separate e poi combinarle, ma diventa troppo laborioso !\\
+Possiamo ricorrere allora all'utilizzo di vari processi, uno per ogni parte della macchina a stati, all'interno della stessa architettura.
+
+\subsubsection*{Parte Sequenziale}
+La parte sequenziale rimane invariata sostanzialmente per ogni macchina a stati, infatti l'unica cosa da fare su misura è a quantità di flip flop per combaciare con quelli che sono i requisiti del caso.
+COnsiste in un processo la cui sensitivity list ha come argomenti il clock e un segnale di reset.
+Il segnale di reset pone a 0 lo stato presente.
+Invece se reset non fosse attivo, nel caso di fronte del clock, il segnale di stato futuro viene assegnato a quello di stato presente.
+
+\subsubsection*{Parte Combinatoria per le Uscite}
+
+E' l'implementazione di funzioni combinatorie.\\
+Viene eseguito nello stesso modo in cui si fanno progetti non sequenziali.
+
+
+\subsubsection*{Parte Combinatoria per lo Stato Futuro}
+
+Analagoamente alla parte per le uscite, questo processo implementa le funzioni booleane che regolano la scelta dello stato futuro.
+
+\section{Registri}
+
+Nella loro realizzazione più semplice sono solamente un flip flop D che memorizza quindi valori a un bit.
+Di solito sono composti da molti flip flop in parallelo e funzionano praticamente come una variabile per i linguaggi di programmazione, perchè la loro funzione è memorizzare un valore.
+
+\subsection*{Registro singolo con clear}
 
 E' un flip flop D che carica un valore ad ogni colpo di clock e viene azzerato con un comando Clear asincrono.
 \subsection{Registro parallelo}
 
 \subsubsection*{Registro multibit parallelo con Clear}
 
-E' costituito da registri singoli in parallelo ognuno indipendente dall'altro ma con segnale di clock e Clear comune.
+E' costituito da registri singoli in parallelo ognuno indipendente dall'altro ma con segnale di clock e clear comune.
 
 \subsubsection*{Registro parallelo con load enable}
 
@@ -1665,7 +1816,7 @@ Un modo alternativo al clock gating è quello di utilizzare un multiplexer con s
 Se load fosse attivo allora verrà caricato il nuovo valore altrimenti si ricaricherà quello che già conteneva.
 Parallelizzando vari registri con load enable che condividono sia load che clock si ottiene un registro multibit con load enable (E' possibile anche aggiungere Clear).
 
-\subsection{Shift register - Registro seriale}
+\subsection*{Shift register - Registro seriale}
 
 E' un tipo di registro costituito da un insieme di registri messi in serie e condividono il segnale di clock.
 \\
@@ -1679,12 +1830,11 @@ Si realizza sempre con un multiplexer che in caso di segnale di load non attivo 
 
 \subsubsection*{Shift register con uscita parallela}
 
-Permette di vedere il cotnenuto di ogni flip flop all'interno del registro seriale.
+Permette di vedere il contenuto di ogni flip flop all'interno del registro seriale.
 
 \subsubsection*{Shift register con ingresso parallelo}
 
-Consiste in un registro a scorrimento in cui c'è un ingresso per ogni flip flop così che sotto opportuni segnale si possa modificare il valore di un flip flop interno.
-
+Consiste in un registro a scorrimento in cui c'è un ingresso per ogni flip flop così che sotto opportuni segnale si possa modificare il valore di un flip flop interno.\\
 Per fare ciò è necessario ampliare il multiplexer e metterlo con 2 segnali di decisione così da poter decidere tra massimo 4 casi.\\
 \begin{tabular}{|c|c|c|}
 \hline
@@ -1701,6 +1851,39 @@ SHIFT & LOAD & RESULT \\
 \subsubsection*{Shift register bidirezionale}
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Metodo RTL}
 
 
 
