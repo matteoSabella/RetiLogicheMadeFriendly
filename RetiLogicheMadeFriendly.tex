@@ -18,7 +18,7 @@
 
 \usepackage{tikz}
 \usetikzlibrary{arrows,automata,positioning}
-
+\usetikzlibrary{shapes.geometric}
 
 
 
@@ -54,15 +54,15 @@
 %Al mio fedele compagno di avventure, che mi piaceva girare a letto come un flip flop e che mi ha consentito di mantenere la fede.%
 
 \chapter{Da analogico a digitale}
-Nell'era pre digitale i segnali erano analogici, ossia il loro valore spaziava su una gamma potenzialmente infinita di valori, in qualche forma proporzionali ad una qualche grandezza di interesse.
-Ciò poneva di fronte ad un problema, quello delle interferenze e dei disturbi di segnale, che potevano distorcere o rendere impossibile la lettura del messaggio trasportato dal segnale in questione.
-Si è perciò deciso di ricorrere al mezzo digitale, ossia un particolare modo di rappresentare le informazioni.
-Ogni segnale può assumere solo due possibili valori(da qui denominato segnale binario), che si distinguono grazie ad un confine detto soglia che li separa.
-Al di sotto di tale soglia il segnale ha ovunque lo stesso valore, così come al di sopra, ma tra una parte della soglia e l'altra, lì il valore cambia.
+Nell'era pre digitale i segnali erano \textbf{analogici}, ossia il loro valore spaziava su una \textbf{gamma potenzialmente infinita di valori}, in qualche forma proporzionali ad una qualche grandezza di interesse.\\
+Ciò poneva di fronte ad un problema, quello delle interferenze e dei disturbi di segnale, che potevano distorcere o rendere impossibile la lettura del messaggio trasportato dal segnale in questione.\\
+Si è perciò deciso di ricorrere al mezzo \textbf{digitale}, ossia un particolare modo di rappresentare le informazioni.\\
+Ogni segnale può assumere solo textbf{due possibili valori}(da qui denominato segnale binario), che si distinguono grazie ad un confine detto soglia che li separa.\\
+Al di sotto di tale soglia il segnale ha ovunque lo stesso valore, così come al di sopra, ma tra una parte della soglia e l'altra, lì il valore cambia.\\
 Tanto più il segnale è lontano dalla soglia tanto più esso può subire distorsioni senza che il messaggio venga all'arrivo compromesso.
-Tale sistema però pone uno svantaggio, ossia l'impossibilità di comunicare un vasto numero di messaggi.
-Per risolvere questo inconveniente intrinseco del modo di comunicare si ricorre a più sorgenti di segnali, così che invece che avere solo 2 possibili valori, il messaggio costituito da n segnali avrà \(2^n\) possibili significati o sfumature.
-Questo non presenta un problema eccessivamente complicato da gestire, infatti essendo logaritmica la relazione tra il numero di rappresentazioni desiderate e il numero di segnali, il numero di segnali necessario cresce lentamente rispetto al numero rappresentazioni che si desiderano ! 
+Tale sistema però pone uno svantaggio, ossia l'impossibilità di comunicare un vasto numero di messaggi.\\
+Per risolvere questo inconveniente intrinseco del modo di comunicare si ricorre a \textbf{più sorgenti di segnali}, così che invece che avere solo 2 possibili valori, il messaggio costituito da n segnali avrà \(2^n\) possibili significati o sfumature.\\
+Questo non presenta un problema eccessivamente complicato da gestire, infatti essendo logaritmica la relazione tra il numero di rappresentazioni desiderate e il numero di segnali, il numero di segnali necessario cresce lentamente rispetto al numero rappresentazioni che si desiderano ! \\
 
 \includegraphics[width=\textwidth]{SchemaDigitale}
 
@@ -1636,6 +1636,29 @@ L'uscita si riferisce sempre allo stato di partenza e non a quello di arrivo.
 
 \chapter{Circuiti sequenziali di base}
 
+\section{Pattern Sequenziali}
+
+Sono pattern molto comuni nelle macchine a stati che si possono riutilizzare quando capita di voler riprodurre un comportamento.
+
+\subsection*{Busy Waiting}
+
+Sostanzialmente tiene occupata la macchina continuando ad entrare nello stesso stato di wait finchè un certo segnale non ha una transizione.\\
+Quando questa avviene, ci sarà una transizione nello stato della macchina al ciclo di clock \textbf{SUCCESSIVO}.\\
+Per una reazione immediata si può ricorrere ad un'uscita condizionata. 
+\subsection*{Choice}
+
+E' il pattern di scelta.\\
+Parte da uno stato comune e poi in base al valore che prende un segnale, sarà diverso lo stato presente al ciclo di clock successivo.
+
+\subsection*{Fire and Check}
+
+Rende possibile effettuare delle operazioni senza dover esplicitamente percorrere, ma invece basandosi su un segnale.
+
+
+\subsection*{Edge detector / Derivatore}
+
+E'un circuito sequenziale il cui scopo è identificare un fronte di clock.
+
 \section{Corse sugli ingressi}
 
 
@@ -1645,10 +1668,70 @@ L'uscita si riferisce sempre allo stato di partenza e non a quello di arrivo.
 Un altro metodo per risolvere le corse è quello di impedire l'accesso accesso diretto  dell'ingresso al circuito, e invece campionarlo.
 Interponendo un flip flop tra ingresso e circuito sostanzialmente fa si che anche l'ingresso, dal ciclo successivo di clock sia sincronizzatto con il resto del circuito perchè verrà immesso in quest'ultimo all'inizio del ciclo.
 
+\section{Registri}
 
-\section{Edge detector / Derivatore}
+Nella loro realizzazione più semplice sono solamente un flip flop D che memorizza quindi valori a un bit.
+Di solito sono composti da molti flip flop in parallelo e funzionano praticamente come una variabile per i linguaggi di programmazione, perchè la loro funzione è memorizzare un valore.
 
-E'un circuito sequenziale il cui scopo è identificare un fronte di clock.
+\subsection*{Registro singolo con clear}
+
+E' un flip flop D che carica un valore ad ogni colpo di clock e viene azzerato con un comando Clear asincrono.
+\subsection{Registro parallelo}
+
+\subsubsection*{Registro multibit parallelo con Clear}
+
+E' costituito da registri singoli in parallelo ognuno indipendente dall'altro ma con segnale di clock e clear comune.
+
+\subsubsection*{Registro parallelo con load enable}
+
+E' un registro che carica un valore solo a determinati cicli di clock.\\
+Questo è possibile grazie ad una segnale di load enable, che attua \textbf{clock gating}, ossia un'operazione di mascheramento del clock che quindi non arriva alla macchina nei cicli in cui non si vuole aggiornare il valore.
+
+Intervenire sul clock però è rischioso, perchè si possono facilmente violare i tempi di hold e setup per cui è meglio non toccarlo.
+
+
+\subsubsection*{Realizzazione sincrona}
+
+Un modo alternativo al clock gating è quello di utilizzare un multiplexer con segnale di "decisione" il segnale load.
+Se load fosse attivo allora verrà caricato il nuovo valore altrimenti si ricaricherà quello che già conteneva.
+Parallelizzando vari registri con load enable che condividono sia load che clock si ottiene un registro multibit con load enable (E' possibile anche aggiungere Clear).
+
+\subsection*{Shift register - Registro seriale}
+
+E' un tipo di registro costituito da un insieme di registri messi in serie e condividono il segnale di clock.
+\\
+Così facendo ogni registro inserisce un ritardo di 1 ciclo di clock.\\
+Sono molto utilizzati per le comunicazioni.
+
+\subsubsection*{Shift register con shift enable}
+
+Lo shift enable permette di abilitare o meno il campionamento dell'input e quindi lo scorrimento all'interno del registro.
+Si realizza sempre con un multiplexer che in caso di segnale di load non attivo ricarica il valore già all'interno del flip flop.
+
+\subsubsection*{Shift register con uscita parallela}
+
+Permette di vedere il contenuto di ogni flip flop all'interno del registro seriale.
+
+\subsubsection*{Shift register con ingresso parallelo}
+
+Consiste in un registro a scorrimento in cui c'è un ingresso per ogni flip flop così che sotto opportuni segnale si possa modificare il valore di un flip flop interno.\\
+Per fare ciò è necessario ampliare il multiplexer e metterlo con 2 segnali di decisione così da poter decidere tra massimo 4 casi.\\
+\begin{tabular}{|c|c|c|}
+\hline
+SHIFT & LOAD & RESULT \\
+\hline
+0 & 0 & non succede nulla \\
+\hline
+0 & 1 & il flip flop si aggiorna con il valore che gli arriva dagli ingressi paralleli \\
+\hline
+1 & - & il registro scorre \\
+\hline
+\end{tabular}
+
+\subsubsection*{Shift register bidirezionale}
+
+
+
 
 \section{VHDL per circuiti sequenziali}
 
@@ -1788,67 +1871,6 @@ Viene eseguito nello stesso modo in cui si fanno progetti non sequenziali.
 
 Analagoamente alla parte per le uscite, questo processo implementa le funzioni booleane che regolano la scelta dello stato futuro.
 
-\section{Registri}
-
-Nella loro realizzazione più semplice sono solamente un flip flop D che memorizza quindi valori a un bit.
-Di solito sono composti da molti flip flop in parallelo e funzionano praticamente come una variabile per i linguaggi di programmazione, perchè la loro funzione è memorizzare un valore.
-
-\subsection*{Registro singolo con clear}
-
-E' un flip flop D che carica un valore ad ogni colpo di clock e viene azzerato con un comando Clear asincrono.
-\subsection{Registro parallelo}
-
-\subsubsection*{Registro multibit parallelo con Clear}
-
-E' costituito da registri singoli in parallelo ognuno indipendente dall'altro ma con segnale di clock e clear comune.
-
-\subsubsection*{Registro parallelo con load enable}
-
-E' un registro che carica un valore solo a determinati cicli di clock.\\
-Questo è possibile grazie ad una segnale di load enable, che attua \textbf{clock gating}, ossia un'operazione di mascheramento del clock che quindi non arriva alla macchina nei cicli in cui non si vuole aggiornare il valore.
-
-Intervenire sul clock però è rischioso, perchè si possono facilmente violare i tempi di hold e setup per cui è meglio non toccarlo.
-
-
-\subsubsection*{Realizzazione sincrona}
-
-Un modo alternativo al clock gating è quello di utilizzare un multiplexer con segnale di "decisione" il segnale load.
-Se load fosse attivo allora verrà caricato il nuovo valore altrimenti si ricaricherà quello che già conteneva.
-Parallelizzando vari registri con load enable che condividono sia load che clock si ottiene un registro multibit con load enable (E' possibile anche aggiungere Clear).
-
-\subsection*{Shift register - Registro seriale}
-
-E' un tipo di registro costituito da un insieme di registri messi in serie e condividono il segnale di clock.
-\\
-Così facendo ogni registro inserisce un ritardo di 1 ciclo di clock.\\
-Sono molto utilizzati per le comunicazioni.
-
-\subsubsection*{Shift register con shift enable}
-
-Lo shift enable permette di abilitare o meno il campionamento dell'input e quindi lo scorrimento all'interno del registro.
-Si realizza sempre con un multiplexer che in caso di segnale di load non attivo ricarica il valore già all'interno del flip flop.
-
-\subsubsection*{Shift register con uscita parallela}
-
-Permette di vedere il contenuto di ogni flip flop all'interno del registro seriale.
-
-\subsubsection*{Shift register con ingresso parallelo}
-
-Consiste in un registro a scorrimento in cui c'è un ingresso per ogni flip flop così che sotto opportuni segnale si possa modificare il valore di un flip flop interno.\\
-Per fare ciò è necessario ampliare il multiplexer e metterlo con 2 segnali di decisione così da poter decidere tra massimo 4 casi.\\
-\begin{tabular}{|c|c|c|}
-\hline
-SHIFT & LOAD & RESULT \\
-\hline
-0 & 0 & non succede nulla \\
-\hline
-0 & 1 & il flip flop si aggiorna con il valore che gli arriva dagli ingressi paralleli \\
-\hline
-1 & - & il registro scorre \\
-\hline
-\end{tabular}
-
-\subsubsection*{Shift register bidirezionale}
 
 
 
